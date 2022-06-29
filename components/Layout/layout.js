@@ -1,8 +1,8 @@
 import styles from "./layout.module.scss";
 import Head from "next/head";
-import Header from "./Header/header.js";
-import AnnouncementBar from "../AnnouncementBar/announcementBar.js";
-import Footer from "./Footer/footer.js";
+import { Header } from "../Header/header.js";
+import { AnnouncementBar } from "../AnnouncementBar/announcementBar.js";
+import { Footer } from "../Footer/footer.js";
 
 export const Layout = ({
   children,
@@ -26,7 +26,7 @@ export const Layout = ({
       {hasAnnoucement && <AnnouncementBar headline={headline} url={linkUrl} />}
       <Header headerNav={header} footerNav={footer} />
       <main className={styles.main}>{children}</main>
-      <Footer footerNav={footer} />
+      {/*<Footer footerNav={footer} />*/}
     </div>
   );
 };

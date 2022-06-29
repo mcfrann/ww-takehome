@@ -42,7 +42,7 @@
   &:hover {
     .hamburger {
       span {
-        background-color: vars.$yellow;
+        background-color: vars.$black;
         cursor: pointer;
       }
     }
@@ -50,7 +50,7 @@
   &.opened {
     .hamburger {
       span {
-        background: vars.$black;
+        background: vars.$white;
         &:nth-child(1) {
           left: 50%;
           top: 18px;

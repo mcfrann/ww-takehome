@@ -1,6 +1,7 @@
-import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.scss";
+import { Layout } from "../components/Layout/layout";
+import { IntroSection } from "../components/IntroSection/introSection";
+import { renderPageSections } from "/utils/renderPageSections";
 import {
   getPage,
   getAnnoucementBar,
@@ -32,7 +33,10 @@ export default function Home({
       header={header}
       footer={footer}
     >
-      <div className={styles.container}></div>
+      <div className={styles.container}>
+        {introSection && <IntroSection section={introSection} />}
+        {pageSections && renderPageSections(pageSections)}
+      </div>
     </Layout>
   );
 }
@@ -46,7 +50,8 @@ export const getStaticProps = async () => {
   const headerNav = (await getHeaderNavLinks()) ?? [];
   const header = headerNav ? headerNav.items[0] : [];
 
-  const announcementBar = (await getAnnoucementBar()) ?? [];
+  const announcement = (await getAnnoucementBar()) ?? [];
+  const announcementBar = announcement ? announcement.items[0] : [];
 
   return {
     props: {

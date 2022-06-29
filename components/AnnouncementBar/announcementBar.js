@@ -1,4 +1,4 @@
-import styles from "./annoucement.module.scss";
+import styles from "./announcement.module.scss";
 
 export const AnnouncementBar = ({ headline, url }) => {
   return (

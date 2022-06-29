@@ -1,5 +1,7 @@
 import styles from "./header.module.scss";
 import Link from "next/link";
+import { ImageOrSvg } from "../ImageorSvg/imageOrSvg.js";
+
 import { useState } from "react";
 
 export const Header = ({ headerNav, footerNav }) => {
@@ -14,33 +16,13 @@ export const Header = ({ headerNav, footerNav }) => {
     }
   };
 
-  const renderLogo = () => {
-    if (logo) {
-      const alt = logo.fields.title || "no alt description";
-      let details = logo.fields.file.details.image;
-      const src = `https:${logo.fields.file.url}`;
-      let height = details.height;
-      let width = details.width;
-
-      return (
-        <Image
-          src={src}
-          alt={alt}
-          width={width}
-          height={height}
-          layout={"intrinsic"}
-          objectFit={"contain"}
-        />
-      );
-    }
-    return;
-  };
-
   const renderLogoContainer = () => {
     return (
       <div className={styles.logoContainer}>
         <Link href="/" passHref>
-          <a className={styles.logoLink}>{renderLogo()}</a>
+          <a className={styles.logoLink}>
+            <ImageOrSvg image={logo} />
+          </a>
         </Link>
       </div>
     );
@@ -50,8 +32,8 @@ export const Header = ({ headerNav, footerNav }) => {
     // Print the nav links here
   };
 
-  renderOrderButton = () => {
-    return <div className={styles.navLink}>// ORder button here</div>;
+  const renderOrderButton = () => {
+    return <div className={styles.navLink}>ORder button here</div>;
   };
 
   return (
