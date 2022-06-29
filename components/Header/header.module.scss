@@ -1,0 +1,117 @@
+@use "../../styles/vars";
+
+.mobileNavigation {
+  display: none;
+  width: 70px;
+  @include vars.tablet-and-lower {
+    @include vars.flexbox();
+    @include vars.justify-content(center);
+    @include vars.align-items(center);
+  }
+  .hamburger {
+    transform: rotate(0deg);
+    transition: 0.5s ease-in-out;
+    height: 40px;
+    position: relative;
+    width: 40px;
+    z-index: 10001;
+    cursor: pointer;
+    span {
+      transform: rotate(0deg);
+      transition: 0.5s ease-in-out;
+      display: block;
+      position: absolute;
+      height: 5px;
+      width: 100%;
+      background: vars.$black;
+      border-radius: 9px;
+      opacity: 1;
+      left: 0;
+      &:nth-child(1) {
+        top: 0px;
+      }
+      &:nth-child(2),
+      &:nth-child(3) {
+        top: 15px;
+      }
+      &:nth-child(4) {
+        top: 30px;
+      }
+    }
+  }
+  &:hover {
+    .hamburger {
+      span {
+        background-color: vars.$yellow;
+        cursor: pointer;
+      }
+    }
+  }
+  &.opened {
+    .hamburger {
+      span {
+        background: vars.$black;
+        &:nth-child(1) {
+          left: 50%;
+          top: 18px;
+          width: 0%;
+        }
+        &:nth-child(2) {
+          transform: rotate(45deg);
+        }
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+        }
+        &:nth-child(4) {
+          left: 50%;
+          top: 18px;
+          width: 0%;
+        }
+      }
+    }
+    &:hover {
+      .hamburger {
+        span {
+          background: vars.$black;
+        }
+      }
+    }
+  }
+}
+
+.drawer {
+  @include vars.flexbox();
+  @include vars.flex-flow(column);
+  @include vars.justify-content(center);
+  @include vars.align-items(center);
+  background: vars.$red;
+  left: 0px;
+  right: 0px;
+  height: 100vh;
+  overflow-y: scroll;
+  position: fixed;
+  width: 100vw;
+  transition: top 0.5s linear;
+  z-index: 10;
+  display: none;
+  @include vars.tablet-and-lower {
+    @include vars.flexbox();
+  }
+  &.closed {
+    top: 120vh;
+  }
+  &.opened {
+    top: 0px;
+  }
+  .headerLink {
+    @include vars.subhead-font();
+    display: block;
+    border-color: vars.$white;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    width: 100%;
+    &:first-child {
+      margin-left: 0px;
+    }
+  }
+}

@@ -1,5 +1,7 @@
+@import "./vars";
 html,
 body {
+  @include body-font();
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -13,4 +15,16 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  @include header-font();
+}
+
+p {
+  @include body-font();
 }
