@@ -112,6 +112,9 @@ $ten-twelfths: calc(100vw * 10 / 12);
 $eleven-twelfths: calc(100vw * 11 / 12);
 $full: 100vw;
 
+// MAX_WIDTH
+$container: 1208px;
+
 // generic transform
 @mixin transform($transforms) {
   -webkit-transform: $transforms;
