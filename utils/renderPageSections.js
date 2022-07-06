@@ -2,10 +2,11 @@ import { VisitSection } from "../components/VisitSection/visitSection";
 import { MenuSection } from "../components/MenuSection/menuSection";
 import { CareersSection } from "../components/CareersSection/careersSection";
 import { AboutSection } from "../components/AboutSection/aboutSection";
+import { ImageSection } from "../components/ImageSection/imageSection";
 
 export const renderPageSections = (pageSections) => {
   return pageSections.map((section, i) => {
-    const { id } = section.sys.contentType.sys.id;
+    const { id } = section.sys.contentType.sys;
 
     if (id == "visitSection") {
       return <VisitSection key={`visit-section-${i}`} section={section} />;

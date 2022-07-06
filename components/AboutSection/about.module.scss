@@ -1,1 +1,39 @@
 @use "../../styles/vars";
+
+
+.aboutSection {
+    background-color: vars.$black;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .aboutSectionContainer {
+        max-width: 835px;
+        text-align: center;
+        color: vars.$white;
+
+        .title {
+            @include vars.header-font;
+            font-size: 36px;
+        }
+
+        .copy {
+            @include vars.body-font;
+
+            font-size: 24px;
+            margin-top: 50px;
+        }
+    }
+
+    .aboutIcon {
+        position: absolute;
+        width: 98px;
+        right: 96px;
+        bottom: 36px;
+    }
+
+}
