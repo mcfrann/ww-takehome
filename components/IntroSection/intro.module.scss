@@ -1,1 +1,37 @@
 @use "../../styles/vars";
+
+
+.introSection {
+    background-color: vars.$white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 58px 16px;
+
+    .logoIcon {
+        width: 142px;
+    }
+
+    .description {
+        @include vars.header-font;
+        text-align: center;
+
+        * {
+            margin: 0;
+        }
+
+        .headline {
+            font-weight: vars.$header-font-weight;
+        }
+
+        .subhead {
+            font-weight: vars.$subhead-font-weight;
+        }
+    }
+
+    .mainImage {
+        width: 100%;
+    }
+}

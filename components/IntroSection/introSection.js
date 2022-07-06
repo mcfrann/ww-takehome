@@ -13,13 +13,21 @@ export const IntroSection = ({ section }) => {
   } = section.fields;
 
   return (
-    <div className={styles.introSection}>
-      {logoIcon && (
-        <div className={styles.logoIcon}>
-          <ImageOrSvg image={logoIcon} />
+    <div>
+      <div className={styles.introSection}>
+        {logoIcon && (
+          <div className={styles.logoIcon}>
+            <ImageOrSvg image={logoIcon} />
+          </div>
+        )}
+        <div className={styles.description}>
+          <h1 className={styles.headline}>{headline}</h1>
+          <h2 className={styles.subhead}>{subhead}</h2>
         </div>
-      )}
-      {/* Intro content  here */}
+      </div>
+      <div className={styles.mainImage}>
+        <ImageOrSvg image={mainImage} />
+      </div>
     </div>
   );
 };
