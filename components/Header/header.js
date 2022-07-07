@@ -29,11 +29,27 @@ export const Header = ({ headerNav, footerNav }) => {
   };
 
   const renderNavLinks = (start, stop) => {
-    // Print the nav links here
+    return headerSectionLinks.map((link, index) => {
+      if (index < start || index > stop) return;
+      return (
+        <Link href={`#${link.fields.menuTitle}`} key={index}>
+          {link.fields.menuTitle}
+        </Link>
+      );
+    });
   };
 
   const renderOrderButton = () => {
-    return <div className={styles.navLink}>ORder button here</div>;
+    return (
+      <a
+        href={orderButton.fields.buttonLinkUrl}
+        target={orderButton.fields.openInNewWindow ? "_blank" : "_self"}
+        rel="noreferrer"
+        className={styles.orderButton}
+      >
+        {orderButton.fields.buttonTitle}
+      </a>
+    );
   };
 
   return (
@@ -59,10 +75,14 @@ export const Header = ({ headerNav, footerNav }) => {
         <div className={styles.navContainerMobile}>{renderNavLinks(1, 3)}</div>
       </div>
       <nav className={styles.navContainer}>
-        {renderNavLinks(0, 2)}
-        {renderLogoContainer()}
-        {renderNavLinks(3)}
-        {renderOrderButton()}
+        <div className={styles.nav}>
+          <div className={styles.navGroup}>{renderNavLinks(0, 1)}</div>
+          {renderLogoContainer()}
+          <div className={styles.navGroup}>
+            {renderNavLinks(2, 3)}
+            {renderOrderButton()}
+          </div>
+        </div>
       </nav>
     </header>
   );

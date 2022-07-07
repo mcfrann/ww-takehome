@@ -3,6 +3,7 @@ import Head from "next/head";
 import { Header } from "../Header/header.js";
 import { AnnouncementBar } from "../AnnouncementBar/announcementBar.js";
 import { Footer } from "../Footer/footer.js";
+import { useState } from "react";
 
 export const Layout = ({
   children,
@@ -14,7 +15,8 @@ export const Layout = ({
   announcementBar,
 }) => {
   const { display, headline, linkUrl } = announcementBar.fields;
-  const hasAnnoucement = announcementBar && headline && display;
+  const [showAnnoucement, setShowAnnoucement] = useState(true);
+  const hasAnnoucement = announcementBar && headline && display && showAnnoucement;
   return (
     <div className={styles.container} id={id}>
       <Head>
@@ -23,7 +25,7 @@ export const Layout = ({
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="https://use.typekit.net/wlo5gtv.css" />
       </Head>
-      {hasAnnoucement && <AnnouncementBar headline={headline} url={linkUrl} />}
+      {hasAnnoucement && <AnnouncementBar headline={headline} url={linkUrl} hide={() => setShowAnnoucement(false)} />}
       <Header headerNav={header} footerNav={footer} />
       <main className={styles.main}>{children}</main>
       {/*<Footer footerNav={footer} />*/}
