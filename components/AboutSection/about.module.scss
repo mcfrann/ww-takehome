@@ -1,1 +1,37 @@
 @use "../../styles/vars";
+
+.aboutSection {
+  @include vars.flexbox();
+  @include vars.flex-direction(column);
+  @include vars.justify-content(center);
+  @include vars.align-items(center);
+  background-color: vars.$black;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+
+  .aboutSectionContainer {
+    max-width: 800px;
+    width: vars.$eight-twelfths;
+    text-align: center;
+    color: vars.$white;
+
+    .title {
+      @include vars.header-font;
+      font-size: 36px;
+    }
+
+    .copy {
+      @include vars.body-font;
+      font-size: 24px;
+      margin-top: 60px;
+    }
+  }
+
+  .aboutIcon {
+    position: absolute;
+    width: vars.$one-twelfth;
+    right: vars.$one-twelfth;
+    bottom: 36px;
+  }
+}
