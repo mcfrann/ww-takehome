@@ -1,104 +1,111 @@
 @use "../../styles/vars";
 
 .visitSection {
-    width: 100%;
-    display: flex;
-    align-self: flex-start;
+  @include vars.flexbox();
+  @include vars.align-self(flex-start);
+  width: 100%;
 
-    .imageColumn,
-    .infoColumn {
-        width: 50%;
+  .imageColumn,
+  .infoColumn {
+    width: vars.$six-twelfths;
+    z-index: 0;
+  }
+
+  .infoColumn {
+    @include vars.body-font;
+    background-color: vars.$black;
+    text-align: center;
+  }
+
+  .hoursSection,
+  .visitSection {
+    @include vars.flexbox();
+    @include vars.flex-flow(column);
+    @include vars.justify-content(center);
+    @include vars.align-items(center);
+    min-height: 100vh;
+    color: vars.$white;
+  }
+
+  .hoursSection {
+    position: relative;
+
+    .hoursHeadline {
+      margin: 0;
+      font-size: 24px;
     }
 
-    .infoColumn {
-        @include vars.body-font;
-        background-color: vars.$black;
-        text-align: center;
+    .hoursTitle {
+      font-size: 36px;
+      font-weight: vars.$header-font-weight;
+      margin: 0;
     }
 
-    .hoursSection,
-    .visitSection {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        color: vars.$white;
+    .hoursContainer {
+      margin-bottom: 40px;
+
+      p {
+        margin: 0;
+        font-size: 24px;
+      }
     }
 
-    .hoursSection {
-        position: relative;
+    .parallaxImage {
+      position: absolute;
+      left: 50px;
+      bottom: 0;
+      width: 64px;
+    }
+  }
 
-        .hoursHeadline {
-            margin: 0;
-            font-size: 24px;
-        }
+  .visitSection {
+    position: relative;
+    padding-bottom: 48px;
 
-        .hoursTitle {
-            font-size: 36px;
-            font-weight: vars.$header-font-weight;
-            margin: 0;
-        }
-
-        .hoursContainer {
-            margin-bottom: 40px;
-
-            p {
-                margin: 0;
-                font-size: 24px;
-            }
-        }
-
-        .parallaxImage {
-            position: absolute;
-            left: 50px;
-            bottom: 0;
-            width: 64px;
-        }
+    .hoursContent {
+      width: vars.$four-twelfths;
     }
 
-    .visitSection {
-        position: relative;
-        padding-bottom: 48px;
-
-        .hoursHeadline {
-            margin: 0;
-            font-size: 24px;
-        }
-
-        .hoursTitle {
-            font-size: 36px;
-            font-weight: vars.$header-font-weight;
-            margin: 0;
-        }
-
-        .mapsContainer {
-            background-color: vars.$white;
-            width: 70%;
-            height: 300px;
-        }
-
-        .hoursContainer {
-            margin-bottom: 40px;
-
-            p {
-                margin: 0;
-                font-size: 24px;
-            }
-        }
-
-        .parallaxImage {
-            position: absolute;
-            right: 64px;
-            bottom: 36px;
-            width: 291px;
-        }
+    .hoursHeadline {
+      margin: 0;
+      font-size: 24px;
     }
 
-    .image {
-        position: sticky;
-        top: 0;
-        z-index: 10;
+    .hoursTitle {
+      font-size: 36px;
+      font-weight: vars.$header-font-weight;
+      margin: 0;
     }
 
+    .mapsContainer {
+      background-color: vars.$white;
+      width: 70%;
+      height: 300px;
+    }
+
+    .hoursContainer {
+      margin-bottom: 40px;
+
+      p {
+        margin: 0;
+        font-size: 24px;
+      }
+    }
+
+    .parallaxImage {
+      position: absolute;
+      right: 64px;
+      bottom: 36px;
+      width: vars.$one-twelfth;
+      &.imageTwo {
+        width: vars.$three-twelfths;
+      }
+    }
+  }
+
+  .image {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
 }

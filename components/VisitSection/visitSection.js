@@ -18,31 +18,33 @@ export const VisitSection = ({ section }) => {
     <div id={menuTitle} className={styles.visitSection}>
       <div className={styles.infoColumn}>
         <div className={styles.hoursSection}>
-          <h3 className={styles.hoursHeadline}>{hoursHeadline}</h3>
+          <div className={styles.hoursContent}>
+            <h3 className={styles.hoursHeadline}>{hoursHeadline}</h3>
 
-          {hoursGroups.map((_field, index) => {
-            const field = _field.fields;
-            return (
-              <div key={index}>
-                <h2 className={styles.hoursTitle}>{field.title}</h2>
-                {field.hours.map((_hours, _index) => {
-                  const hours = _hours.fields;
+            {hoursGroups.map((_field, index) => {
+              const field = _field.fields;
+              return (
+                <div key={index}>
+                  <h2 className={styles.hoursTitle}>{field.title}</h2>
+                  {field.hours.map((_hours, _index) => {
+                    const hours = _hours.fields;
 
-                  return (
-                    <div key={_index} className={styles.hoursContainer}>
-                      <p>
-                        {hours.startDay}-{hours.endDay}
-                      </p>
-                      <p>
-                        {hours.startTime}M-{hours.endTime}M
-                      </p>
-                    </div>
-                  );
-                })}
-              </div>
-            );
-          })}
-          <div className={styles.parallaxImage}>
+                    return (
+                      <div key={_index} className={styles.hoursContainer}>
+                        <p>
+                          {hours.startDay}-{hours.endDay}
+                        </p>
+                        <p>
+                          {hours.startTime}M-{hours.endTime}M
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
+              );
+            })}
+          </div>
+          <div className={`${styles.parallaxImage} ${styles.imageOne}`}>
             <ImageOrSvg image={parallaxIconOne} />
           </div>
         </div>
@@ -55,7 +57,7 @@ export const VisitSection = ({ section }) => {
             <p>{zip}</p>
           </div>
           <div className={styles.mapsContainer} />
-          <div className={styles.parallaxImage}>
+          <div className={`${styles.parallaxImage} ${styles.imageTwo}`}>
             <ImageOrSvg image={parallaxIconTwo} />
           </div>
         </div>
