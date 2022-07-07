@@ -1,1 +1,122 @@
 @use "../../styles/vars";
+
+
+.footer {
+    @include vars.flexbox();
+    @include vars.justify-content(center);
+    @include vars.align-items(center);
+    @include vars.flex-direction(column);
+    width: vars.$full;
+    background-color: vars.$black;
+    padding: 80px 24px 30px;
+    color: white;
+
+    .footerBody {
+        max-width: vars.$five-twelfths;
+        color: vars.$white;
+        text-align: center;
+
+        .headline {
+            @include vars.header-font();
+            font-size: 36px;
+            line-height: 43px;
+        }
+
+        .bodyText {
+            @include vars.body-font();
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .emailBody {
+            margin-top: 60px;
+            width: 100%;
+
+
+            .inputContainer {
+                width: 100%;
+                @include vars.flexbox();
+                @include vars.flex-direction(column);
+                text-align: left;
+
+                label {
+                    @include vars.body-font();
+                    font-size: 18px;
+                    margin: 0;
+                }
+
+                div {
+                    @include vars.flexbox();
+
+                    input {
+                        @include vars.body-font();
+                        font-size: 24px;
+                        text-align: center;
+                        padding: 8px;
+                        background-color: vars.$white;
+                        border: none;
+                        outline: none;
+                        width: 100%;
+                        color: vars.$red;
+
+                        &::placeholder {
+                            color: vars.$red;
+                        }
+                    }
+
+                    button {
+                        @include vars.body-font();
+                        font-size: 24px;
+                        text-align: center;
+                        padding: 8px 30px;
+                        border: vars.$red;
+                        background-color: vars.$red;
+                        color: vars.$white;
+                    }
+                }
+            }
+
+            .workShopButton {
+                @include vars.body-font();
+                font-size: 24px;
+                color: vars.$black;
+                background-color: vars.$gray;
+                padding: 8px;
+                border: none;
+                margin-top: 60px;
+
+            }
+        }
+    }
+
+    .socials {
+        margin-top: 20px;
+        width: 100%;
+        @include vars.flexbox();
+        @include vars.justify-content(center);
+        @include vars.align-items(center);
+
+        a {
+            padding: 17.5px;
+            border-radius: 50%;
+            margin-left: 15px;
+            background: vars.$red;
+        }
+    }
+
+
+    .icon {
+        width: 100%;
+
+        .footerIcon {
+            margin-top: 25px;
+            min-width: 291px;
+            width: vars.$one-twelfth;
+        }
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+}

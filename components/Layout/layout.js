@@ -28,7 +28,7 @@ export const Layout = ({
       {hasAnnoucement && <AnnouncementBar headline={headline} url={linkUrl} hide={() => setShowAnnoucement(false)} />}
       <Header headerNav={header} footerNav={footer} />
       <main className={styles.main}>{children}</main>
-      {/*<Footer footerNav={footer} />*/}
+      <Footer footer={footer} />
     </div>
   );
 };
