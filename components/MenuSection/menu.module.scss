@@ -1,1 +1,26 @@
 @use "../../styles/vars";
+
+
+.menuSection {
+    @include vars.flexbox();
+    @include vars.justify-content(center);
+    @include vars.align-items(center);
+    @include vars.flex-direction(column);
+
+    width: vars.$full;
+    background-color: vars.$white;
+    padding: 100px 36px;
+
+    .menuEmbedImage, .iconsContainer {
+        max-width: vars.$eight-twelfths;
+    }
+
+    .iconsContainer {
+        width: 100%;
+
+        .parallaxIconOne {
+            margin-top: 60px;
+            max-width: vars.$one-twelfth;
+        }
+    }
+}
