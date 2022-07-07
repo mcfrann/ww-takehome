@@ -1,1 +1,71 @@
-@use "../../styles/vars";
+@import "../../styles/vars.scss";
+
+.announcementBar {
+    position: relative;
+    background-color: $pink;
+    display: flex;
+    justify-content: center;
+    padding: 19px;
+
+    .announcement {
+        font-family: $subhead-font-family;
+        font-size: 40px;
+        text-align: center;
+        margin: 0;
+    }
+
+
+    .hamburger {
+        position: absolute;
+        top: 30px;
+        right: 25px;
+        transform: rotate(0deg);
+        transition: 0.5s ease-in-out;
+        height: 24px;
+        width: 24px;
+        z-index: 10001;
+        cursor: pointer;
+
+        span {
+            transform: rotate(0deg);
+            transition: 0.5s ease-in-out;
+            display: block;
+            position: absolute;
+            height: 5px;
+            width: 100%;
+            background: $black;
+            border-radius: 9px;
+            opacity: 1;
+            left: 0;
+
+            &:nth-child(1) {
+                left: 50%;
+                top: 18px;
+                width: 0%;
+            }
+
+            &:nth-child(2),
+            &:nth-child(3) {
+                top: 15px;
+            }
+
+            &:nth-child(4) {
+                top: 30px;
+            }
+
+            &:nth-child(2) {
+                transform: rotate(45deg);
+            }
+
+            &:nth-child(3) {
+                transform: rotate(-45deg);
+            }
+
+            &:nth-child(4) {
+                left: 50%;
+                top: 18px;
+                width: 0%;
+            }
+        }
+    }
+}
