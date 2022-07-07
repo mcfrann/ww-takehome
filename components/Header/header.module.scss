@@ -84,7 +84,7 @@
       }
     }
   }
-  
+
   .drawer {
     @include vars.flexbox();
     @include vars.flex-flow(column);
@@ -121,19 +121,21 @@
       }
     }
   }
-  
+
   .navContainer {
-    display: flex;
-    justify-content: center;
-  
+    @include vars.flexbox();
+    @include vars.justify-content(center);
+    padding: 10px 0;
     .nav {
       width: 100%;
-      max-width: vars.$container;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 24px 0;
-  
+      .navGroup {
+        @include vars.flexbox();
+        @include vars.justify-content(space-around);
+        width: vars.$five-twelfths;
+      }
       * {
         font-family: vars.$body-font-family;
         font-size: 24px;
@@ -147,12 +149,11 @@
         color: vars.$white;
         cursor: pointer;
       }
-
     }
   }
-  
-  .logoContainer {
-    width: 200px;
-  }
 
+  .logoContainer {
+    max-width: 170px;
+    width: vars.$two-twelfths;
+  }
 }

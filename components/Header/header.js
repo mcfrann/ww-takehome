@@ -41,7 +41,12 @@ export const Header = ({ headerNav, footerNav }) => {
 
   const renderOrderButton = () => {
     return (
-      <a href={orderButton.fields.buttonLinkUrl} target={orderButton.fields.openInNewWindow ? '_blank' : '_self'} rel="noreferrer" className={styles.orderButton}>
+      <a
+        href={orderButton.fields.buttonLinkUrl}
+        target={orderButton.fields.openInNewWindow ? "_blank" : "_self"}
+        rel="noreferrer"
+        className={styles.orderButton}
+      >
         {orderButton.fields.buttonTitle}
       </a>
     );
@@ -71,10 +76,12 @@ export const Header = ({ headerNav, footerNav }) => {
       </div>
       <nav className={styles.navContainer}>
         <div className={styles.nav}>
-          {renderNavLinks(0, 1)}
+          <div className={styles.navGroup}>{renderNavLinks(0, 1)}</div>
           {renderLogoContainer()}
-          {renderNavLinks(2, 3)}
-          {renderOrderButton()}
+          <div className={styles.navGroup}>
+            {renderNavLinks(2, 3)}
+            {renderOrderButton()}
+          </div>
         </div>
       </nav>
     </header>
