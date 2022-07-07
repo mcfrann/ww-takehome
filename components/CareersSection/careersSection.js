@@ -3,8 +3,9 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Marquee from "react-fast-marquee";
 
 export const CareersSection = ({ section }) => {
-  const { crawlerText, copy, buttonCtaCopy, applyButton } = section.fields;
+  const { crawlerText, copy: _copy, applyButton } = section.fields;
 
+  const copy = documentToReactComponents(_copy);
   return (
     <div className={styles.careersSection}>
       {crawlerText && (
@@ -16,6 +17,19 @@ export const CareersSection = ({ section }) => {
           <span>{crawlerText}</span>
         </Marquee>
       )}
+      <div className={styles.description}>
+        <div className={styles.copyBody}>
+          <div className={styles.copy}>{copy}</div>
+          <a
+            href={applyButton.fields.buttonLinkUrl}
+            target={applyButton.fields.openInNewWindow ? "_blank" : "_self"}
+            rel="noreferrer"
+            className={styles.applyButton}
+          >
+            {applyButton.fields.buttonTitle}
+          </a>
+        </div>
+      </div>
     </div>
   );
 };
