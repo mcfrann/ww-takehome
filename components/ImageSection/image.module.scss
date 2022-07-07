@@ -1,1 +1,16 @@
 @use "../../styles/vars";
+
+
+.imageSection {
+    @include vars.flexbox();
+
+    div {
+        @include vars.flexbox();
+        @include vars.align-items(flex-start);
+        width: 50%;
+    }
+
+    .stretch {
+        width: vars.$full;
+    }
+}
