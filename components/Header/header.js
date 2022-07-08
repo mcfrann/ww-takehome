@@ -66,6 +66,7 @@ export const Header = ({ headerNav, footerNav }) => {
           <span></span>
           <span></span>
         </div>
+        {renderOrderButton()}
       </div>
       <div
         className={`${styles.drawer} ${

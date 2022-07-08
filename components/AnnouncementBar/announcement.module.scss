@@ -1,3 +1,4 @@
+@use "../../styles/vars";
 @import "../../styles/vars.scss";
 
 .announcementBar {
@@ -6,12 +7,20 @@
     display: flex;
     justify-content: center;
     padding: 19px;
+    @include vars.tablet-and-lower {
+        height: 50px;
+        padding: 10px;
+    }
 
     .announcement {
         font-family: $subhead-font-family;
         font-size: 40px;
         text-align: center;
         margin: 0;
+        @include vars.tablet-and-lower {
+            font-size: 24px;
+            max-width: 200px;
+        }
     }
 
 
@@ -25,13 +34,17 @@
         width: 24px;
         z-index: 10001;
         cursor: pointer;
+        @include vars.tablet-and-lower {
+            top: 10px;
+            right: 16px;
+        }
 
         span {
             transform: rotate(0deg);
             transition: 0.5s ease-in-out;
             display: block;
             position: absolute;
-            height: 5px;
+            height: 1px;
             width: 100%;
             background: $black;
             border-radius: 9px;

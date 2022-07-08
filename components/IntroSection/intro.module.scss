@@ -8,10 +8,16 @@
   flex-direction: column;
   justify-content: center;
   padding: 58px 16px;
+  @include vars.tablet-and-lower {
+    padding: 32px;
+  }
 
   .logoIcon {
     width: vars.$two-twelfths;
     max-width: 142px;
+    @include vars.tablet-and-lower {
+      width: 110px;
+    }
   }
 
   .description {
@@ -25,10 +31,20 @@
 
     .headline {
       font-weight: vars.$header-font-weight;
+      @include vars.tablet-and-lower {
+        font-size: 24px;
+      }
     }
 
     .subhead {
       font-weight: vars.$subhead-font-weight;
+      @include vars.tablet-and-lower {
+        font-size: 24px;
+      }
+    }
+
+    @include vars.tablet-and-lower {
+      width: inherit;
     }
   }
 
