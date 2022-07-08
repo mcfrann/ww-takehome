@@ -122,6 +122,18 @@
         margin-left: 0px;
       }
     }
+    .navContainerMobile {
+      @include vars.flexbox();
+      @include vars.flex-flow(column);
+      @include vars.justify-content(space-between);
+      @include vars.align-items(center);
+      color: vars.$white;
+      font-family: vars.$body-font-family;
+      font-weight: vars.$header-font-weight;
+      font-size: 24px;
+      max-height: 322px;
+      height: 100%;
+    }
   }
 
   .navContainer {

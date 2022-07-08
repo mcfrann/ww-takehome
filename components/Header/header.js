@@ -73,7 +73,7 @@ export const Header = ({ headerNav, footerNav }) => {
           showDrawer ? `${styles.opened}` : `${styles.closed}`
         }`}
       >
-        <div className={styles.navContainerMobile}>{renderNavLinks(1, 3)}</div>
+        <div className={styles.navContainerMobile}>{renderNavLinks(0, 3)}</div>
       </div>
       <nav className={styles.navContainer}>
         <div className={styles.nav}>
