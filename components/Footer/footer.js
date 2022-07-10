@@ -22,27 +22,28 @@ export const Footer = ({ footer }) => {
         <h1 className={styles.headline}>{contactHeadline}</h1>
         <p className={styles.bodyText}>{contactEmail}</p>
         <p className={styles.bodyText}>{phone}</p>
+        {mailchimpLink && (
+          <div className={styles.emailBody}>
+            <h2 className={styles.emailText}>sign up for our email</h2>
+            <form onSubmit={submitHandler} className={styles.inputContainer}>
+              <label htmlFor="email">Email</label>
+              <div>
+                <input
+                  value={email}
+                  placeholder="youremail@email.com"
+                  type="email"
+                  required
+                  id="email"
+                  name="email"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <button type="submit">SUBMIT</button>
+              </div>
+            </form>
 
-        <div className={styles.emailBody}>
-          <h2 className={styles.bodyText}>sign up for our email</h2>
-          <form onSubmit={submitHandler} className={styles.inputContainer}>
-            <label htmlFor="email">Email</label>
-            <div>
-              <input
-                value={email}
-                placeholder="youremail@email.com"
-                type="email"
-                required
-                id="email"
-                name="email"
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <button type="submit">SUBMIT</button>
-            </div>
-          </form>
-
-          <button className={styles.workShopButton}>WORK+SHOP</button>
-        </div>
+            <button className={styles.workShopButton}>WORK+SHOP</button>
+          </div>
+        )}
       </div>
       <div className={styles.icon}>
         <div className={styles.footerIcon}>
