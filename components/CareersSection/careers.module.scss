@@ -1,1 +1,72 @@
 @use "../../styles/vars";
+
+.careersSection {
+  @include vars.body-font();
+  min-height: 100vh;
+  width: 100%;
+  background-color: vars.$red;
+
+  .marquee {
+    background-color: vars.$pink;
+    padding: 20px 0;
+    font-size: 36px;
+
+    span {
+      margin-right: 16px;
+    }
+  }
+
+  .description {
+    @include vars.flexbox();
+    @include vars.flex-flow(column);
+    @include vars.justify-content(center);
+    @include vars.align-items(center);
+    text-align: center;
+    padding: 100px 0px;
+
+    .copyBody {
+      font-size: 24px;
+      max-width: 800px;
+      width: vars.$eight-twelfths;
+      color: vars.$white;
+
+      .copy {
+        margin-bottom: 100px;
+        ul {
+          @include vars.flexbox();
+          @include vars.flex-flow(column);
+          @include vars.justify-content(center);
+          @include vars.align-items(center);
+          li {
+            margin: 0;
+            padding: 0;
+            &::marker {
+              content: "+";
+            }
+            p {
+              text-align: left;
+              padding-left: 10px;
+              margin: 10px 0;
+            }
+          }
+        }
+      }
+
+      .applyButton {
+        padding: 3px 50px;
+        border-radius: 20px;
+        background-color: vars.$black;
+        border: 0.5px solid vars.$black;
+        color: vars.$white;
+        font-size: 2rem;
+        transition: all 0.15s linear;
+        cursor: pointer;
+        &:hover {
+          background: vars.$white;
+          border-color: vars.$white;
+          color: vars.$black;
+        }
+      }
+    }
+  }
+}

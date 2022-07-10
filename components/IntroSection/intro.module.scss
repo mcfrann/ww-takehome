@@ -31,8 +31,9 @@
       font-weight: vars.$subhead-font-weight;
     }
   }
+}
 
-  .mainImage {
-    width: 100%;
-  }
+.mainImage {
+  width: vars.$full;
+  display: flex;
 }
