@@ -1,12 +1,19 @@
+import { ImageOrSvg } from "../ImageOrSvg/imageOrSvg";
 import styles from "./image.module.scss";
 
 export const ImageSection = ({ section }) => {
-  const { title, copy, aboutIcon } = section.fields;
+  const { imageOne, imageTwo } = section.fields;
 
   return (
     <div className={styles.imageSection}>
-      {/* About contnet here */}
-      {aboutIcon && <ImageOrSvg image={aboutIcon} />}
+      <div className={!imageTwo ? styles.stretch : ""}>
+        <ImageOrSvg image={imageOne} />
+      </div>
+      {imageTwo && (
+        <div>
+          <ImageOrSvg image={imageTwo} />
+        </div>
+      )}
     </div>
   );
 };
