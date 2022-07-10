@@ -1,26 +1,64 @@
 @use "../../styles/vars";
 
-
 .menuSection {
+  @include vars.flexbox();
+  @include vars.justify-content(center);
+  @include vars.align-items(center);
+  @include vars.flex-direction(column);
+
+  width: vars.$full;
+  background-color: vars.$white;
+  padding: 100px 0px;
+
+  .menuEmbedImage,
+  .iconsContainer {
+    max-width: 1200px;
+    width: vars.$eight-twelfths;
+  }
+
+  .iconsContainer {
+    width: 100%;
+
+    .parallaxIconOne {
+      margin-top: 60px;
+      width: vars.$two-twelfths;
+    }
+  }
+  .orderButton {
     @include vars.flexbox();
-    @include vars.justify-content(center);
     @include vars.align-items(center);
-    @include vars.flex-direction(column);
-
-    width: vars.$full;
-    background-color: vars.$white;
-    padding: 100px 36px;
-
-    .menuEmbedImage, .iconsContainer {
-        max-width: vars.$eight-twelfths;
+    @include vars.justify-content(center);
+    @include vars.button-font();
+    background: vars.$red;
+    border-radius: 50%;
+    color: vars.$white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    height: vars.$two-twelfths;
+    margin: 60px;
+    transform: rotate(-10deg);
+    width: vars.$two-twelfths;
+    position: relative;
+    transition: background 0.25s linear;
+    .orderNowText {
+      bottom: 10px;
+      height: calc(100% - 20px);
+      left: 10px;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      width: calc(100% - 20px);
+      path {
+        fill: vars.$white;
+      }
     }
-
-    .iconsContainer {
-        width: 100%;
-
-        .parallaxIconOne {
-            margin-top: 60px;
-            max-width: vars.$one-twelfth;
-        }
+    &:hover {
+      background: vars.$black;
     }
+  }
+  .menuFooter {
+    @include vars.flexbox();
+    @include vars.justify-content(space-between);
+    width: vars.$ten-twelfths;
+  }
 }

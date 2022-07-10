@@ -4,7 +4,7 @@ import { CareersSection } from "../components/CareersSection/careersSection";
 import { AboutSection } from "../components/AboutSection/aboutSection";
 import { ImageSection } from "../components/ImageSection/imageSection";
 
-export const renderPageSections = (pageSections) => {
+export const renderPageSections = (pageSections, orderButton) => {
   return pageSections.map((section, i) => {
     const { id } = section.sys.contentType.sys;
 
@@ -15,7 +15,14 @@ export const renderPageSections = (pageSections) => {
     } else if (id == "careersSection") {
       return <CareersSection section={section} key={`careers-section-${i}`} />;
     } else if (id == "menuSection") {
-      return <MenuSection section={section} key={`menu-section-${i}`} />;
+      return (
+        <MenuSection
+          section={section}
+          orderButton={orderButton}
+          key={`menu-section-${i}`}
+          parallax={false}
+        />
+      );
     } else if (id == "imageSection") {
       return <ImageSection section={section} key={`image-section-${i}`} />;
     }
