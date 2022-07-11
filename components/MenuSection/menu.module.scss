@@ -10,14 +10,27 @@
   background-color: vars.$white;
   padding: 100px 0px;
 
+  @include vars.tablet-and-lower {
+    padding-top: 40px;
+    padding-bottom: 0px;
+  }
+
   .menuEmbedImage,
   .iconsContainer {
     max-width: 1200px;
     width: vars.$eight-twelfths;
+
+    @include vars.tablet-and-lower {
+      width: vars.$full;
+    }
   }
 
   .iconsContainer {
     width: 100%;
+
+    @include vars.tablet-and-lower {
+      display: none;
+    }
 
     .parallaxIconOne {
       margin-top: 60px;
@@ -40,6 +53,14 @@
     width: vars.$two-twelfths;
     position: relative;
     transition: background 0.25s linear;
+
+    @include vars.tablet-and-lower {
+      height: vars.$five-twelfths;
+      width: vars.$five-twelfths;
+      transform: rotate(-20deg);
+      font-size: 1rem;
+    }
+
     .orderNowText {
       bottom: 10px;
       height: calc(100% - 20px);
@@ -48,6 +69,17 @@
       right: 10px;
       top: 10px;
       width: calc(100% - 20px);
+
+      @include vars.tablet-and-lower {
+        bottom: 7.5px;
+        height: calc(100% - 15px);
+        left: 7.5px;
+        right: 7.5px;
+        top: 7.5px;
+        width: calc(100% - 15px);
+        transform: rotate(10deg);
+      }
+
       path {
         fill: vars.$white;
       }
@@ -60,5 +92,9 @@
     @include vars.flexbox();
     @include vars.justify-content(space-between);
     width: vars.$ten-twelfths;
+
+    @include vars.tablet-and-lower {
+      @include vars.justify-content(center);
+    }
   }
 }
