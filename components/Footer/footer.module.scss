@@ -26,6 +26,11 @@
       @include vars.body-font();
       font-size: 24px;
       margin: 0;
+      a {
+        &:hover {
+          color: vars.$pink;
+        }
+      }
     }
     .emailText {
       text-transform: lowercase;
@@ -73,7 +78,7 @@
             font-size: 24px;
             text-align: center;
             padding: 8px 30px;
-            border: 2px solid vars.$red;
+            border: 3px solid vars.$red;
             background-color: vars.$red;
             color: vars.$white;
             &:hover {
@@ -83,16 +88,19 @@
           }
         }
       }
+    }
+  }
 
-      .workShopButton {
-        @include vars.body-font();
-        font-size: 24px;
-        color: vars.$black;
-        background-color: vars.$gray;
-        padding: 8px;
-        border: none;
-        margin-top: 60px;
-      }
+  .workShopButton {
+    @include vars.body-font();
+    font-size: 24px;
+    color: vars.$black;
+    background-color: vars.$white;
+    padding: 8px;
+    border: none;
+    margin-top: 60px;
+    &:hover {
+      background: vars.$pink;
     }
   }
 
@@ -105,9 +113,24 @@
 
     a {
       padding: 17.5px;
-      border-radius: 50%;
-      margin-left: 15px;
-      background: vars.$red;
+
+      .socialIconContianer {
+        background: vars.$red;
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        padding: 10px;
+        svg path {
+          fill: vars.$white;
+        }
+        &:hover {
+          background: vars.$white;
+
+          svg path {
+            fill: vars.$black;
+          }
+        }
+      }
     }
   }
 
