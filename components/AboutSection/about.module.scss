@@ -16,15 +16,30 @@
     text-align: center;
     color: vars.$white;
 
+    @include vars.tablet-and-lower {
+      width: vars.$ten-twelfths;
+      padding-top: 74px;
+      padding-bottom: 103px; 
+    }
+
     .title {
       @include vars.header-font;
       font-size: 36px;
+
+      @include vars.tablet-and-lower {
+        font-size: 24px;
+      }
     }
 
     .copy {
       @include vars.body-font;
       font-size: 24px;
       margin-top: 60px;
+
+      @include vars.tablet-and-lower {
+        margin-top: 31px;
+        font-size: 18px;
+      }
     }
   }
 
@@ -33,5 +48,9 @@
     width: vars.$one-twelfth;
     right: vars.$one-twelfth;
     bottom: 36px;
+    
+    @include vars.tablet-and-lower {
+      display: none;
+    }
   }
 }
