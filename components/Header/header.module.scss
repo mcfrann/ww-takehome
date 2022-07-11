@@ -142,9 +142,7 @@
         @include vars.justify-content(space-around);
         width: vars.$five-twelfths;
       }
-      a.active {
-        border-bottom: 2px solid vars.$black;
-      }
+
       * {
         font-family: vars.$body-font-family;
         font-size: 24px;
