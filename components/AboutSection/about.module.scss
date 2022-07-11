@@ -6,8 +6,9 @@
   @include vars.justify-content(center);
   @include vars.align-items(center);
   background-color: vars.$black;
-  width: 100%;
+  width: 100vw;
   min-height: 100vh;
+  padding: 120px 0;
   position: relative;
 
   .aboutSectionContainer {

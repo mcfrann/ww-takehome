@@ -4,24 +4,48 @@ import { CareersSection } from "../components/CareersSection/careersSection";
 import { AboutSection } from "../components/AboutSection/aboutSection";
 import { ImageSection } from "../components/ImageSection/imageSection";
 
+import {
+  Link,
+  Button,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
+
 export const renderPageSections = (pageSections, orderButton) => {
   return pageSections.map((section, i) => {
     const { id } = section.sys.contentType.sys;
 
     if (id == "visitSection") {
-      return <VisitSection key={`visit-section-${i}`} section={section} />;
+      return (
+        <Element name={section.fields.menuTitle}>
+          <VisitSection key={`visit-section-${i}`} section={section} />
+        </Element>
+      );
     } else if (id == "aboutSection") {
-      return <AboutSection section={section} key={`about-section-${i}`} />;
+      return (
+        <Element name={section.fields.menuTitle}>
+          <AboutSection section={section} key={`about-section-${i}`} />
+        </Element>
+      );
     } else if (id == "careersSection") {
-      return <CareersSection section={section} key={`careers-section-${i}`} />;
+      return (
+        <Element name={section.fields.menuTitle}>
+          <CareersSection section={section} key={`careers-section-${i}`} />
+        </Element>
+      );
     } else if (id == "menuSection") {
       return (
-        <MenuSection
-          section={section}
-          orderButton={orderButton}
-          key={`menu-section-${i}`}
-          parallax={false}
-        />
+        <Element name={section.fields.menuTitle}>
+          <MenuSection
+            section={section}
+            orderButton={orderButton}
+            key={`menu-section-${i}`}
+            parallax={false}
+          />
+        </Element>
       );
     } else if (id == "imageSection") {
       return <ImageSection section={section} key={`image-section-${i}`} />;
