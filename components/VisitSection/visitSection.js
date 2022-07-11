@@ -1,5 +1,6 @@
 import styles from "./visit.module.scss";
 import { ImageOrSvg } from "../ImageorSvg/imageOrSvg";
+import GoogleMap from "../../Components/Location/Map";
 
 export const VisitSection = ({ section }) => {
   const {
@@ -12,6 +13,7 @@ export const VisitSection = ({ section }) => {
     addressLine2,
     zip,
     menuTitle,
+    mapLocation,
   } = section.fields;
 
   return (
@@ -56,7 +58,9 @@ export const VisitSection = ({ section }) => {
             </p>
             <p>{zip}</p>
           </div>
-          <div className={styles.mapsContainer} />
+          <div className={styles.mapsContainer} >
+            {mapLocation && <GoogleMap latandLong={mapLocation} />}
+          </div>
           <div className={`${styles.parallaxImage} ${styles.imageTwo}`}>
             <ImageOrSvg image={parallaxIconTwo} />
           </div>
