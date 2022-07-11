@@ -3,11 +3,11 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Marquee from "react-fast-marquee";
 
 export const CareersSection = ({ section }) => {
-  const { crawlerText, copy: _copy, applyButton } = section.fields;
+  const { crawlerText, copy: _copy, applyButton, menuTitle } = section.fields;
 
   const copy = documentToReactComponents(_copy);
   return (
-    <div className={styles.careersSection}>
+    <div className={styles.careersSection} id={menuTitle}>
       {crawlerText && (
         <Marquee className={styles.marquee} gradient={false} speed={10}>
           <span>{crawlerText}</span>
