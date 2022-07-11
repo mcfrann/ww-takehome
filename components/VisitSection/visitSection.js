@@ -30,17 +30,24 @@ export const VisitSection = ({ section }) => {
                   <h2 className={styles.hoursTitle}>{field.title}</h2>
                   {field.hours.map((_hours, _index) => {
                     const hours = _hours.fields;
-
-                    return (
-                      <div key={_index} className={styles.hoursContainer}>
-                        <p>
-                          {hours.startDay}-{hours.endDay}
-                        </p>
-                        <p>
-                          {hours.startTime}M-{hours.endTime}M
-                        </p>
-                      </div>
-                    );
+                    if (hours.altText) {
+                      return (
+                        <div key={_index} className={styles.hoursContainer}>
+                          <p>{hours.altText}</p>
+                        </div>
+                      );
+                    } else {
+                      return (
+                        <div key={_index} className={styles.hoursContainer}>
+                          <p>
+                            {hours.startDay}-{hours.endDay}
+                          </p>
+                          <p>
+                            {hours.startTime}-{hours.endTime}
+                          </p>
+                        </div>
+                      );
+                    }
                   })}
                 </div>
               );
@@ -58,7 +65,7 @@ export const VisitSection = ({ section }) => {
             </p>
             <p>{zip}</p>
           </div>
-          <div className={styles.mapsContainer} >
+          <div className={styles.mapsContainer}>
             {mapLocation && <GoogleMap latandLong={mapLocation} />}
           </div>
           <div className={`${styles.parallaxImage} ${styles.imageTwo}`}>

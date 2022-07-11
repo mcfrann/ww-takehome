@@ -30,7 +30,6 @@ $button-font-style: normal;
 @mixin header-font() {
   font-family: $header-font-family;
   font-style: $header-font-style;
-  letter-spacing: 0.05rem;
   text-transform: uppercase;
 }
 
