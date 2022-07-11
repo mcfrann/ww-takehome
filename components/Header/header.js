@@ -1,13 +1,15 @@
 import styles from "./header.module.scss";
 import Link from "next/link";
 import { ImageOrSvg } from "../ImageorSvg/imageOrSvg.js";
+import { AnnouncementBar } from "../AnnouncementBar/announcementBar.js";
 
 import { useState } from "react";
 
-export const Header = ({ headerNav, footerNav }) => {
+export const Header = ({ headerNav, footerNav, announcementBar }) => {
   const { logo, orderButton, headerSectionLinks } = headerNav.fields;
   const [showDrawer, setShowDrawer] = useState(false);
-
+  const { display, headline, linkUrl } = announcementBar.fields;
+  const [showAnnouncement, setShowAnnouncement] = useState(true);
   const toggleDrawer = () => {
     if (showDrawer) {
       setShowDrawer(false);
@@ -53,7 +55,11 @@ export const Header = ({ headerNav, footerNav }) => {
   };
 
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${
+        headline && display && !showAnnouncement ? `${styles.hidden}` : ""
+      }`}
+    >
       <div
         className={`${styles.mobileNavigation} ${
           showDrawer ? `${styles.opened}` : `${styles.closed}`
@@ -74,6 +80,14 @@ export const Header = ({ headerNav, footerNav }) => {
       >
         <div className={styles.navContainerMobile}>{renderNavLinks(1, 3)}</div>
       </div>
+      {headline && display && (
+        <AnnouncementBar
+          headline={headline}
+          url={linkUrl}
+          hide={() => setShowAnnouncement(false)}
+          isHidden={!showAnnouncement}
+        />
+      )}
       <nav className={styles.navContainer}>
         <div className={styles.nav}>
           <div className={styles.navGroup}>{renderNavLinks(0, 1)}</div>
