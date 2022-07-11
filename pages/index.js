@@ -35,7 +35,7 @@ export default function Home({
     >
       <div className={styles.container}>
         {introSection && <IntroSection section={introSection} />}
-        {pageSections && renderPageSections(pageSections)}
+        {pageSections && renderPageSections(pageSections, orderButton)}
       </div>
     </Layout>
   );

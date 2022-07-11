@@ -47,8 +47,9 @@
       width: inherit;
     }
   }
+}
 
-  .mainImage {
-    width: 100%;
-  }
+.mainImage {
+  width: vars.$full;
+  display: flex;
 }
