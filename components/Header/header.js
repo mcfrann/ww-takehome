@@ -1,9 +1,17 @@
 import styles from "./header.module.scss";
-import Link from "next/link";
+
 import { ImageOrSvg } from "../ImageorSvg/imageOrSvg.js";
 import { AnnouncementBar } from "../AnnouncementBar/announcementBar.js";
-
 import { useState } from "react";
+import {
+  Link,
+  Button,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
 
 export const Header = ({ headerNav, footerNav, announcementBar }) => {
   const { logo, orderButton, headerSectionLinks } = headerNav.fields;
@@ -17,6 +25,8 @@ export const Header = ({ headerNav, footerNav, announcementBar }) => {
       setShowDrawer(true);
     }
   };
+
+  const handleSetActive = (to) => {};
 
   const renderLogoContainer = () => {
     return (
@@ -34,7 +44,16 @@ export const Header = ({ headerNav, footerNav, announcementBar }) => {
     return headerSectionLinks.map((link, index) => {
       if (index < start || index > stop) return;
       return (
-        <Link href={`#${link.fields.menuTitle}`} key={index}>
+        <Link
+          activeClass="active"
+          to={link.fields.menuTitle}
+          spy={true}
+          smooth={true}
+          offset={0}
+          duration={500}
+          onSetActive={() => handleSetActive}
+          key={index}
+        >
           {link.fields.menuTitle}
         </Link>
       );

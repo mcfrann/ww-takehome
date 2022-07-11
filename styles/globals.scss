@@ -17,6 +17,10 @@ a {
   box-sizing: border-box;
 }
 
+a.active {
+  border-bottom: 3px solid $black;
+}
+
 h1,
 h2,
 h3,
