@@ -154,6 +154,11 @@
         border: 0.5px solid vars.$red;
         color: vars.$white;
         cursor: pointer;
+        &:hover {
+          background: vars.$pink;
+          border-color: vars.$pink;
+          color: vars.$black;
+        }
       }
     }
   }
