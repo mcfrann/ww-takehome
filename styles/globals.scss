@@ -24,6 +24,9 @@ h4,
 h5 {
   @include header-font();
 }
+h2 {
+  letter-spacing: 0.05rem;
+}
 
 p {
   @include body-font();
