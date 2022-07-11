@@ -2,9 +2,9 @@ import styles from "./announcement.module.scss";
 
 export const AnnouncementBar = ({ headline, url, hide }) => {
   return (
-    <div className={styles.announcementBar}>
+    <header className={styles.announcementBar}>
       {url?.length ? (
-        <a className={styles.announcement} href={url}>
+        <a className={styles.announcement} aria-label={headline} title={headline} href={url}>
           {headline}
         </a>
       ) : (
@@ -16,6 +16,6 @@ export const AnnouncementBar = ({ headline, url, hide }) => {
         <span></span>
         <span></span>
       </div>
-    </div>
+    </header>
   );
 };

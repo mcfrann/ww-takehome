@@ -17,10 +17,11 @@ export const Header = ({ headerNav, footerNav }) => {
   };
 
   const renderLogoContainer = () => {
+    const alt = logo.fields.title || "no alt description";
     return (
       <div className={styles.logoContainer}>
         <Link href="/" passHref>
-          <a className={styles.logoLink}>
+          <a className={styles.logoLink} aria-label={alt} title={alt}>
             <ImageOrSvg image={logo} />
           </a>
         </Link>
@@ -53,7 +54,7 @@ export const Header = ({ headerNav, footerNav }) => {
   };
 
   return (
-    <header className={styles.header}>
+    <nav className={styles.header}>
       <div
         className={`${styles.mobileNavigation} ${
           showDrawer ? `${styles.opened}` : `${styles.closed}`
@@ -74,7 +75,7 @@ export const Header = ({ headerNav, footerNav }) => {
       >
         <div className={styles.navContainerMobile}>{renderNavLinks(1, 3)}</div>
       </div>
-      <nav className={styles.navContainer}>
+      <div className={styles.navContainer}>
         <div className={styles.nav}>
           <div className={styles.navGroup}>{renderNavLinks(0, 1)}</div>
           {renderLogoContainer()}
@@ -83,7 +84,7 @@ export const Header = ({ headerNav, footerNav }) => {
             {renderOrderButton()}
           </div>
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
   );
 };
