@@ -1,6 +1,6 @@
 import styles from "./announcement.module.scss";
 
-export const AnnouncementBar = ({ headline, url, hide }) => {
+export const AnnouncementBar = ({ headline, url, hide, hidden }) => {
   return (
     <header className={styles.announcementBar}>
       {url?.length ? (

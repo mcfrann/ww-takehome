@@ -1,20 +1,24 @@
 import styles from "./header.module.scss";
-import Link from "next/link";
+
 import { ImageOrSvg } from "../ImageorSvg/imageOrSvg.js";
-
+import { AnnouncementBar } from "../AnnouncementBar/announcementBar.js";
 import { useState } from "react";
+import {
+  Link,
+  Button,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
 
-export const Header = ({ headerNav, footerNav }) => {
+export const Header = ({ headerNav, footerNav, announcementBar }) => {
   const { logo, orderButton, headerSectionLinks } = headerNav.fields;
   const [showDrawer, setShowDrawer] = useState(false);
-  let isMobile = false;
-  try {
-    window;
-    isMobile = window.innerWidth < 821;
-  } catch (err) {
-    console.log("Oops, `window` is not defined");
-  }
 
+  const { display, headline, linkUrl } = announcementBar.fields;
+  const [showAnnouncement, setShowAnnouncement] = useState(true);
   const toggleDrawer = () => {
     if (showDrawer) {
       setShowDrawer(false);
@@ -23,12 +27,14 @@ export const Header = ({ headerNav, footerNav }) => {
     }
   };
 
+  const handleSetActive = (to) => {};
+
   const renderLogoContainer = () => {
     const alt = logo.fields.title || "no alt description";
     return (
       <div className={styles.logoContainer}>
         <Link href="/" passHref>
-          <a className={styles.logoLink} aria-label={alt} title={alt}>
+          <a className={styles.logoLink} title={alt}>
             <ImageOrSvg image={logo} />
           </a>
         </Link>
@@ -40,7 +46,16 @@ export const Header = ({ headerNav, footerNav }) => {
     return headerSectionLinks.map((link, index) => {
       if (index < start || index > stop) return;
       return (
-        <Link href={`#${link.fields.menuTitle}`} key={index}>
+        <Link
+          activeClass="active"
+          to={link.fields.menuTitle}
+          spy={true}
+          smooth={true}
+          offset={0}
+          duration={500}
+          onSetActive={() => handleSetActive}
+          key={index}
+        >
           {link.fields.menuTitle}
         </Link>
       );
@@ -61,13 +76,17 @@ export const Header = ({ headerNav, footerNav }) => {
   };
 
   return (
-    <nav className={styles.header}>
+    <div
+      className={`${styles.header} ${
+        headline && display && !showAnnouncement ? `${styles.hidden}` : ""
+      }`}
+    >
       <div
         className={`${styles.mobileNavigation} ${
           showDrawer ? `${styles.opened}` : `${styles.closed}`
         } `}
       >
-        {isMobile && renderLogoContainer()}
+        {renderLogoContainer()}
         <div className={styles.hamburger} onClick={() => toggleDrawer()}>
           <span></span>
           <span></span>
@@ -82,16 +101,24 @@ export const Header = ({ headerNav, footerNav }) => {
       >
         <div className={styles.navContainerMobile}>{renderNavLinks(1, 3)}</div>
       </div>
-      <div className={styles.navContainer}>
+      {headline && display && (
+        <AnnouncementBar
+          headline={headline}
+          url={linkUrl}
+          hide={() => setShowAnnouncement(false)}
+          isHidden={!showAnnouncement}
+        />
+      )}
+      <nav className={styles.navContainer}>
         <div className={styles.nav}>
           <div className={styles.navGroup}>{renderNavLinks(0, 1)}</div>
-          {!isMobile && renderLogoContainer()}
+          {renderLogoContainer()}
           <div className={styles.navGroup}>
             {renderNavLinks(2, 3)}
             {renderOrderButton()}
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 };
