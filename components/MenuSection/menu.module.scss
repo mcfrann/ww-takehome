@@ -28,13 +28,17 @@
   .iconsContainer {
     width: 100%;
 
-    @include vars.tablet-and-lower {
-      display: none;
-    }
+    // @include vars.tablet-and-lower {
+    //   display: none;
+    // }
 
     .parallaxIconOne {
       margin-top: 60px;
       width: vars.$two-twelfths;
+      @include vars.tablet-and-lower {
+        margin: 0 auto 30px auto;
+        width: vars.$four-twelfths;
+      }
     }
   }
   .orderButton {
@@ -55,6 +59,7 @@
     transition: background 0.25s linear;
 
     @include vars.tablet-and-lower {
+      display: none;
       height: vars.$five-twelfths;
       width: vars.$five-twelfths;
       transform: rotate(-20deg);

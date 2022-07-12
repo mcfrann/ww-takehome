@@ -51,7 +51,9 @@
     bottom: 36px;
 
     @include vars.tablet-and-lower {
-      display: none;
+      margin: 0 auto;
+      right: auto;
+      width: vars.$three-twelfths;
     }
   }
 }
