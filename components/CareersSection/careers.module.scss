@@ -5,7 +5,9 @@
   min-height: 100vh;
   width: 100vw;
   background-color: vars.$red;
-
+  @include vars.tablet-and-lower {
+    min-height: 50vh;
+  }
   .marquee {
     background-color: vars.$pink;
     padding: 20px 0;
@@ -71,6 +73,12 @@
               padding-left: 10px;
               margin: 10px 0;
             }
+          }
+
+          @include vars.tablet-and-lower {
+            @include vars.align-items(flex-start);
+            margin: 0 auto;
+            width: vars.$eight-twelfths;
           }
         }
       }

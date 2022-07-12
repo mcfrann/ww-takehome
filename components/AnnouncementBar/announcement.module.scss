@@ -2,88 +2,96 @@
 @import "../../styles/vars.scss";
 
 .announcementBar {
-    @include flexbox();
-    @include justify-content(center);
-    background-color: $pink;
-    padding: 15px;
-    width: 100%;
-    z-index: 10;
-    transition: top 0.5s linear;
+  @include flexbox();
+  @include justify-content(center);
+  background-color: $pink;
+  padding: 15px;
+  width: 100%;
+  z-index: 10;
+  transition: top 0.5s linear;
 
-    &.hidden {
-        top: -58px;
+  &.hidden {
+    top: -58px;
+  }
+
+  @include vars.tablet-and-lower {
+    height: 50px;
+    padding: 10px;
+  }
+
+  .announcement {
+    font-family: $subhead-font-family;
+    font-size: 1.25rem;
+    text-align: center;
+    margin: 0;
+    @include vars.tablet-and-lower {
+      font-size: 1rem;
+      line-height: 2rem;
     }
+  }
+
+  .hamburger {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    transform: rotate(0deg);
+    transition: 0.5s ease-in-out;
+    height: 24px;
+    width: 24px;
+    z-index: 10;
+    cursor: pointer;
 
     @include vars.tablet-and-lower {
-        height: 50px;
-        padding: 10px;
+      height: 20px;
+      right: 10px;
+      top: 6px;
+      width: 20px;
     }
 
-    .announcement {
-        font-family: $subhead-font-family;
-        font-size: 1.25rem;
-        text-align: center;
-        margin: 0;
-    }
+    span {
+      transform: rotate(0deg);
+      transition: 0.5s ease-in-out;
+      display: block;
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      background: $black;
+      border-radius: 0px;
+      opacity: 1;
+      left: 0;
+      @include vars.tablet-and-lower {
+        height: 2px;
+      }
+      &:nth-child(1) {
+        left: 50%;
+        top: 18px;
+        width: 0%;
+      }
 
-    .hamburger {
-        position: absolute;
+      &:nth-child(2),
+      &:nth-child(3) {
         top: 15px;
-        right: 25px;
-        transform: rotate(0deg);
-        transition: 0.5s ease-in-out;
-        height: 24px;
-        width: 24px;
-        z-index: 10;
-        cursor: pointer;
+      }
 
-        @include vars.tablet-and-lower {
-            top: 10px;
-            right: 16px;
-        }
+      &:nth-child(2) {
+        transform: rotate(45deg);
+      }
 
-        span {
-            transform: rotate(0deg);
-            transition: 0.5s ease-in-out;
-            display: block;
-            position: absolute;
-            height: 3px;
-            width: 100%;
-            background: $black;
-            border-radius: 0px;
-            opacity: 1;
-            left: 0;
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+      }
 
-            &:nth-child(1) {
-                left: 50%;
-                top: 18px;
-                width: 0%;
-            }
-
-            &:nth-child(2),
-            &:nth-child(3) {
-                top: 15px;
-            }
-
-            &:nth-child(2) {
-                transform: rotate(45deg);
-            }
-
-            &:nth-child(3) {
-                transform: rotate(-45deg);
-            }
-
-            &:nth-child(4) {
-                left: 50%;
-                top: 18px;
-                width: 0%;
-            }
-        }
-
-        &:hover {
-            span {
-                background: $white;
-            }
-        }
+      &:nth-child(4) {
+        left: 50%;
+        top: 18px;
+        width: 0%;
+      }
     }
+
+    &:hover {
+      span {
+        background: $white;
+      }
+    }
+  }
 }

@@ -16,6 +16,7 @@
     display: none;
     width: vars.$full;
     height: 93px;
+    padding-top: 20px;
     @include vars.tablet-and-lower {
       @include vars.flexbox();
       @include vars.justify-content(center);
@@ -35,7 +36,7 @@
         transition: 0.5s ease-in-out;
         display: block;
         position: absolute;
-        height: 1px;
+        height: 3px;
         width: 100%;
         background: vars.$black;
         border-radius: 9px;
@@ -168,11 +169,11 @@
   }
 
   .orderButton {
-    padding: 3px 24px;
     border-radius: 20px;
     background-color: vars.$red;
     border: 0.5px solid vars.$red;
     color: vars.$white;
+    padding: 3px 24px;
     cursor: pointer;
     &:hover {
       background: vars.$pink;
@@ -181,8 +182,12 @@
     }
 
     @include vars.tablet-and-lower {
-      position: fixed;
       bottom: 22px;
+      font-size: 1.25rem;
+      position: fixed;
+      padding: 12px 24px;
+      width: vars.$ten-twelfths;
+      text-align: center;
     }
   }
 

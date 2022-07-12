@@ -6,7 +6,7 @@
   width: 100%;
 
   @include vars.tablet-and-lower {
-    @include vars.flex-direction(column-reverse);
+    @include vars.flex-direction(column);
   }
 
   .imageColumn,
@@ -19,12 +19,19 @@
     }
   }
 
+  .imageColumn {
+    @include vars.tablet-and-lower {
+      order: 2;
+    }
+  }
+
   .infoColumn {
     @include vars.body-font;
     background-color: vars.$black;
     text-align: center;
 
     @include vars.tablet-and-lower {
+      order: 1;
       width: vars.$full;
     }
   }
@@ -40,8 +47,13 @@
 
     @include vars.tablet-and-lower {
       min-height: auto;
-      padding-top: 68px;
-      padding-bottom: 68px;
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+  }
+  .visitSection {
+    @include vars.tablet-and-lower {
+      padding-top: 0px;
     }
   }
 
@@ -166,5 +178,13 @@
     position: sticky;
     top: 0;
     z-index: 10;
+    @include vars.tablet-and-lower {
+      @include vars.flexbox();
+      span,
+      img {
+        height: 100% !important;
+        width: 100% !important;
+      }
+    }
   }
 }

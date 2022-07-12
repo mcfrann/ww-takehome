@@ -19,8 +19,8 @@
 
     @include vars.tablet-and-lower {
       width: vars.$ten-twelfths;
-      padding-top: 74px;
-      padding-bottom: 103px; 
+      padding-top: 0px;
+      padding-bottom: 103px;
     }
 
     .title {
@@ -49,7 +49,7 @@
     width: vars.$one-twelfth;
     right: vars.$one-twelfth;
     bottom: 36px;
-    
+
     @include vars.tablet-and-lower {
       display: none;
     }
