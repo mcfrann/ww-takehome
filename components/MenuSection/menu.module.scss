@@ -36,8 +36,7 @@
       margin-top: 60px;
       width: vars.$two-twelfths;
       @include vars.tablet-and-lower {
-        margin: 0 auto 30px auto;
-        width: vars.$four-twelfths;
+        display: none;
       }
     }
   }

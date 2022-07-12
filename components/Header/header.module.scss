@@ -169,6 +169,7 @@
   }
 
   .orderButton {
+    @include vars.button-font();
     border-radius: 20px;
     background-color: vars.$red;
     border: 0.5px solid vars.$red;
@@ -183,7 +184,8 @@
 
     @include vars.tablet-and-lower {
       bottom: 22px;
-      font-size: 1.25rem;
+      border-radius: 30px;
+      font-size: 1.5rem;
       position: fixed;
       padding: 12px 24px;
       width: vars.$ten-twelfths;
