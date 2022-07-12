@@ -3,7 +3,7 @@
 .careersSection {
   @include vars.body-font();
   min-height: 100vh;
-  width: 100%;
+  width: 100vw;
   background-color: vars.$red;
 
   .marquee {

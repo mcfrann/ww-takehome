@@ -1,13 +1,23 @@
 import styles from "./header.module.scss";
-import Link from "next/link";
+
 import { ImageOrSvg } from "../ImageorSvg/imageOrSvg.js";
-
+import { AnnouncementBar } from "../AnnouncementBar/announcementBar.js";
 import { useState } from "react";
+import {
+  Link,
+  Button,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
 
-export const Header = ({ headerNav, footerNav }) => {
+export const Header = ({ headerNav, footerNav, announcementBar }) => {
   const { logo, orderButton, headerSectionLinks } = headerNav.fields;
   const [showDrawer, setShowDrawer] = useState(false);
-
+  const { display, headline, linkUrl } = announcementBar.fields;
+  const [showAnnouncement, setShowAnnouncement] = useState(true);
   const toggleDrawer = () => {
     if (showDrawer) {
       setShowDrawer(false);
@@ -15,6 +25,8 @@ export const Header = ({ headerNav, footerNav }) => {
       setShowDrawer(true);
     }
   };
+
+  const handleSetActive = (to) => {};
 
   const renderLogoContainer = () => {
     return (
@@ -32,7 +44,16 @@ export const Header = ({ headerNav, footerNav }) => {
     return headerSectionLinks.map((link, index) => {
       if (index < start || index > stop) return;
       return (
-        <Link href={`#${link.fields.menuTitle}`} key={index}>
+        <Link
+          activeClass="active"
+          to={link.fields.menuTitle}
+          spy={true}
+          smooth={true}
+          offset={0}
+          duration={500}
+          onSetActive={() => handleSetActive}
+          key={index}
+        >
           {link.fields.menuTitle}
         </Link>
       );
@@ -53,7 +74,19 @@ export const Header = ({ headerNav, footerNav }) => {
   };
 
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${
+        headline && display && !showAnnouncement ? `${styles.hidden}` : ""
+      }`}
+    >
+      {headline && display && (
+        <AnnouncementBar
+          headline={headline}
+          url={linkUrl}
+          hide={() => setShowAnnouncement(false)}
+          isHidden={!showAnnouncement}
+        />
+      )}
       <div
         className={`${styles.mobileNavigation} ${
           showDrawer ? `${styles.opened}` : `${styles.closed}`

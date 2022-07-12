@@ -2,10 +2,16 @@
 
 .header {
   background-color: vars.$white;
+  margin-top: 0;
   position: sticky;
   top: 0;
+  transition: top 0.5s linear;
+  width: 100vw;
   z-index: 10;
-
+  &.hidden {
+    margin-top: -58px;
+    top: -58px;
+  }
   .mobileNavigation {
     display: none;
     width: vars.$full;
@@ -150,6 +156,7 @@
         @include vars.justify-content(space-around);
         width: vars.$five-twelfths;
       }
+
       * {
         font-family: vars.$body-font-family;
         font-size: 24px;
@@ -167,6 +174,12 @@
     border: 0.5px solid vars.$red;
     color: vars.$white;
     cursor: pointer;
+    &:hover {
+      background: vars.$pink;
+      border-color: vars.$pink;
+      color: vars.$black;
+    }
+
     @include vars.tablet-and-lower {
       position: fixed;
       bottom: 22px;
@@ -174,7 +187,7 @@
   }
 
   .logoContainer {
-    max-width: 170px;
+    max-width: 150px;
     width: vars.$two-twelfths;
     @include vars.tablet-and-lower {
       width: 120px;
