@@ -7,6 +7,13 @@ import { useState } from "react";
 export const Header = ({ headerNav, footerNav }) => {
   const { logo, orderButton, headerSectionLinks } = headerNav.fields;
   const [showDrawer, setShowDrawer] = useState(false);
+  let isMobile = false;
+  try {
+    window;
+    isMobile = window.innerWidth < 821;
+  } catch (err) {
+    console.log("Oops, `window` is not defined");
+  }
 
   const toggleDrawer = () => {
     if (showDrawer) {
@@ -60,7 +67,7 @@ export const Header = ({ headerNav, footerNav }) => {
           showDrawer ? `${styles.opened}` : `${styles.closed}`
         } `}
       >
-        {renderLogoContainer()}
+        {isMobile && renderLogoContainer()}
         <div className={styles.hamburger} onClick={() => toggleDrawer()}>
           <span></span>
           <span></span>
@@ -78,7 +85,7 @@ export const Header = ({ headerNav, footerNav }) => {
       <div className={styles.navContainer}>
         <div className={styles.nav}>
           <div className={styles.navGroup}>{renderNavLinks(0, 1)}</div>
-          {renderLogoContainer()}
+          {!isMobile && renderLogoContainer()}
           <div className={styles.navGroup}>
             {renderNavLinks(2, 3)}
             {renderOrderButton()}
