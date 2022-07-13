@@ -73,7 +73,7 @@ export const Header = ({ headerNav, footerNav, announcementBar }) => {
   };
 
   const ConditionalHeader = () => {
-    const totalHeaderLinks = headerSectionLinks.length + (orderButton.fields ? 1 : 0);
+    const totalHeaderLinks = headerSectionLinks.length + (orderButton?.fields?.buttonTitle ? 1 : 0);
     if (totalHeaderLinks === 4) {
       return (
         <div className={styles.nav}>
