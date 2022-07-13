@@ -1,12 +1,12 @@
 @use "../../styles/vars";
 
 .visitSection {
-  @include vars.flexbox();
   @include vars.align-self(flex-start);
-  width: 100%;
-
+  background-color: vars.$black;
+  color: vars.$white;
   @include vars.tablet-and-lower {
     @include vars.flex-direction(column);
+    padding-bottom: 0;
   }
 
   .imageColumn,
@@ -27,7 +27,6 @@
 
   .infoColumn {
     @include vars.body-font;
-    background-color: vars.$black;
     text-align: center;
 
     @include vars.tablet-and-lower {
@@ -43,11 +42,9 @@
     @include vars.justify-content(center);
     @include vars.align-items(center);
     min-height: 100vh;
-    color: vars.$white;
 
     @include vars.tablet-and-lower {
       min-height: auto;
-      padding-top: 60px;
       padding-bottom: 60px;
     }
   }

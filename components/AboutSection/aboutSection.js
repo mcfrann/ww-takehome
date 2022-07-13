@@ -5,7 +5,7 @@ export const AboutSection = ({ section }) => {
   const { title, copy: _copy, aboutIcon, menuTitle } = section.fields;
   const copy = documentToReactComponents(_copy);
   return (
-    <div className={styles.aboutSection} id={menuTitle}>
+    <section className={styles.aboutSection} id={menuTitle}>
       <div className={styles.aboutSectionContainer}>
         <h1 className={styles.title}>{title}</h1>
         <div className={styles.copy}>{copy}</div>
@@ -13,6 +13,6 @@ export const AboutSection = ({ section }) => {
       <div className={styles.aboutIcon}>
         {aboutIcon && <ImageOrSvg image={aboutIcon} />}
       </div>
-    </div>
+    </section>
   );
 };

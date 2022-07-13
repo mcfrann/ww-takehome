@@ -5,7 +5,7 @@ import { ImageOrSvg } from "../ImageOrSvg/imageOrSvg.js";
 export const MenuSection = ({ section, orderButton, parallax }) => {
   const { menuImage, parallaxIconOne, menuTitle } = section.fields;
   return (
-    <div id={menuTitle} className={styles.menuSection}>
+    <section id={menuTitle} className={styles.menuSection}>
       {menuImage && (
         <div className={styles.menuEmbedImage}>
           <ImageOrSvg image={menuImage} />
@@ -57,6 +57,6 @@ export const MenuSection = ({ section, orderButton, parallax }) => {
           )}
         </div>
       )}
-    </div>
+    </section>
   );
 };

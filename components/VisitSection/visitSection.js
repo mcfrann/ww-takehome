@@ -17,7 +17,7 @@ export const VisitSection = ({ section }) => {
   } = section.fields;
 
   return (
-    <div id={menuTitle} className={styles.visitSection}>
+    <section id={menuTitle} className={styles.visitSection}>
       <div className={styles.infoColumn}>
         <div className={styles.hoursSection}>
           <div className={styles.hoursContent}>
@@ -78,6 +78,6 @@ export const VisitSection = ({ section }) => {
           <ImageOrSvg image={sectionImage} />
         </div>
       </div>
-    </div>
+    </section>
   );
 };

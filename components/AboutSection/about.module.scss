@@ -1,26 +1,22 @@
 @use "../../styles/vars";
 
 .aboutSection {
-  @include vars.flexbox();
   @include vars.flex-direction(column);
   @include vars.justify-content(center);
   @include vars.align-items(center);
   background-color: vars.$black;
-  width: 100vw;
   min-height: 100vh;
-  padding: 120px 0;
   position: relative;
-
   .aboutSectionContainer {
     max-width: 800px;
     width: vars.$eight-twelfths;
     text-align: center;
     color: vars.$white;
-
+    margin: 0 auto;
     @include vars.tablet-and-lower {
       width: vars.$ten-twelfths;
       padding-top: 0px;
-      padding-bottom: 103px;
+      padding-bottom: 30px;
     }
 
     .title {
@@ -51,7 +47,9 @@
     bottom: 36px;
 
     @include vars.tablet-and-lower {
+      bottom: auto;
       margin: 0 auto;
+      position: relative;
       right: auto;
       width: vars.$three-twelfths;
     }

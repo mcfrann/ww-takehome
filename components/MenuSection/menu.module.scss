@@ -1,19 +1,10 @@
 @use "../../styles/vars";
 
 .menuSection {
-  @include vars.flexbox();
   @include vars.justify-content(center);
   @include vars.align-items(center);
   @include vars.flex-direction(column);
-
-  width: vars.$full;
   background-color: vars.$white;
-  padding: 100px 0px;
-
-  @include vars.tablet-and-lower {
-    padding-top: 40px;
-    padding-bottom: 0px;
-  }
 
   .menuEmbedImage,
   .iconsContainer {
@@ -27,11 +18,6 @@
 
   .iconsContainer {
     width: 100%;
-
-    // @include vars.tablet-and-lower {
-    //   display: none;
-    // }
-
     .parallaxIconOne {
       margin-top: 60px;
       width: vars.$two-twelfths;

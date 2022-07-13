@@ -165,10 +165,7 @@ const GoogleMap = ({ latandLong }) => {
     zoom: mapZoom,
   };
   return (
-    <section
-      className="map-section"
-      style={{ height: mapHeight, width: "100%" }}
-    >
+    <div className="map-section" style={{ height: mapHeight, width: "100%" }}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: "AIzaSyAhpMokBSxcy4inB8f4BSRGB-SZ2w0-bck" }}
         defaultCenter={defaultProps.center}
@@ -177,7 +174,7 @@ const GoogleMap = ({ latandLong }) => {
       >
         <MapMarker lat={latandLong.lat} lng={latandLong.lon} />
       </GoogleMapReact>
-    </section>
+    </div>
   );
 };
 

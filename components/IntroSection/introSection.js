@@ -13,8 +13,8 @@ export const IntroSection = ({ section }) => {
   } = section.fields;
 
   return (
-    <div>
-      <div className={styles.introSection}>
+    <section className={`${styles.introSection} no-padding`}>
+      <div className={styles.introContent}>
         {logoIcon && (
           <div className={styles.logoIcon}>
             <ImageOrSvg image={logoIcon} />
@@ -28,6 +28,6 @@ export const IntroSection = ({ section }) => {
       <div className={styles.mainImage}>
         <ImageOrSvg image={mainImage} />
       </div>
-    </div>
+    </section>
   );
 };
