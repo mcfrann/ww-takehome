@@ -16,6 +16,7 @@ import {
 export const Header = ({ headerNav, footerNav, announcementBar }) => {
   const { logo, orderButton, headerSectionLinks } = headerNav.fields;
   const [showDrawer, setShowDrawer] = useState(false);
+
   const { display, headline, linkUrl } = announcementBar.fields;
   const [showAnnouncement, setShowAnnouncement] = useState(true);
   const toggleDrawer = () => {
@@ -29,10 +30,11 @@ export const Header = ({ headerNav, footerNav, announcementBar }) => {
   const handleSetActive = (to) => {};
 
   const renderLogoContainer = () => {
+    const alt = logo.fields.title || "no alt description";
     return (
       <div className={styles.logoContainer}>
         <Link href="/" passHref>
-          <a className={styles.logoLink}>
+          <a className={styles.logoLink} title={alt}>
             <ImageOrSvg image={logo} />
           </a>
         </Link>
@@ -75,7 +77,7 @@ export const Header = ({ headerNav, footerNav, announcementBar }) => {
   };
 
   return (
-    <header
+    <div
       className={`${styles.header} ${
         headline && display && !showAnnouncement ? `${styles.hidden}` : ""
       }`}
@@ -119,6 +121,6 @@ export const Header = ({ headerNav, footerNav, announcementBar }) => {
           </div>
         </div>
       </nav>
-    </header>
+    </div>
   );
 };
