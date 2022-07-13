@@ -12,10 +12,41 @@ export const VisitSection = ({ section }) => {
     addressLine1,
     addressLine2,
     zip,
+    city,
+    stateAbbreviation,
+    googleMapLink,
     menuTitle,
     mapLocation,
   } = section.fields;
 
+  const renderAddress = () => {
+    return (
+      <p>
+        {addressLine1}
+        {addressLine2 && <br />}
+        {addressLine2 && addressLine2}
+        <br />
+        {city}, {stateAbbreviation} {zip}
+      </p>
+    );
+  };
+
+  const renderAddressWrap = () => {
+    if (googleMapLink) {
+      return (
+        <a
+          className={styles.addressLink}
+          href={googleMapLink}
+          target="blank"
+          title="Google Map Link"
+        >
+          {renderAddress()}
+        </a>
+      );
+    } else {
+      return renderAddress();
+    }
+  };
   return (
     <section id={menuTitle} className={styles.visitSection}>
       <div className={styles.infoColumn}>
@@ -59,12 +90,7 @@ export const VisitSection = ({ section }) => {
         </div>
         <div className={styles.visitSection}>
           <h2 className={styles.hoursTitle}>VISIT</h2>
-          <div className={styles.hoursContainer}>
-            <p>
-              {addressLine1} {addressLine2}
-            </p>
-            <p>{zip}</p>
-          </div>
+          <div className={styles.hoursContainer}>{renderAddressWrap()}</div>
           <div className={styles.mapsContainer}>
             {mapLocation && <GoogleMap latandLong={mapLocation} />}
           </div>
