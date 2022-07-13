@@ -65,7 +65,8 @@
   border-radius: 50% 50%;
   overflow: hidden;
   position: relative;
-  margin: 2rem;
+  margin: 1rem;
+  max-width: 640px;
   .icon {
     position: absolute;
     top: 50%;
@@ -77,5 +78,5 @@
 .mainImageIconOuter {
   border-radius: 50% 50%;
   border: 1px solid;
-  margin: 2rem;
+  margin: 1rem;
 }
