@@ -159,6 +159,17 @@
         font-size: 24px;
       }
     }
+    .navAlternate {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      * {
+        font-family: vars.$body-font-family;
+        font-size: 24px;
+      }
+    }
     @include vars.tablet-and-lower {
       display: none;
     }
