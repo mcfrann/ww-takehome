@@ -16,6 +16,26 @@
     }
   }
 
+  .menuDownloadLink {
+    padding: 5rem 0;
+    @include vars.mobile() {
+      padding: 2.5rem 0;
+    }  
+    button {
+      cursor: pointer;
+      border-radius: 20px;
+      border-width: 1px;
+      background: none;
+      padding: 0.25rem 0.5rem;
+      font-family: vars.$subhead-font-family;
+      font-size: 1.5rem;
+      &:hover {
+        border-color: vars.$pink;
+        color: vars.$pink;
+      }
+    }
+  }
+
   .iconsContainer {
     width: 100%;
     .parallaxIconOne {
@@ -26,6 +46,7 @@
       }
     }
   }
+
   .orderButton {
     @include vars.flexbox();
     @include vars.align-items(center);
@@ -86,5 +107,44 @@
     @include vars.tablet-and-lower {
       @include vars.justify-content(center);
     }
+  }
+  .foodHighlights {
+    @include vars.flexbox();
+    @include vars.flex-direction(column);
+    @include vars.align-items(center);
+    @include vars.justify-content(center);
+    .food {
+      width: 100%;
+      text-align: center;
+      .icon {
+        position: absolute;
+        width: 5rem;
+        @include vars.mobile() {
+          display: none;
+        }        
+      }
+      .left {
+        left: -5rem;
+      }
+      .right {
+        right: -5rem;
+      }
+      .text {
+        position: relative;
+        margin-top: 20px;
+        @include vars.tablet-and-lower {
+          margin-top: 10px;
+        }
+        font-size: 6rem;
+        @include vars.mobile() {
+          font-size: 4rem;
+        }  
+        font-family : vars.$subhead-font-family;
+        &:hover {
+          cursor: pointer;
+          border-bottom: 2px solid;
+        }
+      }
+    }    
   }
 }
