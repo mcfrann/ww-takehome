@@ -6,7 +6,11 @@
   @include vars.align-items(center);
   background-color: vars.$black;
   min-height: 100vh;
+  padding-bottom: 120px;
   position: relative;
+  @include vars.tablet-and-lower {
+    padding-bottom: 90px;
+  }
   .aboutSectionContainer {
     max-width: 800px;
     width: vars.$eight-twelfths;

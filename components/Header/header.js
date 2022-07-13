@@ -49,10 +49,11 @@ export const Header = ({ headerNav, footerNav, announcementBar }) => {
           to={link.fields.menuTitle}
           spy={true}
           smooth={true}
-          offset={0}
+          offset={-100}
           duration={500}
           onSetActive={() => handleSetActive}
           key={index}
+          onClick={() => toggleDrawer()}
         >
           {link.fields.menuTitle}
         </Link>

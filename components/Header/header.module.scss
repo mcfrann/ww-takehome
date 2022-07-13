@@ -16,7 +16,7 @@
     display: none;
     width: vars.$full;
     height: 93px;
-    padding-top: 20px;
+    padding: 10px 0;
     @include vars.tablet-and-lower {
       @include vars.flexbox();
       @include vars.justify-content(center);
@@ -32,16 +32,16 @@
       z-index: 10001;
       cursor: pointer;
       span {
-        transform: rotate(0deg);
-        transition: 0.5s ease-in-out;
-        display: block;
-        position: absolute;
-        height: 3px;
-        width: 100%;
         background: vars.$black;
         border-radius: 9px;
-        opacity: 1;
+        display: block;
+        height: 3px;
         left: 0;
+        opacity: 1;
+        position: absolute;
+        width: 100%;
+        transform: rotate(0deg);
+        transition: 0.5s ease-in-out;
         &:nth-child(1) {
           top: 0px;
         }
@@ -84,13 +84,6 @@
           }
         }
       }
-      &:hover {
-        .hamburger {
-          span {
-            background: vars.$black;
-          }
-        }
-      }
     }
   }
 
@@ -100,15 +93,15 @@
     @include vars.justify-content(center);
     @include vars.align-items(center);
     background: vars.$red;
-    left: 0px;
-    right: 0px;
+    display: none;
     height: 100vh;
+    left: 0px;
     overflow-y: scroll;
     position: fixed;
-    width: 100vw;
+    right: 0px;
     transition: top 0.5s linear;
+    width: 100vw;
     z-index: 10;
-    display: none;
     @include vars.tablet-and-lower {
       @include vars.flexbox();
     }
@@ -132,14 +125,17 @@
     .navContainerMobile {
       @include vars.flexbox();
       @include vars.flex-flow(column);
-      @include vars.justify-content(space-between);
+      @include vars.justify-content(space-around);
       @include vars.align-items(center);
+      height: 100vh;
       color: vars.$white;
       font-family: vars.$body-font-family;
       font-weight: vars.$header-font-weight;
-      font-size: 24px;
-      max-height: 322px;
-      height: 100%;
+      font-size: 2rem;
+      padding: 120px 0;
+      a.active {
+        border-color: vars.$white;
+      }
     }
   }
 

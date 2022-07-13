@@ -7,17 +7,14 @@
   @include vars.flex-direction(column);
   width: vars.$full;
   background-color: vars.$black;
-  padding: 80px 24px 30px;
+  padding: 90px 0px 30px 0;
   color: white;
 
   .footerBody {
     width: vars.$six-twelfths;
     color: vars.$white;
     text-align: center;
-
-    @include vars.tablet-and-lower {
-      width: vars.$ten-twelfths;
-    }
+    width: vars.$ten-twelfths;
 
     .headline {
       @include vars.header-font();
@@ -173,7 +170,7 @@
   }
 
   .icon {
-    width: 100%;
+    width: vars.$eleven-twelfths;
 
     .footerIcon {
       margin-top: 25px;

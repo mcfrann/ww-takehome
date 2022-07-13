@@ -40,7 +40,7 @@ p {
 section {
   @include flexbox();
   width: 100vw;
-  padding: 120px 0;
+  padding: 90px 0;
   &.no-padding {
     padding: 0;
   }
