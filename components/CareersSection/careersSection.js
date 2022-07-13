@@ -7,7 +7,7 @@ export const CareersSection = ({ section }) => {
 
   const copy = documentToReactComponents(_copy);
   return (
-    <div className={styles.careersSection} id={menuTitle}>
+    <section className={styles.careersSection} id={menuTitle}>
       {crawlerText && (
         <Marquee className={styles.marquee} gradient={false} speed={10}>
           <span>{crawlerText}</span>
@@ -30,6 +30,6 @@ export const CareersSection = ({ section }) => {
           </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

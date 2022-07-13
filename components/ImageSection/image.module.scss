@@ -10,6 +10,12 @@
     height: 70vh;
     min-height: 300px;
     overflow: hidden;
+
+    @include vars.tablet-and-lower {
+      height: 25vh;
+      min-height: 176px;
+    }
+
     span,
     img {
       object-fit: cover !important;

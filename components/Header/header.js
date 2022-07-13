@@ -49,10 +49,11 @@ export const Header = ({ headerNav, footerNav, announcementBar }) => {
           to={link.fields.menuTitle}
           spy={true}
           smooth={true}
-          offset={0}
+          offset={-100}
           duration={500}
           onSetActive={() => handleSetActive}
           key={index}
+          onClick={() => toggleDrawer()}
         >
           {link.fields.menuTitle}
         </Link>
@@ -79,6 +80,14 @@ export const Header = ({ headerNav, footerNav, announcementBar }) => {
         headline && display && !showAnnouncement ? `${styles.hidden}` : ""
       }`}
     >
+      {headline && display && (
+        <AnnouncementBar
+          headline={headline}
+          url={linkUrl}
+          hide={() => setShowAnnouncement(false)}
+          isHidden={!showAnnouncement}
+        />
+      )}
       <div
         className={`${styles.mobileNavigation} ${
           showDrawer ? `${styles.opened}` : `${styles.closed}`
@@ -91,22 +100,15 @@ export const Header = ({ headerNav, footerNav, announcementBar }) => {
           <span></span>
           <span></span>
         </div>
+        {renderOrderButton()}
       </div>
       <div
         className={`${styles.drawer} ${
           showDrawer ? `${styles.opened}` : `${styles.closed}`
         }`}
       >
-        <div className={styles.navContainerMobile}>{renderNavLinks(1, 3)}</div>
+        <div className={styles.navContainerMobile}>{renderNavLinks(0, 3)}</div>
       </div>
-      {headline && display && (
-        <AnnouncementBar
-          headline={headline}
-          url={linkUrl}
-          hide={() => setShowAnnouncement(false)}
-          isHidden={!showAnnouncement}
-        />
-      )}
       <nav className={styles.navContainer}>
         <div className={styles.nav}>
           <div className={styles.navGroup}>{renderNavLinks(0, 1)}</div>

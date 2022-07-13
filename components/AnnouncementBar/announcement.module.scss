@@ -1,3 +1,4 @@
+@use "../../styles/vars";
 @import "../../styles/vars.scss";
 
 .announcementBar {
@@ -8,14 +9,25 @@
   width: 100%;
   z-index: 10;
   transition: top 0.5s linear;
+
   &.hidden {
     top: -58px;
   }
+
+  @include vars.tablet-and-lower {
+    height: 50px;
+    padding: 10px;
+  }
+
   .announcement {
     font-family: $subhead-font-family;
     font-size: 1.25rem;
     text-align: center;
     margin: 0;
+    @include vars.tablet-and-lower {
+      font-size: 1rem;
+      line-height: 2rem;
+    }
   }
 
   .hamburger {
@@ -26,8 +38,16 @@
     transition: 0.5s ease-in-out;
     height: 24px;
     width: 24px;
-    z-index: 10001;
+    z-index: 10;
     cursor: pointer;
+
+    @include vars.tablet-and-lower {
+      height: 20px;
+      right: 10px;
+      top: 6px;
+      width: 20px;
+    }
+
     span {
       transform: rotate(0deg);
       transition: 0.5s ease-in-out;
@@ -39,6 +59,9 @@
       border-radius: 0px;
       opacity: 1;
       left: 0;
+      @include vars.tablet-and-lower {
+        height: 2px;
+      }
       &:nth-child(1) {
         left: 50%;
         top: 18px;
@@ -64,6 +87,7 @@
         width: 0%;
       }
     }
+
     &:hover {
       span {
         background: $white;

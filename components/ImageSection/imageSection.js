@@ -5,7 +5,7 @@ export const ImageSection = ({ section }) => {
   const { imageOne, imageTwo } = section.fields;
 
   return (
-    <div className={styles.imageSection}>
+    <section className={`${styles.imageSection} no-padding`}>
       <div className={!imageTwo ? styles.stretch : ""}>
         <ImageOrSvg image={imageOne} />
       </div>
@@ -14,6 +14,6 @@ export const ImageSection = ({ section }) => {
           <ImageOrSvg image={imageTwo} />
         </div>
       )}
-    </div>
+    </section>
   );
 };

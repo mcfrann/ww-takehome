@@ -7,18 +7,23 @@
   @include vars.flex-direction(column);
   width: vars.$full;
   background-color: vars.$black;
-  padding: 80px 24px 30px;
+  padding: 90px 0px 30px 0;
   color: white;
 
   .footerBody {
     width: vars.$six-twelfths;
     color: vars.$white;
     text-align: center;
+    width: vars.$ten-twelfths;
 
     .headline {
       @include vars.header-font();
       font-size: 36px;
       line-height: 43px;
+      @include vars.tablet-and-lower {
+        font-size: 24px;
+        line-height: 29px;
+      }
     }
 
     .bodyText,
@@ -26,6 +31,11 @@
       @include vars.body-font();
       font-size: 24px;
       margin: 0;
+
+      @include vars.tablet-and-lower {
+        font-size: 18px;
+      }
+
       a {
         &:hover {
           color: vars.$pink;
@@ -40,6 +50,10 @@
       margin-top: 60px;
       width: 100%;
 
+      @include vars.tablet-and-lower {
+        margin-top: 20px;
+      }
+
       .inputContainer {
         @include vars.flex-direction(column);
         @include vars.flexbox();
@@ -48,6 +62,11 @@
         margin: 0 auto;
         text-align: left;
         width: 100%;
+
+        @include vars.tablet-and-lower {
+          margin-top: 10px;
+        }
+
         label {
           @include vars.body-font();
           font-size: 18px;
@@ -56,6 +75,10 @@
 
         div {
           @include vars.flexbox();
+
+          @include vars.tablet-and-lower {
+            @include vars.flex-direction(column);
+          }
 
           input {
             @include vars.body-font();
@@ -111,6 +134,11 @@
     @include vars.justify-content(center);
     @include vars.align-items(center);
 
+    @include vars.tablet-and-lower {
+      margin-top: 10px;
+      margin-bottom: 90px;
+    }
+
     a {
       padding: 17.5px;
 
@@ -120,6 +148,13 @@
         height: 50px;
         width: 50px;
         padding: 10px;
+
+        @include vars.tablet-and-lower {
+          height: 70px;
+          width: 70px;
+          padding: 15px;
+        }
+
         svg path {
           fill: vars.$white;
         }
@@ -135,12 +170,17 @@
   }
 
   .icon {
-    width: 100%;
+    width: vars.$eleven-twelfths;
 
     .footerIcon {
       margin-top: 25px;
       min-width: 291px;
       width: vars.$one-twelfth;
+
+      @include vars.tablet-and-lower {
+        min-width: 200px;
+        margin: 60px auto 0 auto;
+      }
     }
   }
 

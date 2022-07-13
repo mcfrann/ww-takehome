@@ -1,34 +1,55 @@
 @use "../../styles/vars";
 
 .introSection {
+  @include vars.align-items(center);
+  @include vars.flex-direction(column);
+  @include vars.justify-content(center);
   background-color: vars.$white;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  padding: 58px 16px;
 
-  .logoIcon {
-    width: vars.$two-twelfths;
-    max-width: 142px;
-  }
-
-  .description {
-    @include vars.header-font;
-    text-align: center;
-    width: vars.$six-twelfths;
-
-    * {
-      margin: 0;
+  .introContent {
+    @include vars.flexbox();
+    @include vars.align-items(center);
+    @include vars.justify-content(center);
+    @include vars.flex-direction(column);
+    @include vars.tablet-and-lower {
+      padding: 32px;
+      padding: 58px 16px;
     }
 
-    .headline {
-      font-weight: vars.$header-font-weight;
+    .logoIcon {
+      width: vars.$two-twelfths;
+      max-width: 142px;
+      @include vars.tablet-and-lower {
+        width: 110px;
+      }
     }
 
-    .subhead {
-      font-weight: vars.$subhead-font-weight;
+    .description {
+      @include vars.header-font;
+      text-align: center;
+      width: vars.$six-twelfths;
+
+      * {
+        margin: 0;
+      }
+
+      .headline {
+        font-weight: vars.$header-font-weight;
+        @include vars.tablet-and-lower {
+          font-size: 24px;
+        }
+      }
+
+      .subhead {
+        font-weight: vars.$subhead-font-weight;
+        @include vars.tablet-and-lower {
+          font-size: 24px;
+        }
+      }
+
+      @include vars.tablet-and-lower {
+        width: inherit;
+      }
     }
   }
 }

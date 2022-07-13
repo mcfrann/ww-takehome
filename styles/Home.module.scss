@@ -6,6 +6,9 @@
   @include flex-direction(column);
   display: flex;
   min-height: 100vh;
+  @include tablet-and-lower {
+    @include justify-content(flex-start);
+  }
 }
 
 .main {
