@@ -1,36 +1,41 @@
 // COLORS
 
 /* Put in your brand colors here */
-$pink: #f3a591;
-$black: #000000;
-$white: #f6e2ca;
+$black: #172d17;
+$white: #f2e8e2;
 $red: #a61e25;
-$gray: #d9d9d9;
-
+$pink: #f2bbb1;
+$green: #9fc9a5;
+$maroon: #4f0a0d;
 // FONTS
 /* Import your fonts here */
-@import url("https://use.typekit.net/tbw1wgi.css");
-$header-font-family: nitti, monospace;
-$header-font-weight: 700;
-$header-font-style: normal;
+@import url("https://use.typekit.net/qhd4qnk.css");
 
-$subhead-font-family: nitti, monospace;
-$subhead-font-weight: 400;
+$header-font-family: maiola, serif;
+$header-font-weight: 400;
+$header-font-style: italic;
+
+$subhead-font-family: freighttextcmp-pro, serif;
+$subhead-font-weight: 500;
 $subhead-font-style: normal;
 
-$body-font-family: nitti, monospace;
-$body-font-weight: 400;
+$body-font-family: freight-text-pro, serif;
+$body-font-weight: 500;
 $body-font-style: normal;
 
-$button-font-family: nitti, monospace;
-$button-font-weight: 400;
+$nav-font-family: fira-mono, monospace;
+$nav-font-weight: 500;
+$nav-font-style: normal;
+
+$button-font-family: freighttextcmp-pro, serif;
+$button-font-weight: 500;
 $button-font-style: normal;
 
 // MIXINS FOR FONTS
 @mixin header-font() {
   font-family: $header-font-family;
   font-style: $header-font-style;
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
 
 @mixin subhead-font() {
@@ -44,6 +49,13 @@ $button-font-style: normal;
   font-family: $body-font-family;
   font-weight: $body-font-weight;
   font-style: $body-font-style;
+  text-transform: uppercase;
+}
+
+@mixin nav-font() {
+  font-family: $nav-font-family;
+  font-weight: $nav-font-weight;
+  font-style: $nav-font-style;
   text-transform: uppercase;
 }
 
@@ -112,9 +124,6 @@ $nine-twelfths: calc(100vw * 9 / 12);
 $ten-twelfths: calc(100vw * 10 / 12);
 $eleven-twelfths: calc(100vw * 11 / 12);
 $full: 100vw;
-
-// MAX_WIDTH
-$container: 1208px;
 
 // generic transform
 @mixin transform($transforms) {
@@ -295,4 +304,27 @@ $container: 1208px;
   -moz-align-self: $align;
   -ms-align-self: $align;
   align-self: $align;
+}
+
+
+// Positioning
+@mixin fixedPosition($top, $right, $bottom, $left, $width) {
+  position: fixed;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+  width: $width;
+}
+
+@mixin zIndex($val) {
+  z-index: $val;
+}
+
+@mixin alignToCenter() {
+  margin: 0 auto;
+}
+
+@mixin position($position) {
+  position: $position;
 }
