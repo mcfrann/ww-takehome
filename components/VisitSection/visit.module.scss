@@ -56,6 +56,13 @@
     }
   }
 
+  .addressLink {
+    &:hover {
+      color: vars.$pink;
+      cursor: pointer;
+    }
+  }
+
   .hoursSection {
     position: relative;
 

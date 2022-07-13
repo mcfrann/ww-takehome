@@ -33,10 +33,8 @@ export const Header = ({ headerNav, footerNav, announcementBar }) => {
     const alt = logo.fields.title || "no alt description";
     return (
       <div className={styles.logoContainer}>
-        <Link href="/" passHref>
-          <a className={styles.logoLink} title={alt}>
-            <ImageOrSvg image={logo} />
-          </a>
+        <Link className={styles.logoLink} href="/" to="/" title={alt}>
+          <ImageOrSvg image={logo} />
         </Link>
       </div>
     );
