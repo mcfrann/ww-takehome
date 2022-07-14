@@ -2,12 +2,14 @@
 
 .footer {
   @include vars.flexbox();
-  @include vars.justify-content(center);
+  @include vars.justify-content(start);
   @include vars.align-items(center);
   @include vars.flex-direction(column);
+  position: sticky;
   width: vars.$full;
+  height: 100vh;
   background-color: vars.$black;
-  padding: 90px 0px 30px 0;
+  padding: 90px 0px 0 0;
   color: white;
 
   .footerBody {
@@ -187,4 +189,15 @@
   button {
     cursor: pointer;
   }
+}
+
+.parallaxIcon {
+  @include vars.flexbox();
+  @include vars.justify-content(center);
+  @include vars.align-items(center);
+  @include vars.position(relative);
+  background-color: vars.$green;
+  width: vars.$full;
+  height: 15rem;
+  z-index: 9999;
 }
