@@ -164,6 +164,11 @@
     }
   }
 
+  .logoLink {
+    &:hover {
+      cursor: pointer;
+    }
+  }
   .orderButton {
     @include vars.button-font();
     border-radius: 20px;

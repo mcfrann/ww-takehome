@@ -19,8 +19,8 @@
   .iconsContainer {
     width: 100%;
     .parallaxIconOne {
-      margin-top: 60px;
-      width: vars.$two-twelfths;
+      margin-top: 120px;
+      width: vars.$one-twelfths;
       @include vars.tablet-and-lower {
         display: none;
       }
