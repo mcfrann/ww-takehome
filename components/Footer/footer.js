@@ -5,7 +5,7 @@ import React from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-export const Footer = ({ footer }) => {
+export const Footer = ({ footer, parallax }) => {
   const contactRef = React.useRef(null);
   const parallaxRef = React.useRef(null);
   const {
@@ -23,15 +23,17 @@ export const Footer = ({ footer }) => {
   };
 
   React.useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.to(contactRef.current, {
-      scrollTrigger: {
-        trigger: contactRef.current,
-        scrub: true,
-        start: "top top",
-        pin: true
-      }
-    });
+    if (parallax === true) {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.to(contactRef.current, {
+        scrollTrigger: {
+          trigger: contactRef.current,
+          scrub: true,
+          start: "top top",
+          pin: true
+        }
+      });
+    }
   });
   return (
     <>
