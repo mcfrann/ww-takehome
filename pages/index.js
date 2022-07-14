@@ -6,25 +6,38 @@ import {
   getPage,
   getAnnoucementBar,
   getFooterNavLinks,
-  getHeaderNavLinks,
+  getHeaderNavLinks
 } from "../utils/contentful-client";
 
 import { Element } from "react-scroll";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import React from "react";
 
 export default function Home({
   homePageContent,
   footer,
   header,
-  announcementBar,
+  announcementBar
 }) {
-  const {
-    pageTitle,
-    pageMetadata,
-    introSection,
-    pageSections,
-  } = homePageContent.fields;
+  const { pageTitle, pageMetadata, introSection, pageSections } =
+    homePageContent.fields;
 
   const { orderButton } = header.fields;
+
+  React.useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray("section").forEach((section) => {
+      gsap.to(section, {
+        scrollTrigger: {
+          trigger: section,
+          scrub: true,
+          pin: true,
+          pinSpacing: false,
+        }
+      });
+    });
+  }, []);
 
   return (
     <Layout
@@ -33,8 +46,7 @@ export default function Home({
       id="home"
       announcementBar={announcementBar}
       header={header}
-      footer={footer}
-    >
+      footer={footer}>
       <div className={styles.container}>
         {introSection && (
           <Element name="introSection">
@@ -64,8 +76,8 @@ export const getStaticProps = async () => {
       homePageContent,
       header,
       footer,
-      announcementBar,
+      announcementBar
     },
-    revalidate: 120,
+    revalidate: 120
   };
 };
