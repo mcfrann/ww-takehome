@@ -3,19 +3,7 @@ import styles from "./header.module.scss";
 import { ImageOrSvg } from "../ImageorSvg/imageOrSvg.js";
 import { AnnouncementBar } from "../AnnouncementBar/announcementBar.js";
 import { useState } from "react";
-<<<<<<< HEAD
 import { Link } from "react-scroll";
-=======
-import {
-  Link,
-  Button,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
-} from "react-scroll";
->>>>>>> efdf180... create conditional header
 
 export const Header = ({ headerNav, footerNav, announcementBar }) => {
   const { logo, orderButton, headerSectionLinks } = headerNav.fields;
@@ -89,7 +77,7 @@ export const Header = ({ headerNav, footerNav, announcementBar }) => {
 
   const ConditionalHeader = () => {
     const totalHeaderLinks =
-      headerSectionLinks.length + (orderButton?.fields?.buttonTitle ? 1 : 0);
+      headerSectionLinks.length + (orderButton.fields ? 1 : 0);
     if (totalHeaderLinks === 4) {
       return (
         <div className={styles.nav}>
@@ -105,10 +93,8 @@ export const Header = ({ headerNav, footerNav, announcementBar }) => {
       return (
         <div className={styles.navAlternate}>
           {renderLogoContainer()}
-          <div className={styles.shortNav}>
-            {renderNavLinks()}
-            {renderOrderButton()}
-          </div>
+          {renderNavLinks()}
+          {renderOrderButton()}
         </div>
       );
     }
