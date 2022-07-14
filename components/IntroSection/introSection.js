@@ -25,24 +25,26 @@ export const IntroSection = ({ section, parallax }) => {
 
   React.useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    gsap.from(iconOneRef.current, {
-      y: "200px",
-      x:200,
-      duration: 1,
-      scrollTrigger: {
-        trigger: iconOneRef.current,
-        scrub: true,
-      }
-    });
-    gsap.from(iconTwoRef.current, {
-      y: "200px",
-      x:-200,
-      duration: 1,
-      scrollTrigger: {
-        trigger: iconTwoRef.current,
-        scrub: true,
-      }
-    });
+    if (parallax === true) {
+      gsap.from(iconOneRef.current, {
+        y: "200px",
+        x: 200,
+        duration: 1,
+        scrollTrigger: {
+          trigger: iconOneRef.current,
+          scrub: true
+        }
+      });
+      gsap.from(iconTwoRef.current, {
+        y: "200px",
+        x: -200,
+        duration: 1,
+        scrollTrigger: {
+          trigger: iconTwoRef.current,
+          scrub: true
+        }
+      });
+    }
   }, []);
 
   console.log(parallax);

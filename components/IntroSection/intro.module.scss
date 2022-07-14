@@ -85,10 +85,16 @@
   position: absolute;
   left: 10rem;
   top: 25rem;
+  @include vars.tablet-and-lower {
+    display: none;
+  }
 }
 
 .parallaxIconTwo {
   position: absolute;
   right: 10rem;
   top: 25rem;
+  @include vars.tablet-and-lower {
+    display: none;
+  }
 }
