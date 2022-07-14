@@ -182,6 +182,7 @@
   }
 
   .image {
+    position: sticky;
     top: 0;
     z-index: 10;
     @include vars.tablet-and-lower {
