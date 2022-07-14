@@ -160,11 +160,19 @@
       }
     }
     .navAlternate {
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-
+      @include vars.flexbox();
+      @include vars.justify-content(space-between);
+      @include vars.align-items(center);
+      width: calc(100% - 60px);
+      .shortNav {
+        @include vars.flexbox();
+        @include vars.justify-content(space-between);
+        @include vars.align-items(center);
+        width: vars.$seven-twelfths;
+      }
+      .logoContainer {
+        max-width: 100px;
+      }
       * {
         font-family: vars.$body-font-family;
         font-size: 24px;
@@ -175,6 +183,11 @@
     }
   }
 
+  .logoLink {
+    &:hover {
+      cursor: pointer;
+    }
+  }
   .orderButton {
     @include vars.button-font();
     border-radius: 20px;

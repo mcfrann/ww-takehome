@@ -4,15 +4,7 @@ import { CareersSection } from "../components/CareersSection/careersSection";
 import { AboutSection } from "../components/AboutSection/aboutSection";
 import { ImageSection } from "../components/ImageSection/imageSection";
 
-import {
-  Link,
-  Button,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
-} from "react-scroll";
+import { Element } from "react-scroll";
 
 export const renderPageSections = (pageSections, orderButton) => {
   return pageSections.map((section, i) => {

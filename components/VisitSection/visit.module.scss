@@ -5,6 +5,7 @@
   background-color: vars.$black;
   color: vars.$white;
   padding-top: 0;
+  padding-bottom: 0;
   @include vars.tablet-and-lower {
     @include vars.flex-direction(column);
     padding-top: 90px;

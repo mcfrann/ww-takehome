@@ -3,15 +3,7 @@ import styles from "./header.module.scss";
 import { ImageOrSvg } from "../ImageorSvg/imageOrSvg.js";
 import { AnnouncementBar } from "../AnnouncementBar/announcementBar.js";
 import { useState } from "react";
-import {
-  Link,
-  Button,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller
-} from "react-scroll";
+import { Link } from "react-scroll";
 
 export const Header = ({ headerNav, footerNav, announcementBar }) => {
   const { logo, orderButton, headerSectionLinks } = headerNav.fields;
@@ -33,7 +25,16 @@ export const Header = ({ headerNav, footerNav, announcementBar }) => {
     const alt = logo.fields.title || "no alt description";
     return (
       <div className={styles.logoContainer}>
-        <Link className={styles.logoLink} href="/" to="/" title={alt}>
+        <Link
+          className={styles.logoLink}
+          activeClass="active"
+          to={"introSection"}
+          spy={true}
+          smooth={true}
+          offset={-150}
+          duration={500}
+          onSetActive={() => handleSetActive}
+        >
           <ImageOrSvg image={logo} />
         </Link>
       </div>
@@ -73,7 +74,8 @@ export const Header = ({ headerNav, footerNav, announcementBar }) => {
   };
 
   const ConditionalHeader = () => {
-    const totalHeaderLinks = headerSectionLinks.length + (orderButton?.fields?.buttonTitle ? 1 : 0);
+    const totalHeaderLinks =
+      headerSectionLinks.length + (orderButton.fields ? 1 : 0);
     if (totalHeaderLinks === 4) {
       return (
         <div className={styles.nav}>
