@@ -10,9 +10,6 @@ import {
 } from "../utils/contentful-client";
 
 import { Element } from "react-scroll";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import React from "react";
 
 export default function Home({
   homePageContent,
@@ -24,20 +21,6 @@ export default function Home({
     homePageContent.fields;
 
   const { orderButton } = header.fields;
-
-  React.useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.utils.toArray("section").forEach((section) => {
-      gsap.to(section, {
-        scrollTrigger: {
-          trigger: section,
-          scrub: true,
-          pin: true,
-          pinSpacing: false,
-        }
-      });
-    });
-  }, []);
 
   return (
     <Layout
