@@ -75,6 +75,31 @@ export const Header = ({ headerNav, footerNav, announcementBar }) => {
     );
   };
 
+  const ConditionalHeader = () => {
+    const totalHeaderLinks =
+      headerSectionLinks.length + (orderButton.fields ? 1 : 0);
+    if (totalHeaderLinks === 4) {
+      return (
+        <div className={styles.nav}>
+          <div className={styles.navGroup}>{renderNavLinks(0, 1)}</div>
+          {renderLogoContainer()}
+          <div className={styles.navGroup}>
+            {renderNavLinks(2, 3)}
+            {renderOrderButton()}
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div className={styles.navAlternate}>
+          {renderLogoContainer()}
+          {renderNavLinks()}
+          {renderOrderButton()}
+        </div>
+      );
+    }
+  };
+
   return (
     <div
       className={`${styles.header} ${
@@ -111,14 +136,7 @@ export const Header = ({ headerNav, footerNav, announcementBar }) => {
         <div className={styles.navContainerMobile}>{renderNavLinks(0, 3)}</div>
       </div>
       <nav className={styles.navContainer}>
-        <div className={styles.nav}>
-          <div className={styles.navGroup}>{renderNavLinks(0, 1)}</div>
-          {renderLogoContainer()}
-          <div className={styles.navGroup}>
-            {renderNavLinks(2, 3)}
-            {renderOrderButton()}
-          </div>
-        </div>
+        <ConditionalHeader />
       </nav>
     </div>
   );
