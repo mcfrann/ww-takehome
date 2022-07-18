@@ -13,7 +13,11 @@ export const renderPageSections = (pageSections, orderButton) => {
     if (id == "visitSection") {
       return (
         <Element name={section.fields.menuTitle} key={`section-${i}`}>
-          <VisitSection key={`visit-section-${i}`} section={section} />
+          <VisitSection
+            key={`visit-section-${i}`}
+            section={section}
+            parallax={true}
+          />
         </Element>
       );
     } else if (id == "aboutSection") {
@@ -35,7 +39,7 @@ export const renderPageSections = (pageSections, orderButton) => {
             section={section}
             orderButton={orderButton}
             key={`menu-section-${i}`}
-            parallax={false}
+            parallax={true}
           />
         </Element>
       );

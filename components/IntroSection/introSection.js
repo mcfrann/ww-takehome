@@ -11,13 +11,8 @@ export const IntroSection = ({ section, parallax }) => {
     subhead,
     mainImage,
     mainImageIcon,
-<<<<<<< HEAD
-    parallaxIconOne,
-    parallaxIconTwo,
-=======
     parallaxOne,
-    parallaxTwo
->>>>>>> 7db4e2e... add parallax icons
+    parallaxTwo,
   } = section.fields;
 
   const iconOneRef = React.useRef(null);
@@ -25,26 +20,24 @@ export const IntroSection = ({ section, parallax }) => {
 
   React.useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    if (parallax === true) {
-      gsap.from(iconOneRef.current, {
-        y: "200px",
-        x: 200,
-        duration: 1,
-        scrollTrigger: {
-          trigger: iconOneRef.current,
-          scrub: true
-        }
-      });
-      gsap.from(iconTwoRef.current, {
-        y: "200px",
-        x: -200,
-        duration: 1,
-        scrollTrigger: {
-          trigger: iconTwoRef.current,
-          scrub: true
-        }
-      });
-    }
+    gsap.from(iconOneRef.current, {
+      y: "200px",
+      x: 200,
+      duration: 1,
+      scrollTrigger: {
+        trigger: iconOneRef.current,
+        scrub: true,
+      },
+    });
+    gsap.from(iconTwoRef.current, {
+      y: "200px",
+      x: -200,
+      duration: 1,
+      scrollTrigger: {
+        trigger: iconTwoRef.current,
+        scrub: true,
+      },
+    });
   }, []);
 
   console.log(parallax);

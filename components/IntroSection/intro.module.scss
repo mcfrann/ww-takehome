@@ -83,8 +83,9 @@
 
 .parallaxIconOne {
   position: absolute;
-  left: 10rem;
-  top: 25rem;
+  left: vars.$one-twelfth;
+  transform: translateY(25rem);
+  width: vars.$one-twelfth;
   @include vars.tablet-and-lower {
     display: none;
   }
@@ -92,8 +93,9 @@
 
 .parallaxIconTwo {
   position: absolute;
-  right: 10rem;
-  top: 25rem;
+  right: vars.$one-twelfth;
+  transform: translateY(75rem);
+  width: vars.$one-twelfth;
   @include vars.tablet-and-lower {
     display: none;
   }

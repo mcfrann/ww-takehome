@@ -6,7 +6,7 @@ import {
   getPage,
   getAnnoucementBar,
   getFooterNavLinks,
-  getHeaderNavLinks
+  getHeaderNavLinks,
 } from "../utils/contentful-client";
 
 import { Element } from "react-scroll";
@@ -15,10 +15,14 @@ export default function Home({
   homePageContent,
   footer,
   header,
-  announcementBar
+  announcementBar,
 }) {
-  const { pageTitle, pageMetadata, introSection, pageSections } =
-    homePageContent.fields;
+  const {
+    pageTitle,
+    pageMetadata,
+    introSection,
+    pageSections,
+  } = homePageContent.fields;
 
   const { orderButton } = header.fields;
 
@@ -29,11 +33,12 @@ export default function Home({
       id="home"
       announcementBar={announcementBar}
       header={header}
-      footer={footer}>
+      footer={footer}
+    >
       <div className={styles.container}>
         {introSection && (
           <Element name="introSection">
-            <IntroSection section={introSection} />
+            <IntroSection section={introSection} parallax={true} />
           </Element>
         )}
         {pageSections && renderPageSections(pageSections, orderButton)}
@@ -59,8 +64,8 @@ export const getStaticProps = async () => {
       homePageContent,
       header,
       footer,
-      announcementBar
+      announcementBar,
     },
-    revalidate: 120
+    revalidate: 120,
   };
 };
