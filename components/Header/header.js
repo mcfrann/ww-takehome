@@ -93,8 +93,10 @@ export const Header = ({ headerNav, footerNav, announcementBar }) => {
       return (
         <div className={styles.navAlternate}>
           {renderLogoContainer()}
-          {renderNavLinks()}
-          {renderOrderButton()}
+          <div className={styles.altNavLinks}>
+            {renderNavLinks()}
+            {renderOrderButton()}
+          </div>
         </div>
       );
     }

@@ -1,7 +1,9 @@
 @use "../../styles/vars";
 
 .header {
+  @include vars.nav-font();
   background-color: vars.$white;
+  color: vars.$maroon;
   margin-top: 0;
   position: sticky;
   top: 0;
@@ -153,11 +155,6 @@
         @include vars.justify-content(space-around);
         width: vars.$five-twelfths;
       }
-
-      * {
-        font-family: vars.$body-font-family;
-        font-size: 24px;
-      }
     }
     .navAlternate {
       @include vars.flexbox();
@@ -170,12 +167,16 @@
         @include vars.align-items(center);
         width: vars.$seven-twelfths;
       }
+      .altNavLinks {
+        a:not(.orderButton) {
+          margin-right: 60px;
+        }
+      }
       .logoContainer {
         max-width: 100px;
       }
       * {
-        font-family: vars.$body-font-family;
-        font-size: 24px;
+        font-size: 1.2rem;
       }
     }
     @include vars.tablet-and-lower {
