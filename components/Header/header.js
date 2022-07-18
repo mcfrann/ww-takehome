@@ -54,7 +54,8 @@ export const Header = ({ headerNav, footerNav, announcementBar }) => {
           duration={500}
           onSetActive={() => handleSetActive}
           key={index}
-          onClick={() => toggleDrawer()}>
+          onClick={() => toggleDrawer()}
+        >
           {link.fields.menuTitle}
         </Link>
       );
@@ -67,7 +68,8 @@ export const Header = ({ headerNav, footerNav, announcementBar }) => {
         href={orderButton.fields.buttonLinkUrl}
         target={orderButton.fields.openInNewWindow ? "_blank" : "_self"}
         rel="noreferrer"
-        className={styles.orderButton}>
+        className={styles.orderButton}
+      >
         {orderButton.fields.buttonTitle}
       </a>
     );
@@ -91,8 +93,10 @@ export const Header = ({ headerNav, footerNav, announcementBar }) => {
       return (
         <div className={styles.navAlternate}>
           {renderLogoContainer()}
-          {renderNavLinks()}
-          {renderOrderButton()}
+          <div className={styles.altNavLinks}>
+            {renderNavLinks()}
+            {renderOrderButton()}
+          </div>
         </div>
       );
     }
@@ -102,7 +106,8 @@ export const Header = ({ headerNav, footerNav, announcementBar }) => {
     <div
       className={`${styles.header} ${
         headline && display && !showAnnouncement ? `${styles.hidden}` : ""
-      }`}>
+      }`}
+    >
       {headline && display && (
         <AnnouncementBar
           headline={headline}
@@ -114,7 +119,8 @@ export const Header = ({ headerNav, footerNav, announcementBar }) => {
       <div
         className={`${styles.mobileNavigation} ${
           showDrawer ? `${styles.opened}` : `${styles.closed}`
-        } `}>
+        } `}
+      >
         {renderLogoContainer()}
         <div className={styles.hamburger} onClick={() => toggleDrawer()}>
           <span></span>
@@ -124,7 +130,11 @@ export const Header = ({ headerNav, footerNav, announcementBar }) => {
         </div>
         {renderOrderButton()}
       </div>
-      <div className={`${styles.drawer} ${showDrawer ? `${styles.opened}` : `${styles.closed}`}`}>
+      <div
+        className={`${styles.drawer} ${
+          showDrawer ? `${styles.opened}` : `${styles.closed}`
+        }`}
+      >
         <div className={styles.navContainerMobile}>{renderNavLinks(0, 3)}</div>
       </div>
       <nav className={styles.navContainer}>
