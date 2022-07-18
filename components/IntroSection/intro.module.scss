@@ -58,7 +58,7 @@
 .mainImage {
   width: vars.$full;
   display: flex;
-  justify-content: center;
+  @include vars.justify-content(center)
 }
 
 .mainImageIcon {
