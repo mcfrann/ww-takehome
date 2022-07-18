@@ -102,11 +102,14 @@
     }
 
     .parallaxImage {
+      bottom: 0vh;
+      left: vars.$one-twelfth;
       position: absolute;
-      left: 50px;
-      bottom: 0;
       width: vars.$one-twelfth;
-
+      &.imageTwo {
+        bottom: 5vh;
+        left: vars.$four-twelfths;
+      }
       @include vars.tablet-and-lower {
         display: none;
       }
@@ -167,10 +170,9 @@
     }
 
     .parallaxImage {
+      bottom: 10vh;
       position: absolute;
       right: 64px;
-      bottom: 36px;
-
       width: vars.$two-twelfths;
 
       @include vars.tablet-and-lower {
