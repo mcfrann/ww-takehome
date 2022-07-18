@@ -30,9 +30,9 @@ export const IntroSection = ({ section }) => {
         <div className={styles.mainImageIconOuter}>
           <div className={styles.mainImageIcon}>
             <ImageOrSvg image={mainImage} />
-            <div className={styles.icon}>
-              <ImageOrSvg image={mainImageIcon} />
-            </div>
+          </div>
+          <div className={styles.icon}>
+            <ImageOrSvg image={mainImageIcon} />
           </div>
         </div>
       )}
