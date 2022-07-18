@@ -1,6 +1,8 @@
+import React from "react";
 import styles from "./menu.module.scss";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { ImageOrSvg } from "../ImageOrSvg/imageOrSvg.js";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export const MenuSection = ({ section, orderButton, parallax }) => {
   const {
@@ -9,8 +11,28 @@ export const MenuSection = ({ section, orderButton, parallax }) => {
     menuTitle,
     foodHighlights,
     headline,
-    menuDownloadLink,
+    menuDownloadLink
   } = section.fields;
+
+  React.useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.fromTo(
+      "#menu .parallax",
+      {
+        rotate: (i, target) => (target.dataset.index % 2 ? "20" : "-20"),
+        y: "10rem"
+      },
+      {
+        y: "-10rem",
+        rotate: (i, target) => (target.dataset.index % 2 ? "-20" : "20"),
+        scrollTrigger: {
+          trigger: "#menu .parallax",
+          scrub: true,
+          markers: true
+        }
+      }
+    );
+  }, []);
 
   return (
     <section id={menuTitle} className={styles.menuSection}>
@@ -19,8 +41,7 @@ export const MenuSection = ({ section, orderButton, parallax }) => {
         <a
           href={menuDownloadLink.fields.buttonLinkUrl}
           download
-          className={styles.menuDownloadLink}
-        >
+          className={styles.menuDownloadLink}>
           <button className={styles.downloadButton}>
             {menuDownloadLink.fields.buttonTitle.toUpperCase()}
           </button>
@@ -32,7 +53,7 @@ export const MenuSection = ({ section, orderButton, parallax }) => {
         </div>
       )}
       {foodHighlights && (
-        <div className={styles.foodHighlights}>
+        <div className={styles.foodHighlights} ref={foodHighlights}>
           {foodHighlights.map((food, index) => {
             const icon = food.fields.icon;
             const iconDetails = icon.fields.file.details.image;
@@ -42,9 +63,9 @@ export const MenuSection = ({ section, orderButton, parallax }) => {
                 <span className={styles.text}>
                   <div
                     className={`${styles.icon} ${
-                      index % 2 === 1 ? `${styles.left}` : `${styles.right}`
-                    } ${wide && `${styles.wide}`}`}
-                  >
+                      index % 2 === 1 ? styles.left : styles.right
+                    } ${wide && styles.wide} parallax`}
+                    data-index={index}>
                     <ImageOrSvg image={food.fields.icon} />
                   </div>
                   {food.fields.title}
@@ -67,8 +88,7 @@ export const MenuSection = ({ section, orderButton, parallax }) => {
             <a
               href={orderButton.fields.buttonLinkUrl}
               target={orderButton.fields.openInNewWindow ? "_blank" : "_self"}
-              rel="noreferrer"
-            >
+              rel="noreferrer">
               <div className={styles.orderButton}>
                 <svg viewBox="0 0 185.6 187.9" className={styles.orderNowText}>
                   <path d="M23.9,137.9c3.2-2.3,6.1-2.5,8.1,0.2c1.9,2.7,0.9,5.3-2.3,7.6c-3.2,2.3-6.1,2.5-8.1-0.2   C19.6,142.8,20.7,140.2,23.9,137.9z M28.5,144.2c1.7-1.2,3.7-3,2.2-5.2c-1.6-2.2-4-0.8-5.6,0.4c-1.7,1.2-3.7,3-2.1,5.2   C24.5,146.8,26.8,145.4,28.5,144.2z" />
