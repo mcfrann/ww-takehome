@@ -11,6 +11,7 @@ export const IntroSection = ({ section, parallax }) => {
     subhead,
     mainImage,
     mainImageIcon,
+
     parallaxOne,
     parallaxTwo,
   } = section.fields;
@@ -40,7 +41,6 @@ export const IntroSection = ({ section, parallax }) => {
     });
   }, []);
 
-  console.log(parallax);
   return (
     <section className={`${styles.introSection} no-padding`}>
       <div className={styles.introContent}>
@@ -65,9 +65,11 @@ export const IntroSection = ({ section, parallax }) => {
         <div className={styles.mainImageIconOuter}>
           <div className={styles.mainImageIcon}>
             <ImageOrSvg image={mainImage} />
-            <div className={styles.icon}>
-              <ImageOrSvg image={mainImageIcon} />
-            </div>
+
+          </div>
+          <div className={styles.icon}>
+            <ImageOrSvg image={mainImageIcon} />
+
           </div>
         </div>
       )}

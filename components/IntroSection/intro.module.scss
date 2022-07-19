@@ -58,7 +58,8 @@
 .mainImage {
   width: vars.$full;
   display: flex;
-  justify-content: center;
+  @include vars.justify-content(center)
+
 }
 
 .mainImageIcon {
@@ -98,5 +99,27 @@
   width: vars.$one-twelfth;
   @include vars.tablet-and-lower {
     display: none;
+  }
+}
+
+.mainImageIcon {
+  border-radius: 50% 50%;
+  overflow: hidden;
+  position: relative;
+  margin: 1rem;
+  max-width: 640px;
+
+}
+
+.mainImageIconOuter {
+  border-radius: 50% 50%;
+  border: 1px solid;
+  margin: 1rem;
+  position: relative;
+  .icon {
+    position: absolute;
+    bottom:0;
+    left: 0;
+    transform: translate(-50%, -50%);
   }
 }
