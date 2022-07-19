@@ -4,15 +4,7 @@ import { CareersSection } from "../components/CareersSection/careersSection";
 import { AboutSection } from "../components/AboutSection/aboutSection";
 import { ImageSection } from "../components/ImageSection/imageSection";
 
-import {
-  Link,
-  Button,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
-} from "react-scroll";
+import { Element } from "react-scroll";
 
 export const renderPageSections = (pageSections, orderButton) => {
   return pageSections.map((section, i) => {
@@ -21,7 +13,11 @@ export const renderPageSections = (pageSections, orderButton) => {
     if (id == "visitSection") {
       return (
         <Element name={section.fields.menuTitle} key={`section-${i}`}>
-          <VisitSection key={`visit-section-${i}`} section={section} />
+          <VisitSection
+            key={`visit-section-${i}`}
+            section={section}
+            parallax={true}
+          />
         </Element>
       );
     } else if (id == "aboutSection") {
@@ -43,7 +39,7 @@ export const renderPageSections = (pageSections, orderButton) => {
             section={section}
             orderButton={orderButton}
             key={`menu-section-${i}`}
-            parallax={false}
+            parallax={true}
           />
         </Element>
       );

@@ -1,8 +1,11 @@
 import styles from "./visit.module.scss";
 import { ImageOrSvg } from "../ImageorSvg/imageOrSvg";
 import GoogleMap from "../../Components/Location/Map";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useRef, useEffect } from "react";
 
-export const VisitSection = ({ section }) => {
+export const VisitSection = ({ section, parallax }) => {
   const {
     sectionImage,
     hoursHeadline,
@@ -18,6 +21,37 @@ export const VisitSection = ({ section }) => {
     menuTitle,
     mapLocation,
   } = section.fields;
+
+  const iconOneRef = useRef(null);
+  const iconTwoRef = useRef(null);
+  const locationSection = useRef(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    if (parallax === true) {
+      gsap.to(iconOneRef.current, {
+        bottom: "100vh",
+        scrollTrigger: {
+          trigger: locationSection.current,
+          start: "top center",
+          end: "bottom center",
+          toggleActions: "play none none none",
+          scrub: true,
+        },
+      });
+      gsap.to(iconTwoRef.current, {
+        bottom: "50vh",
+        scrollTrigger: {
+          trigger: locationSection.current,
+          start: "top bottom",
+          end: "bottom top",
+          toggleActions: "play none none none",
+          scrub: true,
+        },
+      });
+    }
+  }, []);
 
   const renderAddress = () => {
     return (
@@ -48,7 +82,11 @@ export const VisitSection = ({ section }) => {
     }
   };
   return (
-    <section id={menuTitle} className={styles.visitSection}>
+    <section
+      id={menuTitle}
+      className={styles.visitSection}
+      ref={locationSection}
+    >
       <div className={styles.infoColumn}>
         <div className={styles.hoursSection}>
           <div className={styles.hoursContent}>
@@ -84,9 +122,22 @@ export const VisitSection = ({ section }) => {
               );
             })}
           </div>
-          <div className={`${styles.parallaxImage} ${styles.imageOne}`}>
+
+          <div
+            className={`${styles.parallaxImage} ${styles.imageOne}`}
+            ref={iconOneRef}
+          >
             <ImageOrSvg image={parallaxIconOne} />
           </div>
+
+          {parallax && (
+            <div
+              className={`${styles.parallaxImage} ${styles.imageTwo}`}
+              ref={iconTwoRef}
+            >
+              <ImageOrSvg image={parallaxIconTwo} />
+            </div>
+          )}
         </div>
         <div className={styles.visitSection}>
           <h2 className={styles.hoursTitle}>VISIT</h2>
@@ -94,9 +145,15 @@ export const VisitSection = ({ section }) => {
           <div className={styles.mapsContainer}>
             {mapLocation && <GoogleMap latandLong={mapLocation} />}
           </div>
-          <div className={`${styles.parallaxImage} ${styles.imageTwo}`}>
-            <ImageOrSvg image={parallaxIconTwo} />
-          </div>
+
+          {!parallax && (
+            <div
+              className={`${styles.parallaxImage} ${styles.imageTwo}`}
+              ref={iconTwoRef}
+            >
+              <ImageOrSvg image={parallaxIconTwo} />
+            </div>
+          )}
         </div>
       </div>
       <div className={styles.imageColumn}>

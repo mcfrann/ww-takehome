@@ -9,6 +9,8 @@ import {
   getHeaderNavLinks,
 } from "../utils/contentful-client";
 
+import { Element } from "react-scroll";
+
 export default function Home({
   homePageContent,
   footer,
@@ -34,7 +36,11 @@ export default function Home({
       footer={footer}
     >
       <div className={styles.container}>
-        {introSection && <IntroSection section={introSection} />}
+        {introSection && (
+          <Element name="introSection">
+            <IntroSection section={introSection} parallax={true} />
+          </Element>
+        )}
         {pageSections && renderPageSections(pageSections, orderButton)}
       </div>
     </Layout>

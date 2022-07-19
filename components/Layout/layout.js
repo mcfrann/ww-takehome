@@ -11,7 +11,7 @@ export const Layout = ({
   metaDescription,
   footer,
   header,
-  announcementBar,
+  announcementBar
 }) => {
   return (
     <div className={styles.container} id={id}>
