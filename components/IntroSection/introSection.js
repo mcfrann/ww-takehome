@@ -2,7 +2,7 @@ import styles from "./intro.module.scss";
 import { ImageOrSvg } from "../ImageOrSvg/imageOrSvg.js";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import React from "react";
+import { useRef, useEffect } from "react";
 
 export const IntroSection = ({ section, parallax }) => {
   const {
@@ -11,38 +11,38 @@ export const IntroSection = ({ section, parallax }) => {
     subhead,
     mainImage,
     mainImageIcon,
-
     parallaxOne,
     parallaxTwo,
   } = section.fields;
 
-  const iconOneRef = React.useRef(null);
-  const iconTwoRef = React.useRef(null);
+  const iconOneRef = useRef(null);
+  const iconTwoRef = useRef(null);
+  const sectionRef = useRef();
 
-  React.useEffect(() => {
+  useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    gsap.from(iconOneRef.current, {
-      y: "200px",
-      x: 200,
-      duration: 1,
+    gsap.to(iconOneRef.current, {
+      y: "0vh",
       scrollTrigger: {
-        trigger: iconOneRef.current,
+        start: "top top",
+        end: "bottom center",
+        trigger: sectionRef.current,
         scrub: true,
       },
     });
-    gsap.from(iconTwoRef.current, {
-      y: "200px",
-      x: -200,
-      duration: 1,
+    gsap.to(iconTwoRef.current, {
+      y: "20vh",
       scrollTrigger: {
-        trigger: iconTwoRef.current,
+        start: "top center",
+        end: "bottom top",
+        trigger: sectionRef.current,
         scrub: true,
       },
     });
   }, []);
 
   return (
-    <section className={`${styles.introSection} no-padding`}>
+    <section className={`${styles.introSection}`} ref={sectionRef}>
       <div className={styles.introContent}>
         {logoIcon && (
           <dic className={styles.logoIcon}>
@@ -65,11 +65,9 @@ export const IntroSection = ({ section, parallax }) => {
         <div className={styles.mainImageIconOuter}>
           <div className={styles.mainImageIcon}>
             <ImageOrSvg image={mainImage} />
-
           </div>
           <div className={styles.icon}>
             <ImageOrSvg image={mainImageIcon} />
-
           </div>
         </div>
       )}
