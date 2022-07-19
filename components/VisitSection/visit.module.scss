@@ -2,8 +2,8 @@
 
 .visitSection {
   @include vars.align-self(flex-start);
-  background-color: vars.$black;
-  color: vars.$white;
+  background-color: vars.$pink;
+  color: vars.$black;
   padding-top: 0;
   padding-bottom: 0;
   @include vars.tablet-and-lower {
@@ -102,11 +102,14 @@
     }
 
     .parallaxImage {
+      bottom: 0vh;
+      left: vars.$one-twelfth;
       position: absolute;
-      left: 50px;
-      bottom: 0;
-      width: 64px;
-
+      width: vars.$one-twelfth;
+      &.imageTwo {
+        bottom: 5vh;
+        left: vars.$four-twelfths;
+      }
       @include vars.tablet-and-lower {
         display: none;
       }
@@ -167,13 +170,10 @@
     }
 
     .parallaxImage {
+      bottom: 10vh;
       position: absolute;
       right: 64px;
-      bottom: 36px;
-      width: vars.$one-twelfth;
-      &.imageTwo {
-        width: vars.$three-twelfths;
-      }
+      width: vars.$two-twelfths;
 
       @include vars.tablet-and-lower {
         display: none;

@@ -38,7 +38,7 @@ export default function Home({
       <div className={styles.container}>
         {introSection && (
           <Element name="introSection">
-            <IntroSection section={introSection} />
+            <IntroSection section={introSection} parallax={true} />
           </Element>
         )}
         {pageSections && renderPageSections(pageSections, orderButton)}

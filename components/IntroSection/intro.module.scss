@@ -58,4 +58,45 @@
 .mainImage {
   width: vars.$full;
   display: flex;
+  justify-content: center;
+}
+
+.mainImageIcon {
+  border-radius: 50% 50%;
+  overflow: hidden;
+  position: relative;
+  margin: 1rem;
+  max-width: 640px;
+  .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.mainImageIconOuter {
+  border-radius: 50% 50%;
+  border: 1px solid;
+  margin: 1rem;
+}
+
+.parallaxIconOne {
+  position: absolute;
+  left: vars.$one-twelfth;
+  transform: translateY(25rem);
+  width: vars.$one-twelfth;
+  @include vars.tablet-and-lower {
+    display: none;
+  }
+}
+
+.parallaxIconTwo {
+  position: absolute;
+  right: vars.$one-twelfth;
+  transform: translateY(75rem);
+  width: vars.$one-twelfth;
+  @include vars.tablet-and-lower {
+    display: none;
+  }
 }
