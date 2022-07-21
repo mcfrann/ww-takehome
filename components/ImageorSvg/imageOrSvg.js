@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ReactSVG } from "react-svg";
 
-export const ImageOrSvg = (image) => {
+export const ImageOrSvg = (image, cover) => {
   const alt = image.image?.fields.title || "no alt description";
   let details = image.image?.fields.file.details.image;
   const src = `https:${image.image?.fields.file.url}`;
@@ -14,10 +14,10 @@ export const ImageOrSvg = (image) => {
       <ReactSVG
         beforeInjection={(svg) => {
           svg.classList.add(`svg`);
-          svg.removeAttribute('id');
-          const tagG = svg.getElementsByTagName('g');
+          svg.removeAttribute("id");
+          const tagG = svg.getElementsByTagName("g");
           for (let index = 0; index < tagG.length; index++) {
-            tagG.item(index).removeAttribute('id');
+            tagG.item(index).removeAttribute("id");
           }
         }}
         src={src}
@@ -31,7 +31,7 @@ export const ImageOrSvg = (image) => {
         width={width}
         height={height}
         layout={"intrinsic"}
-        objectFit={"contain"}
+        objectFit={cover ? "cover" : "contain"}
       />
     );
   }

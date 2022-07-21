@@ -158,7 +158,7 @@ export const VisitSection = ({ section, parallax }) => {
       </div>
       <div className={styles.imageColumn}>
         <div className={styles.image}>
-          <ImageOrSvg image={sectionImage} />
+          <ImageOrSvg image={sectionImage} cover={true} />
         </div>
       </div>
     </section>

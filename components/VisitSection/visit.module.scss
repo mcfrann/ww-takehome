@@ -182,16 +182,17 @@
   }
 
   .image {
+    height: 100vh;
     position: sticky;
     top: 0;
     z-index: 10;
+    span,
+    img {
+      height: 100% !important;
+      width: 100% !important;
+    }
     @include vars.tablet-and-lower {
       @include vars.flexbox();
-      span,
-      img {
-        height: 100% !important;
-        width: 100% !important;
-      }
     }
   }
 }
