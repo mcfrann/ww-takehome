@@ -28,7 +28,7 @@ export const Layout = ({
         announcementBar={announcementBar}
       />
       <main className={styles.main}>{children}</main>
-      <Footer footer={footer} />
+      <Footer footer={footer} parallax={true} />
     </div>
   );
 };

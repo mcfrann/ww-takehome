@@ -2,27 +2,27 @@
 
 .footer {
   @include vars.flexbox();
-  @include vars.justify-content(center);
+  @include vars.justify-content(start);
   @include vars.align-items(center);
   @include vars.flex-direction(column);
   background-color: vars.$pink;
   color: vars.$black;
   padding: 90px 0px 0 0;
+<<<<<<< HEAD
+=======
+  position: sticky;
+>>>>>>> 73504aaedfc93714af8527011ea4121f93005917
   width: vars.$full;
-  background-color: vars.$black;
-  padding: 90px 0px 30px 0;
-  color: white;
 
   .footerBody {
-    width: vars.$six-twelfths;
-    color: vars.$white;
+    color: vars.$black;
     text-align: center;
     width: vars.$ten-twelfths;
 
     .headline {
       @include vars.header-font();
-      font-size: 36px;
-      line-height: 43px;
+      font-size: 1.5rem;
+      margin-bottom: 0;
       @include vars.tablet-and-lower {
         font-size: 24px;
         line-height: 29px;
@@ -31,10 +31,9 @@
 
     .bodyText,
     .emailText {
-      @include vars.body-font();
+      @include vars.nav-font();
       font-size: 24px;
       margin: 0;
-
       @include vars.tablet-and-lower {
         font-size: 18px;
       }
@@ -46,6 +45,7 @@
       }
     }
     .emailText {
+      @include vars.header-font();
       text-transform: lowercase;
     }
 
@@ -61,6 +61,7 @@
         @include vars.flex-direction(column);
         @include vars.flexbox();
         @include vars.justify-content(center);
+
         max-width: 600px;
         margin: 0 auto;
         text-align: left;
@@ -71,31 +72,31 @@
         }
 
         label {
-          @include vars.body-font();
+          @include vars.nav-font();
           font-size: 18px;
           margin: 0;
         }
 
         div {
           @include vars.flexbox();
-
+          border: 1px solid vars.$black;
           @include vars.tablet-and-lower {
             @include vars.flex-direction(column);
           }
 
           input {
-            @include vars.body-font();
+            @include vars.nav-font();
             font-size: 24px;
             text-align: center;
             padding: 8px;
-            background-color: vars.$white;
+            background-color: vars.$pink;
             border: none;
             outline: none;
             width: 100%;
-            color: vars.$red;
+            color: vars.$black;
 
             &::placeholder {
-              color: vars.$red;
+              color: vars.$black;
             }
           }
 
@@ -104,9 +105,9 @@
             font-size: 24px;
             text-align: center;
             padding: 8px 30px;
-            border: 3px solid vars.$red;
-            background-color: vars.$red;
-            color: vars.$white;
+            border: 3px solid vars.$black;
+            background-color: vars.$black;
+            color: vars.$pink;
             &:hover {
               background: vars.$white;
               color: vars.$black;
@@ -189,5 +190,59 @@
 
   button {
     cursor: pointer;
+  }
+}
+
+.parallaxFooter {
+  @include vars.flexbox();
+  @include vars.justify-content(center);
+  @include vars.align-items(center);
+  @include vars.position(relative);
+  background-color: vars.$green;
+  width: vars.$full;
+  margin-top: 60px;
+  padding-top: 60px;
+  .socialContainer {
+    background: vars.$pink;
+    border: 1px solid vars.$black;
+    border-top-right-radius: 350px;
+    border-top-left-radius: 350px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: none;
+    color: vars.$green;
+    height: 200px;
+    width: 400px;
+    .followTitle {
+      @include vars.flexbox();
+      @include vars.justify-content(center);
+      padding-top: 20px;
+      svg {
+        width: 300px;
+        path {
+          fill: vars.$black;
+        }
+      }
+    }
+    .socials {
+      margin-top: 0;
+      a {
+        padding-top: 0;
+      }
+      .socialIconContianer {
+        background: vars.$black;
+        border: 1px solid vars.$black;
+
+        svg path {
+          fill: vars.$pink;
+        }
+        &:hover {
+          background: vars.$pink;
+          svg path {
+            fill: vars.$black;
+          }
+        }
+      }
+    }
   }
 }

@@ -36,6 +36,7 @@ $button-font-style: normal;
   font-family: $header-font-family;
   font-style: $header-font-style;
   text-transform: lowercase;
+  font-weight: normal;
 }
 
 @mixin subhead-font() {
@@ -43,6 +44,7 @@ $button-font-style: normal;
   font-weight: $subhead-font-weight;
   font-style: $subhead-font-style;
   text-transform: uppercase;
+  font-weight: normal;
 }
 
 @mixin body-font() {
@@ -50,6 +52,7 @@ $button-font-style: normal;
   font-weight: $body-font-weight;
   font-style: $body-font-style;
   text-transform: uppercase;
+  font-weight: normal;
 }
 
 @mixin nav-font() {
@@ -57,6 +60,7 @@ $button-font-style: normal;
   font-weight: $nav-font-weight;
   font-style: $nav-font-style;
   text-transform: uppercase;
+  font-weight: normal;
 }
 
 @mixin button-font() {
@@ -64,6 +68,7 @@ $button-font-style: normal;
   font-weight: $button-font-weight;
   font-style: $button-font-style;
   text-transform: uppercase;
+  font-weight: normal;
 }
 
 // OTHER SET STYLES
@@ -305,7 +310,6 @@ $full: 100vw;
   -ms-align-self: $align;
   align-self: $align;
 }
-
 
 // Positioning
 @mixin fixedPosition($top, $right, $bottom, $left, $width) {
