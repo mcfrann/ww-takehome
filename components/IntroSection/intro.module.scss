@@ -56,17 +56,17 @@
 }
 
 .mainImage {
-  width: vars.$full;
-  display: flex;
+  @include vars.flexbox();
   @include vars.justify-content(center);
+  width: vars.$full;
 }
 
 .mainImageIcon {
   border-radius: 50% 50%;
-  overflow: hidden;
-  position: relative;
   margin: 1rem;
   max-width: 640px;
+  overflow: hidden;
+  position: relative;
   .icon {
     position: absolute;
     top: 50%;

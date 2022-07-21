@@ -45,9 +45,9 @@ export const IntroSection = ({ section, parallax }) => {
     <section className={`${styles.introSection}`} ref={sectionRef}>
       <div className={styles.introContent}>
         {logoIcon && (
-          <dic className={styles.logoIcon}>
+          <div className={styles.logoIcon}>
             <ImageOrSvg image={logoIcon} />
-          </dic>
+          </div>
         )}
         <div className={styles.description}>
           <h1 className={styles.headline}>{headline}</h1>

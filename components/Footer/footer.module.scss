@@ -5,6 +5,9 @@
   @include vars.justify-content(center);
   @include vars.align-items(center);
   @include vars.flex-direction(column);
+  background-color: vars.$pink;
+  color: vars.$black;
+  padding: 90px 0px 0 0;
   width: vars.$full;
   background-color: vars.$black;
   padding: 90px 0px 30px 0;
