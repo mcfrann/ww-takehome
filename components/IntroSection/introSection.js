@@ -33,7 +33,7 @@ export const IntroSection = ({ section, parallax }) => {
     gsap.to(iconTwoRef.current, {
       y: "20vh",
       scrollTrigger: {
-        start: "top center",
+        start: "top top",
         end: "bottom top",
         trigger: sectionRef.current,
         scrub: true,
