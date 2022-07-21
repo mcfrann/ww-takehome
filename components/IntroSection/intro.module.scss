@@ -77,7 +77,7 @@
 
 .mainImageIconOuter {
   border-radius: 50% 50%;
-  border: 1px solid;
+  border: vars.$border-width solid;
   margin: 1rem;
 }
 
@@ -111,7 +111,7 @@
 
 .mainImageIconOuter {
   border-radius: 50% 50%;
-  border: 1px solid;
+  border: vars.$border-width solid;
   margin: 1rem;
   position: relative;
   .icon {

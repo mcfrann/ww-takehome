@@ -75,7 +75,7 @@
 
         div {
           @include vars.flexbox();
-          border: 1px solid vars.$black;
+          border: vars.$border-width solid vars.$black;
           @include vars.tablet-and-lower {
             @include vars.flex-direction(column);
           }
@@ -101,7 +101,7 @@
             font-size: 24px;
             text-align: center;
             padding: 8px 30px;
-            border: 3px solid vars.$black;
+            border: vars.$border-width solid vars.$black;
             background-color: vars.$black;
             color: vars.$pink;
             &:hover {
@@ -200,7 +200,7 @@
   padding-top: 60px;
   .socialContainer {
     background: vars.$pink;
-    border: 1px solid vars.$black;
+    border: vars.$border-width solid vars.$black;
     border-top-right-radius: 350px;
     border-top-left-radius: 350px;
     border-bottom-left-radius: 0;
@@ -227,7 +227,7 @@
       }
       .socialIconContianer {
         background: vars.$black;
-        border: 1px solid vars.$black;
+        border: vars.$border-width solid vars.$black;
 
         svg path {
           fill: vars.$pink;

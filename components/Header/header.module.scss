@@ -4,6 +4,7 @@
   @include vars.nav-font();
   background-color: vars.$white;
   color: vars.$maroon;
+  font-size: 1.4rem;
   margin-top: 0;
   position: sticky;
   top: 0;
@@ -144,7 +145,7 @@
   .navContainer {
     @include vars.flexbox();
     @include vars.justify-content(center);
-    padding: 10px 0;
+    padding: 20px 0 10px 0;
     .nav {
       width: 100%;
       display: flex;
@@ -192,15 +193,15 @@
   .orderButton {
     @include vars.button-font();
     border-radius: 20px;
-    background-color: vars.$red;
-    border: 0.5px solid vars.$red;
-    color: vars.$white;
+    background-color: vars.$white;
+    border: vars.$border-width solid vars.$black;
+    color: vars.$black;
     padding: 3px 24px;
     cursor: pointer;
     &:hover {
-      background: vars.$pink;
-      border-color: vars.$pink;
-      color: vars.$black;
+      background: vars.$black;
+      border-color: vars.$black;
+      color: vars.$white;
     }
 
     @include vars.tablet-and-lower {
@@ -215,7 +216,7 @@
   }
 
   .logoContainer {
-    max-width: 150px;
+    max-width: 130px;
     width: vars.$two-twelfths;
     @include vars.tablet-and-lower {
       width: 120px;

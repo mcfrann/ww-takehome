@@ -83,7 +83,7 @@
         padding: 3px 50px;
         border-radius: 20px;
         background-color: vars.$black;
-        border: 0.5px solid vars.$black;
+        border: vars.$border-width solid vars.$black;
         color: vars.$white;
         font-size: 2rem;
         transition: all 0.15s linear;

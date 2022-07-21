@@ -30,7 +30,7 @@
     }
     button {
       cursor: pointer;
-      border: 1px solid vars.$black;
+      border: vars.$border-width solid vars.$black;
       border-radius: 30px;
       border-width: 1px;
       background: none;
