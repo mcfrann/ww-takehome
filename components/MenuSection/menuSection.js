@@ -1,14 +1,79 @@
+import React from "react";
 import styles from "./menu.module.scss";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { ImageOrSvg } from "../ImageOrSvg/imageOrSvg.js";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export const MenuSection = ({ section, orderButton, parallax }) => {
-  const { menuImage, parallaxIconOne, menuTitle } = section.fields;
+  const {
+    menuImage,
+    parallaxIconOne,
+    menuTitle,
+    foodHighlights,
+    headline,
+    menuDownloadLink,
+  } = section.fields;
+
+  React.useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.fromTo(
+      "#menu .parallax",
+      {
+        rotate: (i, target) => (target.dataset.index % 2 ? "20" : "-20"),
+        y: "10rem",
+      },
+      {
+        y: "-10rem",
+        rotate: (i, target) => (target.dataset.index % 2 ? "-20" : "20"),
+        scrollTrigger: {
+          trigger: "#menu .parallax",
+          scrub: true,
+        },
+      }
+    );
+  }, []);
+
   return (
     <section id={menuTitle} className={styles.menuSection}>
+      {headline && <div className={styles.buttonHeadline}>{headline}</div>}
+      {menuDownloadLink && (
+        <a
+          href={menuDownloadLink.fields.buttonLinkUrl}
+          download
+          className={styles.menuDownloadLink}
+        >
+          <button className={styles.downloadButton}>
+            {menuDownloadLink.fields.buttonTitle.toUpperCase()}
+          </button>
+        </a>
+      )}
       {menuImage && (
         <div className={styles.menuEmbedImage}>
           <ImageOrSvg image={menuImage} />
+        </div>
+      )}
+      {foodHighlights && (
+        <div className={styles.foodHighlights} ref={foodHighlights}>
+          {foodHighlights.map((food, index) => {
+            const icon = food.fields.icon;
+            const iconDetails = icon.fields.file.details.image;
+            const wide = iconDetails.width > iconDetails.height;
+            return (
+              <div key={index} className={styles.food}>
+                <span className={styles.text}>
+                  <div
+                    className={`${styles.icon} ${
+                      index % 2 === 1 ? styles.left : styles.right
+                    } ${wide && styles.wide} parallax`}
+                    data-index={index}
+                  >
+                    <ImageOrSvg image={food.fields.icon} />
+                  </div>
+                  {food.fields.title}
+                </span>
+              </div>
+            );
+          })}
         </div>
       )}
       {!parallax && (

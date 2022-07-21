@@ -16,6 +16,34 @@
     }
   }
 
+  .buttonHeadline {
+    @include vars.header-font();
+    font-size: 1.2rem;
+    padding: 0 0 10px 0;
+    text-transform: lowercase;
+  }
+
+  .menuDownloadLink {
+    padding: 0 0 90px 0;
+    @include vars.mobile() {
+      padding: 2.5rem 0;
+    }
+    button {
+      cursor: pointer;
+      border: 1px solid vars.$black;
+      border-radius: 30px;
+      border-width: 1px;
+      background: none;
+      padding: 8px 30px;
+      font-family: vars.$subhead-font-family;
+      font-size: 1.5rem;
+      &:hover {
+        background: vars.$pink;
+        border-color: vars.$pink;
+      }
+    }
+  }
+
   .iconsContainer {
     width: 100%;
     .parallaxIconOne {
@@ -26,6 +54,7 @@
       }
     }
   }
+
   .orderButton {
     @include vars.flexbox();
     @include vars.align-items(center);
@@ -85,6 +114,50 @@
 
     @include vars.tablet-and-lower {
       @include vars.justify-content(center);
+    }
+  }
+  .foodHighlights {
+    @include vars.flexbox();
+    @include vars.flex-direction(column);
+    @include vars.align-items(center);
+    @include vars.justify-content(center);
+    .food {
+      width: 100%;
+      text-align: center;
+      .icon {
+        position: absolute;
+        width: vars.$one-twelfth;
+        &.wide {
+          width: vars.$two-twelfths;
+        }
+        @include vars.mobile() {
+          display: none;
+        }
+      }
+      .left {
+        left: calc(-100vw * 1 / 12);
+        &.wide {
+          left: calc(-100vw * 2 / 12);
+        }
+      }
+      .right {
+        right: calc(-100vw * 1 / 12);
+        &.wide {
+          right: calc(-100vw * 2 / 12);
+        }
+      }
+      .text {
+        font-size: 8rem;
+        font-family: vars.$subhead-font-family;
+        margin-top: 20px;
+        position: relative;
+        @include vars.tablet-and-lower {
+          margin-top: 10px;
+        }
+        @include vars.mobile() {
+          font-size: 4rem;
+        }
+      }
     }
   }
 }
