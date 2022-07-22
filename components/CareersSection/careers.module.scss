@@ -52,7 +52,7 @@
         margin-bottom: 100px;
         p {
           @include vars.nav-font();
-          font-weight: 500;
+          font-weight: 400;
         }
         @include vars.tablet-and-lower {
           margin-bottom: 74px;
@@ -95,7 +95,7 @@
       }
       .applyButton {
         display: inline-block;
-        padding: 8px 30px;
+        padding: 8px 60px;
         border-radius: 30px;
         background-color: vars.$black;
         border: vars.$border-width solid vars.$white;

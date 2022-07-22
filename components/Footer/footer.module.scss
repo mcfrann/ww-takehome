@@ -5,7 +5,7 @@
   @include vars.justify-content(start);
   @include vars.align-items(center);
   @include vars.flex-direction(column);
-  background-color: vars.$pink;
+  background-color: vars.$white;
   color: vars.$black;
   padding: 90px 0px 0 0;
   width: vars.$full;
@@ -28,6 +28,7 @@
     .bodyText,
     .emailText {
       @include vars.nav-font();
+      font-weight: 400;
       font-size: 24px;
       margin: 0;
       @include vars.tablet-and-lower {
@@ -36,7 +37,7 @@
 
       a {
         &:hover {
-          color: vars.$pink;
+          color: vars.$maroon;
         }
       }
     }
@@ -69,6 +70,7 @@
 
         label {
           @include vars.nav-font();
+          font-weight: 400;
           font-size: 18px;
           margin: 0;
         }
@@ -82,10 +84,11 @@
 
           input {
             @include vars.nav-font();
+            font-weight: 400;
             font-size: 24px;
             text-align: center;
             padding: 8px;
-            background-color: vars.$pink;
+            background-color: vars.$white;
             border: none;
             outline: none;
             width: 100%;
@@ -101,9 +104,12 @@
             font-size: 24px;
             text-align: center;
             padding: 8px 30px;
-            border: vars.$border-width solid vars.$black;
+            border-top: none;
+            border-right: none;
+            border-bottom: none;
+            border-left: vars.$border-width solid vars.$black;
             background-color: vars.$black;
-            color: vars.$pink;
+            color: vars.$white;
             &:hover {
               background: vars.$white;
               color: vars.$black;
