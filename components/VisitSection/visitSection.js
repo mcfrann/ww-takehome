@@ -57,7 +57,7 @@ export const VisitSection = ({ section, parallax }) => {
     return (
       <p>
         {addressLine1}
-        {addressLine2 && !parallax ? <br /> : " "}
+        {addressLine2 && <br />}
         {addressLine2 && addressLine2}
         <br />
         {city}, {stateAbbreviation} {zip}

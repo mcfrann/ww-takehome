@@ -6,8 +6,16 @@
   @include vars.align-items(center);
   background-color: vars.$black;
   min-height: 100vh;
-  padding-bottom: 120px;
+
   position: relative;
+  .aboutWrapper {
+    @include vars.flexbox();
+    @include vars.flex-direction(column);
+    @include vars.justify-content(center);
+    @include vars.align-items(center);
+    width: 100vw;
+    padding-bottom: 120px;
+  }
   @include vars.tablet-and-lower {
     padding-bottom: 90px;
   }
@@ -24,17 +32,16 @@
     }
 
     .title {
-      @include vars.header-font;
-      font-size: 36px;
+      font-size: 1.7rem;
 
       @include vars.tablet-and-lower {
-        font-size: 24px;
+        font-size: 1.7rem;
       }
     }
 
     .copy {
       @include vars.body-font;
-      font-size: 24px;
+      font-size: 1.7rem;
       margin-top: 60px;
 
       @include vars.tablet-and-lower {
@@ -56,6 +63,25 @@
       position: relative;
       right: auto;
       width: vars.$three-twelfths;
+    }
+  }
+  &.parallax {
+    background: vars.$white;
+    border-top: vars.$border-width solid vars.$black;
+    border-bottom: vars.$border-width solid vars.$black;
+    padding: 15px;
+    .aboutWrapper {
+      border: vars.$border-width solid vars.$black;
+      height: calc(100vh - 30px);
+      padding: 60px;
+      width: calc(100vw - 30px);
+    }
+    .aboutSectionContainer {
+      color: vars.$black;
+      max-width: 1000px;
+      .copy {
+        font-size: 2rem;
+      }
     }
   }
 }

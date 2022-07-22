@@ -23,7 +23,11 @@ export const renderPageSections = (pageSections, orderButton) => {
     } else if (id == "aboutSection") {
       return (
         <Element name={section.fields.menuTitle} key={`section-${i}`}>
-          <AboutSection section={section} key={`about-section-${i}`} />
+          <AboutSection
+            section={section}
+            key={`about-section-${i}`}
+            parallax={true}
+          />
         </Element>
       );
     } else if (id == "careersSection") {
@@ -49,6 +53,7 @@ export const renderPageSections = (pageSections, orderButton) => {
           section={section}
           key={`image-section-${i}`}
           key={`section-${i}`}
+          parallax={true}
         />
       );
     }
