@@ -16,7 +16,7 @@ export const AboutSection = ({ section, parallax }) => {
         </div>
         {aboutIcon && (
           <div className={styles.aboutIcon}>
-            <ImageOrSvg image={aboutIcon} />}
+            <ImageOrSvg image={aboutIcon} />
           </div>
         )}
       </div>
