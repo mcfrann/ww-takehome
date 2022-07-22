@@ -34,7 +34,7 @@ export const VisitSection = ({ section, parallax }) => {
         bottom: "100vh",
         scrollTrigger: {
           trigger: locationSection.current,
-          start: "top center",
+          start: "top top",
           end: "bottom center",
           toggleActions: "play none none none",
           scrub: true,
@@ -44,7 +44,7 @@ export const VisitSection = ({ section, parallax }) => {
         bottom: "50vh",
         scrollTrigger: {
           trigger: locationSection.current,
-          start: "top bottom",
+          start: "top top",
           end: "bottom top",
           toggleActions: "play none none none",
           scrub: true,
@@ -57,7 +57,7 @@ export const VisitSection = ({ section, parallax }) => {
     return (
       <p>
         {addressLine1}
-        {addressLine2 && <br />}
+        {addressLine2 && !parallax ? <br /> : " "}
         {addressLine2 && addressLine2}
         <br />
         {city}, {stateAbbreviation} {zip}
@@ -109,9 +109,7 @@ export const VisitSection = ({ section, parallax }) => {
                       return (
                         <div key={_index} className={styles.hoursContainer}>
                           <p>
-                            {hours.startDay}-{hours.endDay}
-                          </p>
-                          <p>
+                            {hours.startDay}-{hours.endDay} &nbsp;
                             {hours.startTime}-{hours.endTime}
                           </p>
                         </div>
@@ -139,9 +137,21 @@ export const VisitSection = ({ section, parallax }) => {
             </div>
           )}
         </div>
-        <div className={styles.visitSection}>
-          <h2 className={styles.hoursTitle}>VISIT</h2>
-          <div className={styles.hoursContainer}>{renderAddressWrap()}</div>
+        <div
+          className={`${styles.visitSection} ${parallax && styles.parallax}`}
+        >
+          {parallax ? (
+            <h3 className={styles.hoursHeadline}>location</h3>
+          ) : (
+            <h2 className={styles.hoursTitle}>VISIT</h2>
+          )}
+          <div
+            className={`${styles.hoursContainer} ${
+              parallax && styles.parallax
+            }`}
+          >
+            {renderAddressWrap()}
+          </div>
           <div className={styles.mapsContainer}>
             {mapLocation && <GoogleMap latandLong={mapLocation} />}
           </div>
