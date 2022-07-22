@@ -1,4 +1,4 @@
-import { ImageOrSvg } from "../ImageOrSvg/imageOrSvg";
+import { ImageOrSvg } from "../ImageorSvg/imageOrSvg";
 import styles from "./image.module.scss";
 
 export const ImageSection = ({ section, parallax }) => {

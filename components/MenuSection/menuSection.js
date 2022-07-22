@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./menu.module.scss";
-import { ImageOrSvg } from "../ImageOrSvg/imageOrSvg.js";
+import { ImageOrSvg } from "../ImageorSvg/imageOrSvg.js";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 

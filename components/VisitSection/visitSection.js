@@ -1,6 +1,6 @@
 import styles from "./visit.module.scss";
 import { ImageOrSvg } from "../ImageorSvg/imageOrSvg";
-import GoogleMap from "../../Components/Location/Map";
+import GoogleMap from "../Location/Map";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useRef, useEffect } from "react";
@@ -51,7 +51,7 @@ export const VisitSection = ({ section, parallax }) => {
         },
       });
     }
-  }, []);
+  }, [parallax, iconOneRef, iconTwoRef, locationSection]);
 
   const renderAddress = () => {
     return (

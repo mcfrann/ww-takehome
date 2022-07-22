@@ -1,5 +1,5 @@
 import styles from "./intro.module.scss";
-import { ImageOrSvg } from "../ImageOrSvg/imageOrSvg.js";
+import { ImageOrSvg } from "../ImageorSvg/imageOrSvg.js";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useRef, useEffect } from "react";
