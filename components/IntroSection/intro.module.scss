@@ -11,10 +11,10 @@
     @include vars.align-items(center);
     @include vars.justify-content(center);
     @include vars.flex-direction(column);
-    padding: 60px 0;
+    padding: 60px 0 30px 0;
     @include vars.tablet-and-lower {
       padding: 32px;
-      padding: 58px 16px;
+      padding: 20px 16px;
     }
 
     .logoIcon {
@@ -37,15 +37,13 @@
       .headline {
         font-weight: vars.$header-font-weight;
         @include vars.tablet-and-lower {
-          font-size: 24px;
+          font-size: 1.7rem;
         }
       }
 
       .subhead {
-        font-weight: vars.$subhead-font-weight;
-        @include vars.tablet-and-lower {
-          font-size: 24px;
-        }
+        @include vars.subhead-font();
+        @include vars.title-font-size();
       }
 
       @include vars.tablet-and-lower {
@@ -63,6 +61,9 @@
 
 .mainImageIcon {
   border-radius: 50% 50%;
+  border: vars.$border-width solid vars.$black;
+  height: 100vh;
+  min-height: 500px;
   margin: 1rem;
   max-width: 640px;
   overflow: hidden;
@@ -73,11 +74,14 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  @include vars.tablet-and-lower {
+    height: 56vh;
+  }
 }
 
 .mainImageIconOuter {
   border-radius: 50% 50%;
-  border: 1px solid;
+  border: vars.$border-width solid vars.$black;
   margin: 1rem;
 }
 
@@ -94,7 +98,7 @@
 .parallaxIconTwo {
   position: absolute;
   right: vars.$one-twelfth;
-  transform: translateY(75vh);
+  transform: translateY(100vh);
   width: vars.$one-twelfth;
   @include vars.tablet-and-lower {
     display: none;
@@ -111,7 +115,7 @@
 
 .mainImageIconOuter {
   border-radius: 50% 50%;
-  border: 1px solid;
+  border: vars.$border-width solid;
   margin: 1rem;
   position: relative;
   .icon {
@@ -120,5 +124,9 @@
     left: vars.$one-twelfth;
     transform: translate(-50%, -50%);
     width: vars.$two-twelfths;
+    @include vars.tablet-and-lower {
+      left: vars.$two-twelfths;
+      width: vars.$five-twelfths;
+    }
   }
 }

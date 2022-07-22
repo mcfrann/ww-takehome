@@ -27,4 +27,32 @@
   .stretch {
     width: vars.$full;
   }
+  &.parallax {
+    background: vars.$white;
+    div {
+      @include vars.justify-content(center);
+      border-bottom: vars.$border-width solid vars.$black;
+
+      border-right: vars.$border-width solid vars.$black;
+      padding: 15px;
+      &:first-child {
+        border-left: vars.$border-width solid vars.$black;
+      }
+      span,
+      img {
+        height: calc(70vh - 30px) !important;
+        object-fit: cover !important;
+        min-height: calc(70vh - 30px) !important;
+        @include vars.tablet-and-lower {
+          height: calc(25vh - 30px) !important;
+          min-height: calc(25vh - 30px) !important;
+        }
+      }
+      img {
+        &:last-of-type {
+          border: vars.$border-width solid vars.$black !important;
+        }
+      }
+    }
+  }
 }

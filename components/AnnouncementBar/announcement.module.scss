@@ -5,6 +5,7 @@
   @include flexbox();
   @include justify-content(center);
   background-color: $pink;
+  color: $black;
   padding: 15px;
   width: 100%;
   z-index: 10;
@@ -20,7 +21,8 @@
   }
 
   .announcement {
-    font-family: $subhead-font-family;
+    @include vars.nav-font();
+    font-weight: 400;
     font-size: 1.25rem;
     text-align: center;
     margin: 0;
@@ -53,7 +55,7 @@
       transition: 0.5s ease-in-out;
       display: block;
       position: absolute;
-      height: 3px;
+      height: $border-width;
       width: 100%;
       background: $black;
       border-radius: 0px;

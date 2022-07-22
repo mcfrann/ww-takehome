@@ -5,7 +5,7 @@
   @include vars.align-items(center);
   @include vars.flex-direction(column);
   background-color: vars.$white;
-
+  color: vars.$black;
   .menuEmbedImage,
   .iconsContainer {
     max-width: 1200px;
@@ -18,25 +18,24 @@
 
   .buttonHeadline {
     @include vars.header-font();
-    font-size: 1.2rem;
+    @include vars.subhead-font-size();
     padding: 0 0 10px 0;
     text-transform: lowercase;
   }
 
   .menuDownloadLink {
     padding: 0 0 90px 0;
-    @include vars.mobile() {
-      padding: 2.5rem 0;
-    }
+
     button {
       cursor: pointer;
-      border: 1px solid vars.$black;
+      border: vars.$border-width solid vars.$black;
       border-radius: 30px;
       border-width: 1px;
       background: none;
-      padding: 8px 30px;
       font-family: vars.$subhead-font-family;
-      font-size: 1.5rem;
+      font-size: 2rem;
+      letter-spacing: 0.05rem;
+      padding: 8px 30px;
       &:hover {
         background: vars.$pink;
         border-color: vars.$pink;
@@ -60,11 +59,11 @@
     @include vars.align-items(center);
     @include vars.justify-content(center);
     @include vars.button-font();
+    @include vars.title-font-size();
     background: vars.$red;
     border-radius: 50%;
     color: vars.$white;
     font-weight: bold;
-    font-size: 1.2rem;
     height: vars.$two-twelfths;
     margin: 60px;
     transform: rotate(-10deg);
@@ -157,6 +156,18 @@
         @include vars.mobile() {
           font-size: 4rem;
         }
+      }
+    }
+  }
+  .mobileIcon {
+    display: none;
+    @include vars.mobile() {
+      display: block;
+      height: 30vh;
+      margin: 60px 0 30px 0;
+      span,
+      img {
+        height: 30vh !important;
       }
     }
   }
