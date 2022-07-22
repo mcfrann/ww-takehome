@@ -19,7 +19,7 @@
     display: none;
     width: vars.$full;
     height: 93px;
-    padding: 10px 0;
+    padding: 30px 0 10px 0;
     @include vars.tablet-and-lower {
       @include vars.flexbox();
       @include vars.justify-content(center);
@@ -38,7 +38,7 @@
         background: vars.$black;
         border-radius: 9px;
         display: block;
-        height: 3px;
+        height: vars.$border-width;
         left: 0;
         opacity: 1;
         position: absolute;
@@ -205,6 +205,7 @@
     }
 
     @include vars.tablet-and-lower {
+      background: vars.$pink;
       bottom: 22px;
       border-radius: 30px;
       font-size: 1.5rem;
@@ -212,6 +213,9 @@
       padding: 12px 24px;
       width: vars.$ten-twelfths;
       text-align: center;
+      &:hover {
+        background: vars.$white;
+      }
     }
   }
 
@@ -219,7 +223,7 @@
     max-width: 130px;
     width: vars.$two-twelfths;
     @include vars.tablet-and-lower {
-      width: 120px;
+      width: 100px;
     }
   }
 }

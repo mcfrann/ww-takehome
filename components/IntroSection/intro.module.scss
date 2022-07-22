@@ -14,7 +14,7 @@
     padding: 60px 0 30px 0;
     @include vars.tablet-and-lower {
       padding: 32px;
-      padding: 58px 16px;
+      padding: 20px 16px;
     }
 
     .logoIcon {
@@ -77,6 +77,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  @include vars.tablet-and-lower {
+    height: 56vh;
+  }
 }
 
 .mainImageIconOuter {
@@ -124,5 +127,9 @@
     left: vars.$one-twelfth;
     transform: translate(-50%, -50%);
     width: vars.$two-twelfths;
+    @include vars.tablet-and-lower {
+      left: vars.$two-twelfths;
+      width: vars.$five-twelfths;
+    }
   }
 }

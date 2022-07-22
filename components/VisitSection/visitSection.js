@@ -84,7 +84,7 @@ export const VisitSection = ({ section, parallax }) => {
   return (
     <section
       id={menuTitle}
-      className={styles.visitSection}
+      className={`${styles.visitSection} ${parallax && styles.parallax}`}
       ref={locationSection}
     >
       <div className={styles.infoColumn}>
