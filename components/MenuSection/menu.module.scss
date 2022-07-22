@@ -18,7 +18,7 @@
 
   .buttonHeadline {
     @include vars.header-font();
-    font-size: 1.2rem;
+    font-size: 1.7rem;
     padding: 0 0 10px 0;
     text-transform: lowercase;
   }
@@ -34,9 +34,10 @@
       border-radius: 30px;
       border-width: 1px;
       background: none;
-      padding: 8px 30px;
       font-family: vars.$subhead-font-family;
-      font-size: 1.5rem;
+      font-size: 2rem;
+      letter-spacing: 0.05rem;
+      padding: 8px 30px;
       &:hover {
         background: vars.$pink;
         border-color: vars.$pink;
@@ -64,7 +65,7 @@
     border-radius: 50%;
     color: vars.$white;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 2.4rem;
     height: vars.$two-twelfths;
     margin: 60px;
     transform: rotate(-10deg);
