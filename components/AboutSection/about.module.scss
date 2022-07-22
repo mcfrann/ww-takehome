@@ -6,8 +6,10 @@
   @include vars.align-items(center);
   background-color: vars.$black;
   min-height: 100vh;
-
   position: relative;
+  @include vars.tablet-and-lower {
+    min-height: 50vh;
+  }
   .aboutWrapper {
     @include vars.flexbox();
     @include vars.flex-direction(column);
@@ -32,21 +34,16 @@
     }
 
     .title {
-      font-size: 1.7rem;
-
-      @include vars.tablet-and-lower {
-        font-size: 1.7rem;
-      }
+      @include vars.subhead-font-size();
     }
 
     .copy {
       @include vars.body-font;
-      font-size: 1.7rem;
+      @include vars.subhead-font-size();
       margin-top: 60px;
 
       @include vars.tablet-and-lower {
         margin-top: 31px;
-        font-size: 18px;
       }
     }
   }
@@ -75,12 +72,22 @@
       height: calc(100vh - 30px);
       padding: 30px;
       width: calc(100vw - 30px);
+      @include vars.tablet-and-lower {
+        height: auto;
+        min-height: calc(50vh - 30px);
+      }
     }
     .aboutSectionContainer {
       color: vars.$black;
       max-width: 1000px;
+      @include vars.tablet-and-lower {
+        max-width: vars.$nine-twelfths;
+      }
       .copy {
         font-size: 2rem;
+        @include vars.tablet-and-lower {
+          font-size: 1.5rem;
+        }
       }
     }
   }

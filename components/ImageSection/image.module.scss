@@ -43,6 +43,10 @@
         height: calc(70vh - 30px) !important;
         object-fit: cover !important;
         min-height: calc(70vh - 30px) !important;
+        @include vars.tablet-and-lower {
+          height: calc(25vh - 30px) !important;
+          min-height: calc(25vh - 30px) !important;
+        }
       }
       img {
         &:last-of-type {

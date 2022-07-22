@@ -76,6 +76,13 @@ export const MenuSection = ({ section, orderButton, parallax }) => {
           })}
         </div>
       )}
+      {parallax && (
+        <div className={styles.mobileIcon}>
+          <ImageOrSvg
+            image={foodHighlights[foodHighlights.length - 1].fields.icon}
+          />
+        </div>
+      )}
       {!parallax && (
         <div className={styles.menuFooter}>
           <div className={styles.iconsContainer}>

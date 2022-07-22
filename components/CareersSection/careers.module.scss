@@ -7,10 +7,10 @@
   padding-top: 0;
   .marquee {
     @include vars.subhead-font();
+    @include vars.title-font-size();
     font-weight: 300;
     background-color: vars.$pink;
     padding: 20px 0;
-    font-size: 2.4rem;
 
     span {
       margin-right: 16px;
@@ -34,19 +34,10 @@
     }
 
     .copyBody {
-      font-size: 1.7rem;
+      @include vars.subhead-font-size();
       max-width: 800px;
       width: vars.$eight-twelfths;
       color: vars.$white;
-
-      @include vars.tablet-and-lower {
-        font-size: 18px;
-        width: vars.$full;
-        max-width: 335px;
-        letter-spacing: 0.05em;
-        line-height: 22px;
-        text-align: center;
-      }
 
       .copy {
         margin-bottom: 100px;
@@ -81,15 +72,19 @@
           }
 
           @include vars.tablet-and-lower {
-            @include vars.align-items(flex-start);
+            @include vars.align-items(center);
             margin: 0 auto;
-            width: vars.$eight-twelfths;
+            width: vars.$seven-twelfths;
+            min-width: 400px;
+            text-align: center;
+            li p {
+            }
           }
         }
       }
       .buttonHeadline {
         @include vars.header-font();
-        font-size: 1.7rem;
+        @include vars.subhead-font-size();
         padding: 0 0 10px 0;
         text-transform: lowercase;
       }

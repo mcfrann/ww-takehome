@@ -37,16 +37,13 @@
       .headline {
         font-weight: vars.$header-font-weight;
         @include vars.tablet-and-lower {
-          font-size: 24px;
+          font-size: 1.7rem;
         }
       }
 
       .subhead {
         @include vars.subhead-font();
-        font-size: 2rem;
-        @include vars.tablet-and-lower {
-          font-size: 24px;
-        }
+        @include vars.title-font-size();
       }
 
       @include vars.tablet-and-lower {
