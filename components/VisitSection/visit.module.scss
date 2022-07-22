@@ -84,7 +84,7 @@
       p {
         @include vars.nav-font();
         @include vars.subhead-font-size();
-        font-weight: 400;
+
         margin: 0;
       }
     }
@@ -153,7 +153,7 @@
       p {
         @include vars.nav-font();
         @include vars.subhead-font-size();
-        font-weight: 400;
+
         margin: 0;
 
         @include vars.tablet-and-lower {

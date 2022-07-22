@@ -68,7 +68,7 @@
     &.opened {
       .hamburger {
         span {
-          background: vars.$white;
+          background: vars.$black;
           &:nth-child(1) {
             left: 50%;
             top: 18px;
@@ -95,7 +95,7 @@
     @include vars.flex-flow(column);
     @include vars.justify-content(center);
     @include vars.align-items(center);
-    background: vars.$red;
+    background: vars.$green;
     display: none;
     height: 100vh;
     left: 0px;
@@ -131,7 +131,7 @@
       @include vars.justify-content(space-around);
       @include vars.align-items(center);
       height: 100vh;
-      color: vars.$white;
+      color: vars.$black;
       font-family: vars.$body-font-family;
       font-weight: vars.$header-font-weight;
       font-size: 2rem;

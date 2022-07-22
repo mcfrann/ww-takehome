@@ -43,7 +43,6 @@
         margin-bottom: 100px;
         p {
           @include vars.nav-font();
-          font-weight: 400;
         }
         @include vars.tablet-and-lower {
           margin-bottom: 74px;
