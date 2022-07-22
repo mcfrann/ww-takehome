@@ -20,6 +20,7 @@ export const CareersSection = ({ section }) => {
       <div className={styles.description}>
         <div className={styles.copyBody}>
           <div className={styles.copy}>{copy}</div>
+          <div className={styles.buttonHeadline}>join our team</div>
           <a
             href={applyButton.fields.buttonLinkUrl}
             target={applyButton.fields.openInNewWindow ? "_blank" : "_self"}

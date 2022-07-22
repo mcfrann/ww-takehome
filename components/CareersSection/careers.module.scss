@@ -3,12 +3,14 @@
 .careersSection {
   @include vars.body-font();
   @include vars.flex-flow(column);
-  background-color: vars.$red;
+  background-color: vars.$black;
   padding-top: 0;
   .marquee {
+    @include vars.subhead-font();
+    font-weight: 300;
     background-color: vars.$pink;
     padding: 20px 0;
-    font-size: 36px;
+    font-size: 2.4rem;
 
     span {
       margin-right: 16px;
@@ -16,7 +18,7 @@
 
     @include vars.tablet-and-lower {
       padding: 16px 0;
-      font-size: 24px;
+      font-size: 1.7rem;
     }
   }
 
@@ -32,7 +34,7 @@
     }
 
     .copyBody {
-      font-size: 24px;
+      font-size: 1.7rem;
       max-width: 800px;
       width: vars.$eight-twelfths;
       color: vars.$white;
@@ -48,7 +50,10 @@
 
       .copy {
         margin-bottom: 100px;
-
+        p {
+          @include vars.nav-font();
+          font-weight: 500;
+        }
         @include vars.tablet-and-lower {
           margin-bottom: 74px;
         }
@@ -58,13 +63,17 @@
           @include vars.flex-flow(column);
           @include vars.justify-content(center);
           @include vars.align-items(center);
+          @include vars.nav-font();
+          font-weight: 500;
           li {
             margin: 0;
             padding: 0;
             &::marker {
+              color: vars.$pink;
               content: "+";
             }
             p {
+              color: vars.$pink;
               text-align: left;
               padding-left: 10px;
               margin: 10px 0;
@@ -78,14 +87,23 @@
           }
         }
       }
-
+      .buttonHeadline {
+        @include vars.header-font();
+        font-size: 1.7rem;
+        padding: 0 0 10px 0;
+        text-transform: lowercase;
+      }
       .applyButton {
-        padding: 3px 50px;
-        border-radius: 20px;
+        display: inline-block;
+        padding: 8px 30px;
+        border-radius: 30px;
         background-color: vars.$black;
-        border: vars.$border-width solid vars.$black;
+        border: vars.$border-width solid vars.$white;
         color: vars.$white;
+        font-family: vars.$subhead-font-family;
         font-size: 2rem;
+        letter-spacing: 0.05rem;
+
         transition: all 0.15s linear;
         cursor: pointer;
         &:hover {
@@ -95,7 +113,7 @@
         }
 
         @include vars.tablet-and-lower {
-          font-size: 24px;
+          font-size: 1.7rem;
         }
       }
     }
