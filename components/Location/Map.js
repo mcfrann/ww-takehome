@@ -15,134 +15,134 @@ function createMapOptions(maps) {
         elementType: "labels.text",
         stylers: [
           {
-            visibility: "on"
-          }
-        ]
+            visibility: "on",
+          },
+        ],
       },
       {
         featureType: "administrative",
         elementType: "labels.text.fill",
         stylers: [
           {
-            color: "#757268"
-          }
-        ]
+            color: "#172d17",
+          },
+        ],
       },
       {
         featureType: "landscape",
         elementType: "all",
         stylers: [
           {
-            color: "#ddd7c5"
+            color: "#f2bbb1",
           },
           {
-            visibility: "on"
-          }
-        ]
+            visibility: "on",
+          },
+        ],
       },
       {
         featureType: "poi",
         elementType: "all",
         stylers: [
           {
-            visibility: "off"
-          }
-        ]
+            visibility: "off",
+          },
+        ],
       },
       {
         featureType: "poi",
         elementType: "labels.text",
         stylers: [
           {
-            visibility: "off"
-          }
-        ]
+            visibility: "off",
+          },
+        ],
       },
       {
         featureType: "road",
         elementType: "all",
         stylers: [
           {
-            saturation: -100
+            saturation: -100,
           },
           {
-            lightness: 45
+            lightness: 45,
           },
           {
-            visibility: "simplified"
+            visibility: "simplified",
           },
           {
-            color: "#e4decb"
-          }
-        ]
+            color: "#f2e8e2",
+          },
+        ],
       },
       {
         featureType: "road",
         elementType: "labels.text",
         stylers: [
           {
-            visibility: "on"
-          }
-        ]
+            visibility: "on",
+          },
+        ],
       },
       {
         featureType: "road",
         elementType: "labels.text.fill",
         stylers: [
           {
-            color: "#757268"
-          }
-        ]
+            color: "#172d17",
+          },
+        ],
       },
       {
         featureType: "road.highway",
         elementType: "all",
         stylers: [
           {
-            visibility: "simplified"
-          }
-        ]
+            visibility: "simplified",
+          },
+        ],
       },
       {
         featureType: "road.arterial",
         elementType: "labels.icon",
         stylers: [
           {
-            visibility: "off"
-          }
-        ]
+            visibility: "off",
+          },
+        ],
       },
       {
         featureType: "transit",
         elementType: "all",
         stylers: [
           {
-            visibility: "off"
-          }
-        ]
+            visibility: "off",
+          },
+        ],
       },
       {
         featureType: "transit",
         elementType: "labels.text",
         stylers: [
           {
-            visibility: "off"
-          }
-        ]
+            visibility: "off",
+          },
+        ],
       },
       {
         featureType: "water",
         elementType: "all",
         stylers: [
           {
-            color: "#ede5d6"
+            color: "#f2e8e2",
           },
           {
-            visibility: "on"
-          }
-        ]
-      }
-    ]
+            visibility: "on",
+          },
+        ],
+      },
+    ],
   };
 }
 
@@ -160,9 +160,9 @@ const GoogleMap = ({ latandLong }) => {
   const defaultProps = {
     center: {
       lat: latandLong.lat,
-      lng: latandLong.lon
+      lng: latandLong.lon,
     },
-    zoom: mapZoom
+    zoom: mapZoom,
   };
   return (
     <div className="map-section" style={{ height: mapHeight, width: "100%" }}>
@@ -170,7 +170,8 @@ const GoogleMap = ({ latandLong }) => {
         bootstrapURLKeys={{ key: "AIzaSyAhpMokBSxcy4inB8f4BSRGB-SZ2w0-bck" }}
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
-        options={createMapOptions}>
+        options={createMapOptions}
+      >
         <MapMarker lat={latandLong.lat} lng={latandLong.lon} />
       </GoogleMapReact>
     </div>
