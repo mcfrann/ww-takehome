@@ -9,7 +9,12 @@ export const CareersSection = ({ section }) => {
   return (
     <section className={styles.careersSection} id={menuTitle}>
       {crawlerText && (
-        <Marquee className={styles.marquee} gradient={false} speed={10}>
+        <Marquee className={styles.marquee} gradient={false} speed={20}>
+          <span>{crawlerText}</span>
+          <span>{crawlerText}</span>
+          <span>{crawlerText}</span>
+          <span>{crawlerText}</span>
+          <span>{crawlerText}</span>
           <span>{crawlerText}</span>
           <span>{crawlerText}</span>
           <span>{crawlerText}</span>

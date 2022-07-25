@@ -5,7 +5,7 @@
   @include vars.justify-content(start);
   @include vars.align-items(center);
   @include vars.flex-direction(column);
-  background-color: vars.$white;
+  background-color: vars.$pink;
   color: vars.$black;
   padding: 90px 0px 0 0;
   width: vars.$full;
@@ -17,19 +17,26 @@
 
     .headline {
       @include vars.header-font();
-      @include vars.subhead-font-size();
+      font-size: 1.5rem;
       margin-bottom: 0;
+      @include vars.tablet-and-lower {
+        font-size: 24px;
+        line-height: 29px;
+      }
     }
 
     .bodyText,
     .emailText {
       @include vars.nav-font();
-      @include vars.subhead-font-size();
+      font-size: 24px;
       margin: 0;
+      @include vars.tablet-and-lower {
+        font-size: 18px;
+      }
 
       a {
         &:hover {
-          color: vars.$maroon;
+          color: vars.$pink;
         }
       }
     }
@@ -62,22 +69,23 @@
 
         label {
           @include vars.nav-font();
+          font-size: 18px;
           margin: 0;
         }
 
         div {
           @include vars.flexbox();
-          border: vars.$border-width solid vars.$black;
+          border: 1px solid vars.$black;
           @include vars.tablet-and-lower {
             @include vars.flex-direction(column);
           }
 
           input {
             @include vars.nav-font();
-            @include vars.subhead-font-size();
-            text-align: center;
+            font-size: 24px;
+            text-align: left;
             padding: 8px;
-            background-color: vars.$white;
+            background-color: vars.$pink;
             border: none;
             outline: none;
             width: 100%;
@@ -90,15 +98,12 @@
 
           button {
             @include vars.body-font();
-            @include vars.subhead-font-size();
+            font-size: 24px;
             text-align: center;
             padding: 8px 30px;
-            border-top: none;
-            border-right: none;
-            border-bottom: none;
-            border-left: vars.$border-width solid vars.$black;
+            border: 3px solid vars.$black;
             background-color: vars.$black;
-            color: vars.$white;
+            color: vars.$pink;
             &:hover {
               background: vars.$white;
               color: vars.$black;
@@ -111,7 +116,7 @@
 
   .workShopButton {
     @include vars.body-font();
-    @include vars.subhead-font-size();
+    font-size: 24px;
     color: vars.$black;
     background-color: vars.$white;
     padding: 8px;
@@ -193,10 +198,9 @@
   width: vars.$full;
   margin-top: 60px;
   padding-top: 60px;
-
   .socialContainer {
     background: vars.$pink;
-    border: vars.$border-width solid vars.$black;
+    border: 1px solid vars.$black;
     border-top-right-radius: 350px;
     border-top-left-radius: 350px;
     border-bottom-left-radius: 0;
@@ -204,13 +208,16 @@
     border-bottom: none;
     color: vars.$green;
     height: 200px;
+    position: relative;
     width: 400px;
     .followTitle {
       @include vars.flexbox();
       @include vars.justify-content(center);
-      padding-top: 20px;
+      padding-top: 10px;
       svg {
-        width: 300px;
+        height: 125px;
+        width: 275px;
+
         path {
           fill: vars.$black;
         }
@@ -218,12 +225,14 @@
     }
     .socials {
       margin-top: 0;
+      position: absolute;
+      top: 120px;
       a {
         padding-top: 0;
       }
       .socialIconContianer {
         background: vars.$black;
-        border: vars.$border-width solid vars.$black;
+        border: 1px solid vars.$black;
 
         svg path {
           fill: vars.$pink;
@@ -235,12 +244,6 @@
           }
         }
       }
-    }
-  }
-  @include vars.tablet-and-lower {
-    padding-bottom: 90px;
-    .socialContainer {
-      border-bottom: vars.$border-width solid vars.$black;
     }
   }
 }

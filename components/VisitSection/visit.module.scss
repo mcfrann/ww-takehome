@@ -97,6 +97,8 @@
       &.imageTwo {
         bottom: -2vh;
         left: vars.$four-twelfths;
+        min-width: 150px;
+        width: vars.$one-twelfth;
       }
       @include vars.tablet-and-lower {
         display: none;
@@ -173,7 +175,6 @@
       position: absolute;
       right: 64px;
       width: vars.$two-twelfths;
-
       @include vars.tablet-and-lower {
         display: none;
       }

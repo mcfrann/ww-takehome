@@ -72,7 +72,7 @@ function createMapOptions(maps) {
             visibility: "simplified",
           },
           {
-            color: "#f2e8e2",
+            color: "#9fc9a5",
           },
         ],
       },
