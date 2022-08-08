@@ -11,7 +11,7 @@
     @include vars.align-items(center);
     @include vars.justify-content(center);
     @include vars.flex-direction(column);
-    padding: 60px 0 30px 0;
+    padding: 30px 0 30px 0;
     @include vars.tablet-and-lower {
       padding: 32px;
       padding: 20px 16px;
@@ -62,7 +62,7 @@
 .mainImageIcon {
   border-radius: 50% 50%;
   border: vars.$border-width solid vars.$black;
-  height: 100vh;
+  height: 80vh;
   min-height: 500px;
   margin: 1rem;
   max-width: 640px;
@@ -110,7 +110,12 @@
   overflow: hidden;
   position: relative;
   margin: 1rem;
-  max-width: 640px;
+  max-width: 500px;
+  span,
+  img {
+    width: 100% !important;
+    height: 100% !important;
+  }
 }
 
 .mainImageIconOuter {
@@ -121,7 +126,7 @@
   .icon {
     position: absolute;
     bottom: 0;
-    left: vars.$one-twelfth;
+    left: -30px;
     transform: translate(-50%, -50%);
     width: vars.$two-twelfths;
     @include vars.tablet-and-lower {
