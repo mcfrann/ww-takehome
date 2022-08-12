@@ -11,7 +11,7 @@
     @include vars.align-items(center);
     @include vars.justify-content(center);
     @include vars.flex-direction(column);
-    padding: 60px 0 30px 0;
+    padding: 30px 0 30px 0;
     @include vars.tablet-and-lower {
       padding: 32px;
       padding: 20px 16px;
