@@ -16,31 +16,8 @@
     }
   }
 
-  .buttonHeadline {
-    @include vars.header-font();
-    @include vars.subhead-font-size();
-    padding: 0 0 10px 0;
-    text-transform: lowercase;
-  }
-
   .menuDownloadLink {
     padding: 0 0 90px 0;
-
-    button {
-      cursor: pointer;
-      border: vars.$border-width solid vars.$black;
-      border-radius: 30px;
-      border-width: 1px;
-      background: none;
-      font-family: vars.$subhead-font-family;
-      font-size: 2rem;
-      letter-spacing: 0.05rem;
-      padding: 8px 30px;
-      &:hover {
-        background: vars.$pink;
-        border-color: vars.$pink;
-      }
-    }
   }
 
   .iconsContainer {
@@ -146,8 +123,8 @@
         }
       }
       .text {
+        @include vars.header-font();
         font-size: 8rem;
-        font-family: vars.$subhead-font-family;
         margin-top: 20px;
         position: relative;
         @include vars.tablet-and-lower {

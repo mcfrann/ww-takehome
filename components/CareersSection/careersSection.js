@@ -3,7 +3,13 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Marquee from "react-fast-marquee";
 
 export const CareersSection = ({ section }) => {
-  const { crawlerText, copy: _copy, applyButton, menuTitle } = section.fields;
+  const {
+    crawlerText,
+    copy: _copy,
+    applyButton,
+    menuTitle,
+    buttonCtaCopy,
+  } = section.fields;
 
   const copy = documentToReactComponents(_copy);
   return (
@@ -25,14 +31,16 @@ export const CareersSection = ({ section }) => {
       <div className={styles.description}>
         <div className={styles.copyBody}>
           <div className={styles.copy}>{copy}</div>
-          <div className={styles.buttonHeadline}>join our team</div>
+          <div className={`${styles.buttonHeadline} button-headline`}>
+            join our team
+          </div>
           <a
             href={applyButton.fields.buttonLinkUrl}
             target={applyButton.fields.openInNewWindow ? "_blank" : "_self"}
             rel="noreferrer"
             className={styles.applyButton}
           >
-            {applyButton.fields.buttonTitle}
+            <button> {applyButton.fields.buttonTitle} </button>
           </a>
         </div>
       </div>

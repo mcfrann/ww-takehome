@@ -11,7 +11,7 @@ export const AboutSection = ({ section, parallax }) => {
     >
       <div className={styles.aboutWrapper}>
         <div className={styles.aboutSectionContainer}>
-          <h1 className={styles.title}>{title}</h1>
+          <h2 className={styles.title}>{title}</h2>
           <div className={styles.copy}>{copy}</div>
         </div>
         {aboutIcon && (

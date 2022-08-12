@@ -11,13 +11,13 @@ $maroon: #4f0a0d;
 /* Import your fonts here */
 @import url("https://use.typekit.net/qhd4qnk.css");
 
-$header-font-family: maiola, serif;
-$header-font-weight: 400;
-$header-font-style: italic;
+$subhead-font-family: maiola, serif;
+$subhead-font-weight: 400;
+$subhead-font-style: italic;
 
-$subhead-font-family: freighttextcmp-pro, serif;
-$subhead-font-weight: 500;
-$subhead-font-style: normal;
+$header-font-family: freighttextcmp-pro, serif;
+$header-font-weight: 500;
+$header-font-style: normal;
 
 $body-font-family: freight-text-pro, serif;
 $body-font-weight: 500;
@@ -36,14 +36,14 @@ $button-font-style: normal;
   font-family: $header-font-family;
   font-style: $header-font-style;
   font-weight: $header-font-weight;
-  text-transform: lowercase;
+  text-transform: uppercase;
 }
 
 @mixin subhead-font() {
   font-family: $subhead-font-family;
   font-weight: $subhead-font-weight;
   font-style: $subhead-font-style;
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
 
 @mixin body-font() {
@@ -78,6 +78,14 @@ $button-font-style: normal;
   font-size: 1.7rem;
   @include tablet-and-lower {
     font-size: 1.4rem;
+  }
+}
+
+@mixin large-p-font-size() {
+  font-size: 1.5rem;
+  line-height: 1.9rem;
+  @include tablet-and-lower {
+    font-size: 1.2rem;
   }
 }
 

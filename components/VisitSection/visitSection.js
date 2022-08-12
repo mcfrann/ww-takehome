@@ -90,13 +90,15 @@ export const VisitSection = ({ section, parallax }) => {
       <div className={styles.infoColumn}>
         <div className={styles.hoursSection}>
           <div className={styles.hoursContent}>
-            <h3 className={styles.hoursHeadline}>{hoursHeadline}</h3>
+            <h2 className={styles.hoursTitle}>{hoursHeadline}</h2>
 
             {hoursGroups.map((_field, index) => {
               const field = _field.fields;
               return (
                 <div key={index}>
-                  <h2 className={styles.hoursTitle}>{field.title}</h2>
+                  {field.title && (
+                    <h1 className={styles.hoursSubTitle}>{field.title}</h1>
+                  )}
                   {field.hours.map((_hours, _index) => {
                     const hours = _hours.fields;
                     if (hours.altText) {
@@ -141,9 +143,9 @@ export const VisitSection = ({ section, parallax }) => {
           className={`${styles.visitSection} ${parallax && styles.parallax}`}
         >
           {parallax ? (
-            <h3 className={styles.hoursHeadline}>location</h3>
+            <h2 className={styles.hoursSubTitle}>location</h2>
           ) : (
-            <h2 className={styles.hoursTitle}>VISIT</h2>
+            <h1 className={styles.hoursTitle}>VISIT</h1>
           )}
           <div
             className={`${styles.hoursContainer} ${

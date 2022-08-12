@@ -16,23 +16,13 @@
     width: vars.$ten-twelfths;
 
     .headline {
-      @include vars.header-font();
-      font-size: 1.5rem;
       margin-bottom: 0;
-      @include vars.tablet-and-lower {
-        font-size: 24px;
-        line-height: 29px;
-      }
     }
 
     .bodyText,
     .emailText {
       @include vars.nav-font();
-      font-size: 24px;
       margin: 0;
-      @include vars.tablet-and-lower {
-        font-size: 18px;
-      }
 
       a {
         &:hover {
@@ -59,18 +49,12 @@
         @include vars.justify-content(center);
 
         max-width: 600px;
-        margin: 0 auto;
+        margin: 10px auto 0 auto;
         text-align: left;
         width: 100%;
 
         @include vars.tablet-and-lower {
           margin-top: 10px;
-        }
-
-        label {
-          @include vars.nav-font();
-          font-size: 18px;
-          margin: 0;
         }
 
         div {
@@ -80,30 +64,17 @@
             @include vars.flex-direction(column);
           }
 
-          input {
-            @include vars.nav-font();
-            font-size: 24px;
-            text-align: left;
-            padding: 8px;
-            background-color: vars.$pink;
-            border: none;
-            outline: none;
-            width: 100%;
-            color: vars.$black;
-
-            &::placeholder {
-              color: vars.$black;
-            }
-          }
-
           button {
-            @include vars.body-font();
+            border-left: vars.$border-width solid vars.$black;
+            border-right: none;
+            border-top: none;
+            border-bottom: none;
+            background-color: vars.$black;
+            border-radius: 0;
+            color: vars.$white;
             font-size: 24px;
             text-align: center;
-            padding: 8px 30px;
-            border: 3px solid vars.$black;
-            background-color: vars.$black;
-            color: vars.$pink;
+
             &:hover {
               background: vars.$white;
               color: vars.$black;
@@ -114,16 +85,19 @@
     }
   }
 
-  .workShopButton {
-    @include vars.body-font();
-    font-size: 24px;
-    color: vars.$black;
-    background-color: vars.$white;
-    padding: 8px;
-    border: none;
-    margin-top: 60px;
+  .workShopLink {
+    margin: 60px auto 0 auto;
+    width: vars.$two-twelfths;
+    svg {
+      width: 100%;
+      path {
+        fill: vars.$black;
+      }
+    }
     &:hover {
-      background: vars.$pink;
+      svg path {
+        fill: vars.$maroon;
+      }
     }
   }
 
@@ -183,10 +157,6 @@
       }
     }
   }
-
-  button {
-    cursor: pointer;
-  }
 }
 
 .parallaxFooter {
@@ -210,6 +180,10 @@
     height: 200px;
     position: relative;
     width: 400px;
+    transform: translate(0, 300px);
+    @include vars.tablet-and-lower {
+      padding-bottom: 100px;
+    }
     .followTitle {
       @include vars.flexbox();
       @include vars.justify-content(center);

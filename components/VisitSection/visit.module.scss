@@ -72,21 +72,8 @@
       margin: 0;
     }
 
-    .hoursTitle {
-      @include vars.subhead-font();
-      @include vars.title-font-size();
-      margin: 10px 0;
-    }
-
     .hoursContainer {
       margin-bottom: 0px;
-
-      p {
-        @include vars.nav-font();
-        @include vars.subhead-font-size();
-
-        margin: 0;
-      }
     }
 
     .parallaxImage {
@@ -111,6 +98,7 @@
     padding-bottom: 48px;
     &.parallax {
       background: vars.$green;
+      border-bottom: vars.$border-width solid vars.$black;
     }
 
     @include vars.tablet-and-lower {
@@ -124,16 +112,6 @@
     .hoursHeadline {
       @include vars.subhead-font-size();
       margin: 0;
-    }
-
-    .hoursTitle {
-      @include vars.subhead-font();
-      font-size: 3rem;
-      margin: 0 0 10px 0;
-
-      @include vars.tablet-and-lower {
-        font-size: 1.7rem;
-      }
     }
 
     .mapsContainer {
@@ -151,23 +129,6 @@
 
     .hoursContainer {
       margin-bottom: 120px;
-
-      p {
-        @include vars.nav-font();
-        @include vars.subhead-font-size();
-
-        margin: 0;
-
-        @include vars.tablet-and-lower {
-          font-weight: vars.$body-font-weight;
-        }
-      }
-      &.parallax {
-        p {
-          @include vars.body-font();
-          @include vars.title-font-size();
-        }
-      }
     }
 
     .parallaxImage {
@@ -182,9 +143,9 @@
   }
 
   .image {
-    height: 100vh;
+    height: calc(100vh - 94px);
     position: sticky;
-    top: 0;
+    top: 94px;
     z-index: 10;
     span,
     img {
@@ -200,7 +161,6 @@
     .image {
       background: vars.$white;
       border: vars.$border-width solid vars.$black;
-      border-bottom: none;
       padding: 15px;
       img {
         border: vars.$border-width solid vars.$black !important;
@@ -231,4 +191,17 @@
       }
     }
   }
+  p {
+    @include vars.nav-font();
+    line-height: 1.75rem;
+    margin: 0;
+  }
+}
+
+.hoursTitle {
+  margin: 0;
+}
+
+.hoursSubTitle {
+  margin: 0 0 10px 0;
 }

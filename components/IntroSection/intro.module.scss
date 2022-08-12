@@ -34,18 +34,6 @@
         margin: 0;
       }
 
-      .headline {
-        font-weight: vars.$header-font-weight;
-        @include vars.tablet-and-lower {
-          font-size: 1.7rem;
-        }
-      }
-
-      .subhead {
-        @include vars.subhead-font();
-        @include vars.title-font-size();
-      }
-
       @include vars.tablet-and-lower {
         width: inherit;
       }
@@ -62,12 +50,19 @@
 .mainImageIcon {
   border-radius: 50% 50%;
   border: vars.$border-width solid vars.$black;
-  height: 100vh;
+  height: vars.$five-twelfths;
   min-height: 500px;
   margin: 1rem;
-  max-width: 640px;
+  max-width: vars.$four-twelfths;
+  min-width: 400px;
   overflow: hidden;
   position: relative;
+  div,
+  span,
+  img {
+    height: 100% !important;
+    width: 100% !important;
+  }
   .icon {
     position: absolute;
     top: 50%;
@@ -76,19 +71,15 @@
   }
   @include vars.tablet-and-lower {
     height: 56vh;
+    max-width: 370px;
+    min-width: 300px;
   }
-}
-
-.mainImageIconOuter {
-  border-radius: 50% 50%;
-  border: vars.$border-width solid vars.$black;
-  margin: 1rem;
 }
 
 .parallaxIconOne {
   position: absolute;
-  left: vars.$one-twelfth;
-  transform: translateY(25vh);
+  left: 90px;
+  transform: translateY(25vh) rotate(-10deg);
   width: vars.$one-twelfth;
   @include vars.tablet-and-lower {
     display: none;
@@ -98,34 +89,33 @@
 .parallaxIconTwo {
   position: absolute;
   right: vars.$one-twelfth;
-  transform: translateY(100vh);
+  transform: translateY(100vh) rotate(10deg);
   width: vars.$one-twelfth;
   @include vars.tablet-and-lower {
     display: none;
   }
 }
 
-.mainImageIcon {
-  border-radius: 50% 50%;
-  overflow: hidden;
-  position: relative;
-  margin: 1rem;
-  max-width: 640px;
-}
-
 .mainImageIconOuter {
   border-radius: 50% 50%;
-  border: vars.$border-width solid;
+  border: vars.$border-width solid vars.$black;
   margin: 1rem;
   position: relative;
+
   .icon {
     position: absolute;
-    bottom: 0;
-    left: vars.$one-twelfth;
+    bottom: -60px;
+    left: -60px;
     transform: translate(-50%, -50%);
     width: vars.$two-twelfths;
     @include vars.tablet-and-lower {
-      left: vars.$two-twelfths;
+      bottom: -110px;
+      left: -10px;
+      width: vars.$four-twelfths;
+    }
+    @include vars.mobile {
+      bottom: -90px;
+      left: 60px;
       width: vars.$five-twelfths;
     }
   }

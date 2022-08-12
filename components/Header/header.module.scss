@@ -8,7 +8,7 @@
   margin-top: 0;
   position: sticky;
   top: 0;
-  transition: top 0.5s linear;
+  transition: top 0.25s linear;
   width: 100vw;
   z-index: 10;
   &.hidden {
@@ -145,16 +145,30 @@
   .navContainer {
     @include vars.flexbox();
     @include vars.justify-content(center);
-    padding: 20px 0 10px 0;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
     .nav {
+      @include vars.flexbox();
+      @include vars.justify-content(center);
+      @include vars.align-items(center);
       width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       .navGroup {
         @include vars.flexbox();
-        @include vars.justify-content(space-around);
         width: vars.$five-twelfths;
+        a:not(.orderButton) {
+          border-bottom: 3px solid vars.$white;
+          margin: 0 vars.$one-twelfth;
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+        &:first-of-type {
+          @include vars.justify-content(flex-start);
+        }
+        &:last-child {
+          @include vars.justify-content(flex-end);
+        }
       }
     }
     .navAlternate {
@@ -191,37 +205,41 @@
     }
   }
   .orderButton {
-    @include vars.button-font();
-    border-radius: 20px;
-    background-color: vars.$white;
-    border: vars.$border-width solid vars.$black;
-    color: vars.$black;
-    padding: 3px 24px;
-    cursor: pointer;
-    &:hover {
-      background: vars.$black;
-      border-color: vars.$black;
-      color: vars.$white;
+    button {
+      background-color: vars.$white;
+      border: vars.$border-width solid vars.$black;
+      color: vars.$black;
+      &:hover {
+        background: vars.$black;
+        border-color: vars.$black;
+        color: vars.$white;
+      }
     }
 
     @include vars.tablet-and-lower {
-      background: vars.$pink;
-      bottom: 22px;
-      border-radius: 30px;
-      font-size: 1.5rem;
-      position: fixed;
-      padding: 12px 24px;
-      width: vars.$ten-twelfths;
-      text-align: center;
-      &:hover {
-        background: vars.$white;
+      @include vars.flexbox();
+      @include vars.justify-content(center);
+      bottom: 20px;
+      button {
+        background: vars.$pink;
+        bottom: 22px;
+        border-radius: 30px;
+        font-size: 1.5rem;
+        position: fixed;
+        padding: 12px 24px;
+        width: vars.$ten-twelfths;
+        text-align: center;
+        &:hover {
+          background: vars.$white;
+        }
       }
     }
   }
 
   .logoContainer {
-    max-width: 130px;
+    max-width: 100px;
     width: vars.$two-twelfths;
+    padding: 10px 0;
     @include vars.tablet-and-lower {
       width: 100px;
     }

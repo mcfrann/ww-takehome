@@ -70,7 +70,7 @@ export const Header = ({ headerNav, footerNav, announcementBar }) => {
         rel="noreferrer"
         className={styles.orderButton}
       >
-        {orderButton.fields.buttonTitle}
+        <button className="small">{orderButton.fields.buttonTitle} </button>
       </a>
     );
   };
@@ -103,7 +103,7 @@ export const Header = ({ headerNav, footerNav, announcementBar }) => {
   };
 
   return (
-    <div
+    <header
       className={`${styles.header} ${
         headline && display && !showAnnouncement ? `${styles.hidden}` : ""
       }`}
@@ -140,6 +140,6 @@ export const Header = ({ headerNav, footerNav, announcementBar }) => {
       <nav className={styles.navContainer}>
         <ConditionalHeader />
       </nav>
-    </div>
+    </header>
   );
 };

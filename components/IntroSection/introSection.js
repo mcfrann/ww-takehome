@@ -23,6 +23,7 @@ export const IntroSection = ({ section, parallax }) => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.to(iconOneRef.current, {
       y: "0vh",
+      rotate: "10deg",
       scrollTrigger: {
         start: "top top",
         end: "bottom center",
@@ -32,6 +33,7 @@ export const IntroSection = ({ section, parallax }) => {
     });
     gsap.to(iconTwoRef.current, {
       y: "20vh",
+      rotate: "20deg",
       scrollTrigger: {
         start: "top top",
         end: "bottom top",
@@ -39,7 +41,7 @@ export const IntroSection = ({ section, parallax }) => {
         scrub: true,
       },
     });
-  }, []);
+  }, [iconOneRef, iconTwoRef, sectionRef]);
 
   return (
     <section className={`${styles.introSection}`} ref={sectionRef}>
@@ -50,8 +52,8 @@ export const IntroSection = ({ section, parallax }) => {
           </div>
         )}
         <div className={styles.description}>
-          <h1 className={styles.headline}>{headline}</h1>
           <h2 className={styles.subhead}>{subhead}</h2>
+          <h1 className={styles.headline}>{headline}</h1>
         </div>
         <div className={styles.parallaxIconOne} ref={iconOneRef}>
           <ImageOrSvg image={parallaxOne} />

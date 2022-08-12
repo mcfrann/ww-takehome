@@ -2,6 +2,7 @@
 html,
 body {
   @include body-font();
+  background: $white;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -12,14 +13,19 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  &.active {
+    border-bottom: 3px solid $maroon;
+    &.active {
+      border-bottom: 3px solid $black !important;
+      &.logo-link {
+        border-bottom: none;
+      }
+    }
+  }
 }
 
 * {
   box-sizing: border-box;
-}
-
-a.active {
-  border-bottom: 3px solid $maroon;
 }
 
 h1,
@@ -29,12 +35,75 @@ h4,
 h5 {
   @include header-font();
 }
+
+h1 {
+  @include title-font-size();
+  color: $black;
+  @include tablet-and-lower {
+    font-size: 1.7rem;
+  }
+}
+
 h2 {
+  @include subhead-font();
   letter-spacing: 0.05rem;
 }
 
 p {
   @include body-font();
+  @include large-p-font-size();
+  line-height: 2.5rem;
+  margin: 0;
+}
+
+ul {
+  @include flexbox();
+  @include flex-flow(column);
+  @include justify-content(center);
+  @include align-items(center);
+  @include nav-font();
+  font-weight: 500;
+  li {
+    margin: 0;
+    padding: 0;
+    &::marker {
+      color: $black;
+      content: "+";
+    }
+    p {
+      color: $black;
+      text-align: left;
+      padding-left: 10px;
+      margin: 10px 0;
+    }
+  }
+
+  @include tablet-and-lower {
+    @include align-items(center);
+    margin: 0 auto;
+    width: $seven-twelfths;
+    min-width: 400px;
+    text-align: center;
+  }
+}
+
+input {
+  @include body-font();
+  background-color: $white;
+  border: none;
+  color: $black;
+  font-size: 24px;
+  outline: none;
+  padding: 8px 20px;
+  text-align: left;
+  width: 100%;
+
+  &::placeholder {
+    color: $black;
+  }
+  @include tablet-and-lower {
+    text-align: center;
+  }
 }
 
 section {
@@ -46,5 +115,40 @@ section {
   }
   @include tablet-and-lower {
     padding: 90px 0;
+  }
+}
+
+.button-headline {
+  @include subhead-font();
+  @include large-p-font-size();
+  padding: 0 0 10px 0;
+}
+
+button {
+  @include header-font();
+  cursor: pointer;
+  background: $white;
+  border: $border-width solid $black;
+  border-radius: 30px;
+  border-width: 1px;
+  font-size: 2rem;
+  letter-spacing: 0.05rem;
+  padding: 8px 30px;
+  text-transform: capitalize;
+  &.small {
+    @include button-font();
+    font-size: 1.3rem;
+    border-radius: 20px;
+    padding: 3px 24px;
+  }
+  &:hover {
+    background: $black;
+    border-color: $black;
+    cursor: pointer;
+    color: $white;
+  }
+  @include tablet-and-lower {
+    font-size: 1.7rem;
+    padding: 8px 30px;
   }
 }

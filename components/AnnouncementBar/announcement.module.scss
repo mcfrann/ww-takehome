@@ -1,4 +1,3 @@
-@use "../../styles/vars";
 @import "../../styles/vars.scss";
 
 .announcementBar {
@@ -9,23 +8,22 @@
   padding: 15px;
   width: 100%;
   z-index: 10;
-  transition: top 0.5s linear;
 
   &.hidden {
     top: -58px;
   }
 
-  @include vars.tablet-and-lower {
+  @include tablet-and-lower {
     height: 50px;
     padding: 10px;
   }
 
   .announcement {
-    @include vars.nav-font();
+    @include nav-font();
     font-size: 1.25rem;
     text-align: center;
     margin: 0;
-    @include vars.tablet-and-lower {
+    @include tablet-and-lower {
       font-size: 1rem;
       line-height: 2rem;
     }
@@ -42,7 +40,7 @@
     z-index: 10;
     cursor: pointer;
 
-    @include vars.tablet-and-lower {
+    @include tablet-and-lower {
       height: 20px;
       right: 10px;
       top: 6px;
@@ -60,7 +58,7 @@
       border-radius: 0px;
       opacity: 1;
       left: 0;
-      @include vars.tablet-and-lower {
+      @include tablet-and-lower {
         height: 2px;
       }
       &:nth-child(1) {

@@ -6,9 +6,8 @@
   background-color: vars.$black;
   padding-top: 0;
   .marquee {
-    @include vars.subhead-font();
+    @include vars.header-font();
     @include vars.title-font-size();
-    font-weight: 300;
     background-color: vars.$pink;
     padding: 20px 0;
 
@@ -19,6 +18,17 @@
     @include vars.tablet-and-lower {
       padding: 16px 0;
       font-size: 1.7rem;
+    }
+  }
+
+  button {
+    background: vars.$black;
+    border-color: vars.$white;
+    color: vars.$white;
+    &:hover {
+      background: vars.$white;
+      border-color: vars.$white;
+      color: vars.$black;
     }
   }
 
@@ -34,80 +44,24 @@
     }
 
     .copyBody {
-      @include vars.subhead-font-size();
+      color: vars.$white;
       max-width: 800px;
       width: vars.$eight-twelfths;
-      color: vars.$white;
 
       .copy {
         margin-bottom: 100px;
-        p {
-          @include vars.nav-font();
-        }
+
         @include vars.tablet-and-lower {
           margin-bottom: 74px;
         }
-
-        ul {
-          @include vars.flexbox();
-          @include vars.flex-flow(column);
-          @include vars.justify-content(center);
-          @include vars.align-items(center);
-          @include vars.nav-font();
-          font-weight: 500;
-          li {
-            margin: 0;
-            padding: 0;
-            &::marker {
-              color: vars.$pink;
-              content: "+";
-            }
-            p {
-              color: vars.$pink;
-              text-align: left;
-              padding-left: 10px;
-              margin: 10px 0;
-            }
+        ul li {
+          &::marker {
+            color: vars.$white;
+            font-size: 1.7rem;
           }
-
-          @include vars.tablet-and-lower {
-            @include vars.align-items(center);
-            margin: 0 auto;
-            width: vars.$seven-twelfths;
-            min-width: 400px;
-            text-align: center;
-            li p {
-            }
+          p {
+            color: vars.$white;
           }
-        }
-      }
-      .buttonHeadline {
-        @include vars.header-font();
-        @include vars.subhead-font-size();
-        padding: 0 0 10px 0;
-        text-transform: lowercase;
-      }
-      .applyButton {
-        display: inline-block;
-        padding: 8px 60px;
-        border-radius: 30px;
-        background-color: vars.$black;
-        border: vars.$border-width solid vars.$white;
-        color: vars.$white;
-        font-family: vars.$subhead-font-family;
-        font-size: 2rem;
-        letter-spacing: 0.05rem;
-
-        transition: all 0.15s linear;
-        cursor: pointer;
-        &:hover {
-          background: vars.$white;
-          border-color: vars.$white;
-          color: vars.$black;
-        }
-
-        @include vars.tablet-and-lower {
-          font-size: 1.7rem;
         }
       }
     }

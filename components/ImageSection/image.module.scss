@@ -32,8 +32,8 @@
     div {
       @include vars.justify-content(center);
       border-bottom: vars.$border-width solid vars.$black;
-
       border-right: vars.$border-width solid vars.$black;
+      border-top: vars.$border-width solid vars.$black;
       padding: 15px;
       &:first-child {
         border-left: vars.$border-width solid vars.$black;

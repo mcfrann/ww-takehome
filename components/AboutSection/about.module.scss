@@ -4,9 +4,12 @@
   @include vars.flex-direction(column);
   @include vars.justify-content(center);
   @include vars.align-items(center);
-  background-color: vars.$black;
-  min-height: 100vh;
+  background-color: vars.$white;
+  border: vars.$border-width solid vars.$black;
+  min-height: calc(100vh - 30px);
+  margin: 15px;
   position: relative;
+  width: calc(100vw - 30px);
   @include vars.tablet-and-lower {
     min-height: 50vh;
   }
@@ -32,19 +35,13 @@
       padding-top: 0px;
       padding-bottom: 30px;
     }
-
     .title {
-      @include vars.subhead-font-size();
+      color: vars.$black;
     }
 
     .copy {
-      @include vars.body-font;
-      @include vars.subhead-font-size();
-      margin-top: 60px;
-
-      @include vars.tablet-and-lower {
-        margin-top: 31px;
-      }
+      color: vars.$black;
+      margin-top: 30px;
     }
   }
 
@@ -60,35 +57,6 @@
       position: relative;
       right: auto;
       width: vars.$three-twelfths;
-    }
-  }
-  &.parallax {
-    background: vars.$white;
-    border-top: vars.$border-width solid vars.$black;
-    border-bottom: vars.$border-width solid vars.$black;
-    padding: 15px;
-    .aboutWrapper {
-      // border: vars.$border-width solid vars.$black;
-      height: calc(100vh - 30px);
-      padding: 30px;
-      width: calc(100vw - 30px);
-      @include vars.tablet-and-lower {
-        height: auto;
-        min-height: calc(50vh - 30px);
-      }
-    }
-    .aboutSectionContainer {
-      color: vars.$black;
-      max-width: 1000px;
-      @include vars.tablet-and-lower {
-        max-width: vars.$nine-twelfths;
-      }
-      .copy {
-        font-size: 2rem;
-        @include vars.tablet-and-lower {
-          font-size: 1.5rem;
-        }
-      }
     }
   }
 }

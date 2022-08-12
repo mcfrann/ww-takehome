@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 import styles from "./menu.module.scss";
 import { ImageOrSvg } from "../ImageorSvg/imageOrSvg.js";
 import { gsap } from "gsap";
@@ -14,7 +14,14 @@ export const MenuSection = ({ section, orderButton, parallax }) => {
     menuDownloadLink,
   } = section.fields;
 
-  React.useEffect(() => {
+  const mobileHightlightImage =
+    foodHighlights &&
+    foodHighlights.length > 0 &&
+    [foodHighlights.length - 1].fields
+      ? [foodHighlights.length - 1].fields.icon
+      : null;
+
+  useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.fromTo(
       "#menu .parallax",
@@ -35,7 +42,11 @@ export const MenuSection = ({ section, orderButton, parallax }) => {
 
   return (
     <section id={menuTitle} className={styles.menuSection}>
-      {headline && <div className={styles.buttonHeadline}>{headline}</div>}
+      {headline && (
+        <div className={`${styles.buttonHeadline} button-headline`}>
+          {headline}
+        </div>
+      )}
       {menuDownloadLink && (
         <a
           href={menuDownloadLink.fields.buttonLinkUrl}
@@ -43,7 +54,7 @@ export const MenuSection = ({ section, orderButton, parallax }) => {
           className={styles.menuDownloadLink}
         >
           <button className={styles.downloadButton}>
-            {menuDownloadLink.fields.buttonTitle.toUpperCase()}
+            {menuDownloadLink.fields.buttonTitle}
           </button>
         </a>
       )}
@@ -56,19 +67,23 @@ export const MenuSection = ({ section, orderButton, parallax }) => {
         <div className={styles.foodHighlights} ref={foodHighlights}>
           {foodHighlights.map((food, index) => {
             const icon = food.fields.icon;
-            const iconDetails = icon.fields.file.details.image;
-            const wide = iconDetails.width > iconDetails.height;
+            const iconDetails = icon ? icon.fields.file.details.image : null;
+            const wide = iconDetails
+              ? iconDetails.width > iconDetails.height
+              : null;
             return (
               <div key={index} className={styles.food}>
                 <span className={styles.text}>
-                  <div
-                    className={`${styles.icon} ${
-                      index % 2 === 1 ? styles.left : styles.right
-                    } ${wide && styles.wide} parallax`}
-                    data-index={index}
-                  >
-                    <ImageOrSvg image={food.fields.icon} />
-                  </div>
+                  {icon && icon.fields && (
+                    <div
+                      className={`${styles.icon} ${
+                        index % 2 === 1 ? styles.left : styles.right
+                      } ${wide && styles.wide} parallax`}
+                      data-index={index}
+                    >
+                      <ImageOrSvg image={food.fields.icon} />
+                    </div>
+                  )}
                   {food.fields.title}
                 </span>
               </div>
