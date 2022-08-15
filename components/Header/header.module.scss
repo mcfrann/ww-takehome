@@ -220,6 +220,7 @@
       @include vars.flexbox();
       @include vars.justify-content(center);
       bottom: 20px;
+      position: fixed;
       button {
         background: vars.$pink;
         bottom: 22px;
@@ -231,6 +232,7 @@
         text-align: center;
         &:hover {
           background: vars.$white;
+          color: vars.$black;
         }
       }
     }

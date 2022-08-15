@@ -47,7 +47,9 @@
       color: vars.$white;
       max-width: 800px;
       width: vars.$eight-twelfths;
-
+      @include vars.tablet-and-lower {
+        width: vars.$ten-twelfths;
+      }
       .copy {
         margin-bottom: 100px;
 

@@ -63,6 +63,7 @@ ul {
   @include align-items(center);
   @include nav-font();
   font-weight: 500;
+  padding: 0;
   li {
     margin: 0;
     padding: 0;
@@ -82,7 +83,7 @@ ul {
     @include align-items(center);
     margin: 0 auto;
     width: $seven-twelfths;
-    min-width: 400px;
+    min-width: 350px;
     text-align: center;
   }
 }
