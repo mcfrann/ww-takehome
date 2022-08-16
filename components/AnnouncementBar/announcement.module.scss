@@ -9,10 +9,6 @@
   width: 100%;
   z-index: 10;
 
-  &.hidden {
-    top: -58px;
-  }
-
   @include tablet-and-lower {
     height: 50px;
     padding: 10px;

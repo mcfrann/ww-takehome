@@ -99,6 +99,9 @@
         fill: vars.$maroon;
       }
     }
+    @include vars.tablet-and-lower {
+      width: vars.$six-twelfths;
+    }
   }
 
   .socials {
@@ -181,6 +184,10 @@
     position: relative;
     width: 400px;
     transform: translate(0, 300px);
+    @include vars.tablet-and-lower {
+      border-bottom: 1px solid vars.$black;
+      margin-bottom: 100px;
+    }
     @include vars.tablet-and-lower {
       padding-bottom: 100px;
     }

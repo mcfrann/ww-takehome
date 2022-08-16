@@ -39,6 +39,7 @@ h5 {
 h1 {
   @include title-font-size();
   color: $black;
+  font-size: 2.8rem;
   @include tablet-and-lower {
     font-size: 1.7rem;
   }
