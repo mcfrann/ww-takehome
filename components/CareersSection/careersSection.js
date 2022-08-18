@@ -34,14 +34,16 @@ export const CareersSection = ({ section }) => {
           <div className={`${styles.buttonHeadline} button-headline`}>
             join our team
           </div>
-          <a
-            href={applyButton.fields.buttonLinkUrl}
-            target={applyButton.fields.openInNewWindow ? "_blank" : "_self"}
-            rel="noreferrer"
-            className={styles.applyButton}
-          >
-            <button> {applyButton.fields.buttonTitle} </button>
-          </a>
+          {applyButton && (
+            <a
+              href={applyButton.fields.buttonLinkUrl}
+              target={applyButton.fields.openInNewWindow ? "_blank" : "_self"}
+              rel="noreferrer"
+              className={styles.applyButton}
+            >
+              <button> {applyButton.fields.buttonTitle} </button>
+            </a>
+          )}
         </div>
       </div>
     </section>
