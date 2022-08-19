@@ -92,35 +92,37 @@ export const VisitSection = ({ section, parallax }) => {
           <div className={styles.hoursContent}>
             <h2 className={styles.hoursSubTitle}>{hoursHeadline}</h2>
 
-            {hoursGroups.map((_field, index) => {
-              const field = _field.fields;
-              return (
-                <div key={index}>
-                  {field.title && (
-                    <h1 className={styles.hoursTitle}>{field.title}</h1>
-                  )}
-                  {field.hours.map((_hours, _index) => {
-                    const hours = _hours.fields;
-                    if (hours.altText) {
-                      return (
-                        <div key={_index} className={styles.hoursContainer}>
-                          <p>{hours.altText}</p>
-                        </div>
-                      );
-                    } else {
-                      return (
-                        <div key={_index} className={styles.hoursContainer}>
-                          <p>
-                            {hours.startDay}-{hours.endDay} &nbsp;
-                            {hours.startTime}-{hours.endTime}
-                          </p>
-                        </div>
-                      );
-                    }
-                  })}
-                </div>
-              );
-            })}
+            {hoursGroups &&
+              hoursGroups.map((_field, index) => {
+                const field = _field.fields;
+                return (
+                  <div key={index}>
+                    {field.title && (
+                      <h1 className={styles.hoursTitle}>{field.title}</h1>
+                    )}
+                    {field.hours &&
+                      field.hours.map((_hours, _index) => {
+                        const hours = _hours.fields;
+                        if (hours.altText) {
+                          return (
+                            <div key={_index} className={styles.hoursContainer}>
+                              <p>{hours.altText}</p>
+                            </div>
+                          );
+                        } else {
+                          return (
+                            <div key={_index} className={styles.hoursContainer}>
+                              <p>
+                                {hours.startDay}-{hours.endDay} &nbsp;
+                                {hours.startTime}-{hours.endTime}
+                              </p>
+                            </div>
+                          );
+                        }
+                      })}
+                  </div>
+                );
+              })}
           </div>
 
           <div
