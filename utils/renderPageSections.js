@@ -13,21 +13,13 @@ export const renderPageSections = (pageSections, orderButton) => {
     if (id == "visitSection") {
       return (
         <Element name={section.fields.menuTitle} key={`section-${i}`}>
-          <VisitSection
-            key={`visit-section-${i}`}
-            section={section}
-            parallax={true}
-          />
+          <VisitSection key={`visit-section-${i}`} section={section} />
         </Element>
       );
     } else if (id == "aboutSection") {
       return (
         <Element name={section.fields.menuTitle} key={`section-${i}`}>
-          <AboutSection
-            section={section}
-            key={`about-section-${i}`}
-            parallax={true}
-          />
+          <AboutSection section={section} key={`about-section-${i}`} />
         </Element>
       );
     } else if (id == "careersSection") {
@@ -43,19 +35,11 @@ export const renderPageSections = (pageSections, orderButton) => {
             section={section}
             orderButton={orderButton}
             key={`menu-section-${i}`}
-            parallax={true}
           />
         </Element>
       );
     } else if (id == "imageSection") {
-      return (
-        <ImageSection
-          section={section}
-          key={`image-section-${i}`}
-          key={`section-${i}`}
-          parallax={true}
-        />
-      );
+      return <ImageSection section={section} key={`image-section-${i}`} />;
     }
   });
 };
