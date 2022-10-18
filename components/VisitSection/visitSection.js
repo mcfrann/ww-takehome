@@ -1,6 +1,6 @@
-import styles from "./visit.module.scss";
-import { ImageOrSvg } from "../ImageorSvg/imageOrSvg";
-import GoogleMap from "../Location/Map";
+import styles from './visit.module.scss'
+import { ImageOrSvg } from '../ImageorSvg/imageOrSvg'
+import GoogleMap from '../Location/Map'
 
 export const VisitSection = ({ section, parallax }) => {
   const {
@@ -16,8 +16,15 @@ export const VisitSection = ({ section, parallax }) => {
     stateAbbreviation,
     googleMapLink,
     menuTitle,
-    mapLocation,
-  } = section.fields;
+    mapLocation
+  } = section.fields
 
-  return <section id={menuTitle} className={styles.visitSection}></section>;
-};
+  return (
+    <section id={menuTitle} className={styles.visitSection}>
+      <div className={styles.gridItemOne}>First Tile</div>
+      <div className={styles.gridItemTwo}>Second Tile</div>
+      <div className={styles.gridItemThree}>Third Tile</div>
+      <div className={styles.gridItemFour}>Fourth Tile</div>
+    </section>
+  )
+}
