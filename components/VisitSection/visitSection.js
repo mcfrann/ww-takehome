@@ -19,9 +19,13 @@ export const VisitSection = ({ section, parallax }) => {
     mapLocation
   } = section.fields
 
+  console.log(hoursGroups)
+
   return (
     <section id={menuTitle} className={styles.visitSection}>
-      <div className={styles.gridItemOne}></div>
+      <div className={styles.gridItemOne}>
+        <h2>{hoursHeadline}</h2>
+      </div>
       <div className={styles.gridItemTwo}></div>
       <div className={styles.gridItemThree}></div>
       <div className={styles.gridItemFour}></div>
