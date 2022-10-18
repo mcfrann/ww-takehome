@@ -3,9 +3,13 @@
 .visitSection {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  // grid-template-rows: 1fr 1fr;
+  grid-template-rows: vars.$eight-twelfths vars.$eight-twelfths;
 }
 
 .gridItemOne {
   background-color: vars.$pink;
+}
+
+.gridItemThree {
+  background-color: vars.$green;
 }
