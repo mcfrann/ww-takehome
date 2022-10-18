@@ -1,4 +1,10 @@
-@import "../../styles/vars.scss";
+@import '../../styles/vars.scss';
 
 .announcementBar {
+  background-color: $pink;
+  color: $black;
+}
+
+.hidden {
+  display: none;
 }
