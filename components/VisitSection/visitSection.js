@@ -27,6 +27,9 @@ export const VisitSection = ({ section, parallax }) => {
     <section id={menuTitle} className={styles.visitSection}>
       <div className={styles.gridItemOne}>
         <h2>{hoursHeadline}</h2>
+        <h1>Hours</h1>
+        <p>{days}</p>
+        <p>{hours}</p>
       </div>
       <div className={styles.gridItemTwo}></div>
       <div className={styles.gridItemThree}></div>
