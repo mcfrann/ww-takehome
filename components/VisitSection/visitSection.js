@@ -19,7 +19,9 @@ export const VisitSection = ({ section, parallax }) => {
     mapLocation
   } = section.fields
 
-  console.log(hoursGroups)
+  const days = `${hoursGroups[0].fields.hours[0].fields.startDay} - ${hoursGroups[0].fields.hours[0].fields.endDay}`
+  const hours = `${hoursGroups[0].fields.hours[0].fields.startTime} - ${hoursGroups[0].fields.hours[0].fields.endTime}`
+  console.log(days, hours)
 
   return (
     <section id={menuTitle} className={styles.visitSection}>
