@@ -21,10 +21,10 @@ export const VisitSection = ({ section, parallax }) => {
 
   return (
     <section id={menuTitle} className={styles.visitSection}>
-      <div className={styles.gridItemOne}>First Tile</div>
-      <div className={styles.gridItemTwo}>Second Tile</div>
-      <div className={styles.gridItemThree}>Third Tile</div>
-      <div className={styles.gridItemFour}>Fourth Tile</div>
+      <div className={styles.gridItemOne}></div>
+      <div className={styles.gridItemTwo}></div>
+      <div className={styles.gridItemThree}></div>
+      <div className={styles.gridItemFour}></div>
     </section>
   )
 }
