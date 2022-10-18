@@ -3,8 +3,7 @@
 .announcementBar {
   background-color: $pink;
   color: $black;
-}
-
-.hidden {
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
