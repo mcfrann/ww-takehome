@@ -10,6 +10,15 @@
   background-color: vars.$pink;
 }
 
+.gridItemTwo,
+.gridItemFour {
+  border: vars.$border-width solid vars.$black;
+}
+
+.gridItemTwo {
+  border-bottom: none;
+}
+
 .gridItemThree {
   background-color: vars.$green;
 }
