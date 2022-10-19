@@ -1,6 +1,8 @@
 import styles from './visit.module.scss'
 import { ImageOrSvg } from '../ImageorSvg/imageOrSvg'
 import GoogleMap from '../Location/Map'
+import Image from 'next/image'
+import FlourPic from '../../public/flour.jpg'
 
 export const VisitSection = ({ section, parallax }) => {
   const {
@@ -46,7 +48,18 @@ export const VisitSection = ({ section, parallax }) => {
           <GoogleMap latandLong={mapLocation} />
         </div>
       </div>
-      <div className={styles.gridItemFour}></div>
+      <div className={styles.gridItemFour}>
+        <div className={styles.imageWrapper}>
+          <Image
+            src={FlourPic}
+            alt={'flour photo'}
+            width={'1138'}
+            height={'1678'}
+            layout={'intrinsic'}
+            objectFit={'cover'}
+          />
+        </div>
+      </div>
     </section>
   )
 }
