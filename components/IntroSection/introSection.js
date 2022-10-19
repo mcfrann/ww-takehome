@@ -16,6 +16,7 @@ export const IntroSection = ({ section, parallax }) => {
     <section className={styles.introSection}>
       {subhead && <h2>{subhead}</h2>}
       <h1>{headline}</h1>
+      <div className={styles.introImageWrapper}></div>
     </section>
   )
 }
