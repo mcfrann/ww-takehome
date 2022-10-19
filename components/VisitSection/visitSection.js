@@ -32,6 +32,12 @@ export const VisitSection = ({ section, parallax }) => {
         <p className={styles.details}>
           {days} {hours}
         </p>
+        <div className={styles.parallaxOne}>
+          <ImageOrSvg image={parallaxIconOne} />
+        </div>
+        <div className={styles.parallaxTwo}>
+          <ImageOrSvg image={parallaxIconTwo} />
+        </div>
       </div>
       <div className={styles.gridItemTwo}>
         <div className={styles.imageWrapper}>
