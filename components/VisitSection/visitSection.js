@@ -26,17 +26,17 @@ export const VisitSection = ({ section, parallax }) => {
   return (
     <section id={menuTitle} className={styles.visitSection}>
       <div className={styles.gridItemOne}>
-        <h2 className={styles.hours}>{hoursHeadline}</h2>
-        <h1 className={styles.hours}>Hours</h1>
-        <p className={styles.hourDetails}>
+        <h2 className={styles.visitInfo}>{hoursHeadline}</h2>
+        <h1 className={styles.visitInfo}>Hours</h1>
+        <p className={styles.details}>
           {days} {hours}
         </p>
       </div>
       <div className={styles.gridItemTwo}></div>
       <div className={styles.gridItemThree}>
-        <h2 className={styles.hours}>{city}</h2>
-        <h1 className={styles.hours}>{addressLine1}</h1>
-        <p className={styles.hourDetails}>{zip}</p>
+        <h2 className={styles.visitInfo}>{city}</h2>
+        <h1 className={styles.visitInfo}>{addressLine1}</h1>
+        <p className={styles.details}>{zip}</p>
       </div>
       <div className={styles.gridItemFour}></div>
     </section>
