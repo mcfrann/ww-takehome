@@ -26,8 +26,8 @@ export const VisitSection = ({ section, parallax }) => {
   return (
     <section id={menuTitle} className={styles.visitSection}>
       <div className={styles.gridItemOne}>
-        <h2>{hoursHeadline}</h2>
-        <h1>Hours</h1>
+        <h2 className={styles.hours}>{hoursHeadline}</h2>
+        <h1 className={styles.hours}>Hours</h1>
         <p className={styles.hourDetails}>
           {days} {hours}
         </p>
