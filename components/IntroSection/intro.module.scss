@@ -1,4 +1,9 @@
-@use "../../styles/vars";
+@use '../../styles/vars';
 
 .introSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
