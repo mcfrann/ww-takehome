@@ -25,6 +25,7 @@
 
 .gridItemTwo {
   border-bottom: none;
+  padding: 1em;
   div,
   span,
   img {
@@ -35,14 +36,7 @@
 }
 
 .imageWrapper {
-  margin: 1rem;
-  // border: vars.$border-width solid vars.$black;
-  // div,
-  // span,
-  // img {
-  //   height: 100% !important;
-  //   width: 100% !important;
-  // }
+  border: vars.$border-width solid vars.$black;
 }
 
 .gridItemThree {
