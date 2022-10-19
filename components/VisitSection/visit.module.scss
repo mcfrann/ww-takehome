@@ -1,4 +1,59 @@
-@use "../../styles/vars";
+@use '../../styles/vars';
 
 .visitSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: vars.$eight-twelfths vars.$eight-twelfths;
+}
+
+.gridItemOne {
+  background-color: vars.$pink;
+}
+
+.gridItemOne,
+.gridItemThree {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gridItemTwo,
+.gridItemFour {
+  border: vars.$border-width solid vars.$black;
+}
+
+.gridItemTwo {
+  border-bottom: none;
+  padding: 1em;
+  div,
+  span,
+  img {
+    height: 100% !important;
+    width: 100% !important;
+    border: vars.$border-width solid vars.$black;
+  }
+}
+
+.imageWrapper {
+  border: vars.$border-width solid vars.$black;
+}
+
+.gridItemThree {
+  background-color: vars.$green;
+}
+
+.visitInfo {
+  margin: 0;
+}
+
+.details {
+  font-family: vars.$nav-font-family;
+}
+
+.mapContainer {
+  height: 35vh;
+  width: 38vw;
+  margin-top: 3em;
+  border: vars.$border-width solid vars.$black;
 }
