@@ -25,6 +25,12 @@
 
 .gridItemTwo {
   border-bottom: none;
+  div,
+  span,
+  img {
+    height: 100% !important;
+    width: 100% !important;
+  }
 }
 
 .gridItemThree {
