@@ -21,8 +21,6 @@ export const VisitSection = ({ section, parallax }) => {
 
   const days = `${hoursGroups[0].fields.hours[0].fields.startDay} - ${hoursGroups[0].fields.hours[0].fields.endDay}`
   const hours = `${hoursGroups[0].fields.hours[0].fields.startTime} - ${hoursGroups[0].fields.hours[0].fields.endTime}`
-  console.log(googleMapLink, mapLocation)
-  console.log(sectionImage)
 
   return (
     <section id={menuTitle} className={styles.visitSection}>
@@ -33,7 +31,9 @@ export const VisitSection = ({ section, parallax }) => {
           {days} {hours}
         </p>
       </div>
-      <div className={styles.gridItemTwo}></div>
+      <div className={styles.gridItemTwo}>
+        <ImageOrSvg image={sectionImage} />
+      </div>
       <div className={styles.gridItemThree}>
         <h2 className={styles.visitInfo}>
           {city}, {stateAbbreviation}
