@@ -38,3 +38,10 @@
 .details {
   font-family: vars.$nav-font-family;
 }
+
+.mapContainer {
+  height: 35vh;
+  width: 38vw;
+  margin-top: 3em;
+  border: vars.$border-width solid vars.$black;
+}
