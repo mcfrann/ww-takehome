@@ -147,7 +147,6 @@ function createMapOptions(maps) {
 }
 
 const GoogleMap = ({ latandLong }) => {
-  console.log(window, 'window')
   let isMobile = false
   try {
     window
