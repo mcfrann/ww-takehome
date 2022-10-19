@@ -1,5 +1,5 @@
-import GoogleMapReact from "google-map-react";
-import MapMarker from "./mapMarker";
+import GoogleMapReact from 'google-map-react'
+import MapMarker from './mapMarker'
 
 function createMapOptions(maps) {
   // next props are exposed at maps
@@ -11,163 +11,164 @@ function createMapOptions(maps) {
   return {
     styles: [
       {
-        featureType: "administrative",
-        elementType: "labels.text",
+        featureType: 'administrative',
+        elementType: 'labels.text',
         stylers: [
           {
-            visibility: "on",
-          },
-        ],
+            visibility: 'on'
+          }
+        ]
       },
       {
-        featureType: "administrative",
-        elementType: "labels.text.fill",
+        featureType: 'administrative',
+        elementType: 'labels.text.fill',
         stylers: [
           {
-            color: "#172d17",
-          },
-        ],
+            color: '#172d17'
+          }
+        ]
       },
       {
-        featureType: "landscape",
-        elementType: "all",
+        featureType: 'landscape',
+        elementType: 'all',
         stylers: [
           {
-            color: "#f2bbb1",
+            color: '#f2bbb1'
           },
           {
-            visibility: "on",
-          },
-        ],
+            visibility: 'on'
+          }
+        ]
       },
       {
-        featureType: "poi",
-        elementType: "all",
+        featureType: 'poi',
+        elementType: 'all',
         stylers: [
           {
-            visibility: "off",
-          },
-        ],
+            visibility: 'off'
+          }
+        ]
       },
       {
-        featureType: "poi",
-        elementType: "labels.text",
+        featureType: 'poi',
+        elementType: 'labels.text',
         stylers: [
           {
-            visibility: "off",
-          },
-        ],
+            visibility: 'off'
+          }
+        ]
       },
       {
-        featureType: "road",
-        elementType: "all",
+        featureType: 'road',
+        elementType: 'all',
         stylers: [
           {
-            saturation: -100,
+            saturation: -100
           },
           {
-            lightness: 45,
+            lightness: 45
           },
           {
-            visibility: "simplified",
+            visibility: 'simplified'
           },
           {
-            color: "#f2e8e2",
-          },
-        ],
+            color: '#f2e8e2'
+          }
+        ]
       },
       {
-        featureType: "road",
-        elementType: "labels.text",
+        featureType: 'road',
+        elementType: 'labels.text',
         stylers: [
           {
-            visibility: "on",
-          },
-        ],
+            visibility: 'on'
+          }
+        ]
       },
       {
-        featureType: "road",
-        elementType: "labels.text.fill",
+        featureType: 'road',
+        elementType: 'labels.text.fill',
         stylers: [
           {
-            color: "#172d17",
-          },
-        ],
+            color: '#172d17'
+          }
+        ]
       },
       {
-        featureType: "road.highway",
-        elementType: "all",
+        featureType: 'road.highway',
+        elementType: 'all',
         stylers: [
           {
-            visibility: "simplified",
-          },
-        ],
+            visibility: 'simplified'
+          }
+        ]
       },
       {
-        featureType: "road.arterial",
-        elementType: "labels.icon",
+        featureType: 'road.arterial',
+        elementType: 'labels.icon',
         stylers: [
           {
-            visibility: "off",
-          },
-        ],
+            visibility: 'off'
+          }
+        ]
       },
       {
-        featureType: "transit",
-        elementType: "all",
+        featureType: 'transit',
+        elementType: 'all',
         stylers: [
           {
-            visibility: "off",
-          },
-        ],
+            visibility: 'off'
+          }
+        ]
       },
       {
-        featureType: "transit",
-        elementType: "labels.text",
+        featureType: 'transit',
+        elementType: 'labels.text',
         stylers: [
           {
-            visibility: "off",
-          },
-        ],
+            visibility: 'off'
+          }
+        ]
       },
       {
-        featureType: "water",
-        elementType: "all",
+        featureType: 'water',
+        elementType: 'all',
         stylers: [
           {
-            color: "#f2e8e2",
+            color: '#f2e8e2'
           },
           {
-            visibility: "on",
-          },
-        ],
-      },
-    ],
-  };
+            visibility: 'on'
+          }
+        ]
+      }
+    ]
+  }
 }
 
 const GoogleMap = ({ latandLong }) => {
-  let isMobile = false;
+  console.log(window, 'window')
+  let isMobile = false
   try {
-    window;
-    isMobile = window.innerWidth < 821;
+    window
+    isMobile = window.innerWidth < 821
   } catch (err) {
-    console.log("Oops, `window` is not defined");
+    console.log('Oops, `window` is not defined')
   }
 
-  let mapHeight = "inherit";
-  let mapZoom = isMobile ? 15 : 16;
+  let mapHeight = 'inherit'
+  let mapZoom = isMobile ? 15 : 16
   const defaultProps = {
     center: {
       lat: latandLong.lat,
-      lng: latandLong.lon,
+      lng: latandLong.lon
     },
-    zoom: mapZoom,
-  };
+    zoom: mapZoom
+  }
   return (
-    <div className="map-section" style={{ height: mapHeight, width: "100%" }}>
+    <div className='map-section' style={{ height: mapHeight, width: '100%' }}>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyAhpMokBSxcy4inB8f4BSRGB-SZ2w0-bck" }}
+        bootstrapURLKeys={{ key: 'AIzaSyAhpMokBSxcy4inB8f4BSRGB-SZ2w0-bck' }}
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
         options={createMapOptions}
@@ -175,7 +176,7 @@ const GoogleMap = ({ latandLong }) => {
         <MapMarker lat={latandLong.lat} lng={latandLong.lon} />
       </GoogleMapReact>
     </div>
-  );
-};
+  )
+}
 
-export default GoogleMap;
+export default GoogleMap
