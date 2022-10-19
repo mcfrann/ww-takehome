@@ -21,10 +21,6 @@
 .gridItemTwo,
 .gridItemFour {
   border: vars.$border-width solid vars.$black;
-}
-
-.gridItemTwo {
-  border-bottom: none;
   padding: 1em;
   div,
   span,
@@ -33,6 +29,10 @@
     width: 100% !important;
     border: vars.$border-width solid vars.$black;
   }
+}
+
+.gridItemTwo {
+  border-bottom: none;
 }
 
 .imageWrapper {
