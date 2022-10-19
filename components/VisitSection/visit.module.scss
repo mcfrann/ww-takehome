@@ -8,6 +8,10 @@
 
 .gridItemOne {
   background-color: vars.$pink;
+}
+
+.gridItemOne,
+.gridItemThree {
   display: flex;
   flex-direction: column;
   justify-content: center;
