@@ -7,3 +7,19 @@
   justify-content: center;
   align-items: center;
 }
+
+.outerImageWrapper {
+  width: 32vw;
+  height: 70vh;
+  padding: 1em;
+  border: vars.$border-width solid vars.$black;
+  border-radius: 50%;
+  div,
+  span,
+  img {
+    height: 100% !important;
+    width: 100% !important;
+    border: vars.$border-width solid vars.$black;
+    border-radius: 50%;
+  }
+}
