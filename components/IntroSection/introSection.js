@@ -24,6 +24,9 @@ export const IntroSection = ({ section, parallax }) => {
           <ImageOrSvg image={mainImage} />
         </div>
       </div>
+      <div className={styles.parallaxTwo}>
+        <ImageOrSvg image={parallaxTwo} />
+      </div>
     </section>
   )
 }
