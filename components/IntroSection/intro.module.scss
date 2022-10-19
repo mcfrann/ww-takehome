@@ -1,4 +1,56 @@
-@use "../../styles/vars";
+@use '../../styles/vars';
 
 .introSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+}
+
+.introImageWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.outerImageWrapper {
+  width: 40vw;
+  height: 95vh;
+  padding: 1em;
+  border: vars.$border-width solid vars.$black;
+  border-radius: 50%;
+  div,
+  span,
+  img {
+    height: 100% !important;
+    width: 100% !important;
+    border: vars.$border-width solid vars.$black;
+    border-radius: 50%;
+  }
+}
+
+.parallaxOne,
+.parallaxTwo {
+  width: 7vw;
+  position: absolute;
+}
+
+.parallaxOne {
+  top: -5vh;
+  left: 12vw;
+}
+
+.parallaxTwo {
+  bottom: 13vh;
+  right: 12vw;
+}
+
+.mainImageIcon {
+  position: absolute;
+  width: 15vw;
+  bottom: 13vh;
+  left: 25vw;
 }
