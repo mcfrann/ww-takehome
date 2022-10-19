@@ -8,6 +8,21 @@
 
 .gridItemOne {
   background-color: vars.$pink;
+  position: relative;
+}
+
+.parallaxOne {
+  position: absolute;
+  bottom: 12vh;
+  left: 6vw;
+  width: vars.$two-twelfths;
+}
+
+.parallaxTwo {
+  position: absolute;
+  bottom: 6vh;
+  left: 27vw;
+  width: vars.$two-twelfths;
 }
 
 .gridItemOne,
