@@ -4,13 +4,21 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
 }
 
+.introImageWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
 .outerImageWrapper {
-  width: 32vw;
-  height: 70vh;
+  width: 40vw;
+  height: 95vh;
   padding: 1em;
   border: vars.$border-width solid vars.$black;
   border-radius: 50%;
