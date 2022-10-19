@@ -16,16 +16,18 @@ export const IntroSection = ({ section, parallax }) => {
     <section className={styles.introSection}>
       {subhead && <h2>{subhead}</h2>}
       <h1>{headline}</h1>
-      <div className={styles.parallaxOne}>
-        <ImageOrSvg image={parallaxOne} />
-      </div>
-      <div className={styles.outerImageWrapper}>
-        <div className={styles.innerImageWrapper}>
-          <ImageOrSvg image={mainImage} />
+      <div className={styles.introImageWrapper}>
+        <div className={styles.parallaxOne}>
+          <ImageOrSvg image={parallaxOne} />
         </div>
-      </div>
-      <div className={styles.parallaxTwo}>
-        <ImageOrSvg image={parallaxTwo} />
+        <div className={styles.outerImageWrapper}>
+          <div className={styles.innerImageWrapper}>
+            <ImageOrSvg image={mainImage} />
+          </div>
+        </div>
+        <div className={styles.parallaxTwo}>
+          <ImageOrSvg image={parallaxTwo} />
+        </div>
       </div>
     </section>
   )
