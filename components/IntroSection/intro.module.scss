@@ -31,3 +31,19 @@
     border-radius: 50%;
   }
 }
+
+.parallaxOne,
+.parallaxTwo {
+  width: 7vw;
+  position: absolute;
+}
+
+.parallaxOne {
+  top: -5vh;
+  left: 12vw;
+}
+
+.parallaxTwo {
+  bottom: 13vh;
+  right: 12vw;
+}
