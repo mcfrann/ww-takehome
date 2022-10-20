@@ -1,34 +1,72 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Challenge for WW
 
-First, run the development server:
+##### Created by:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Francesca McConnell | [Github](https://github.com/mcfrann), [LinkedIn](https://www.linkedin.com/in/francesca-mcconnell/)
+| Spec found [here](https://www.figma.com/file/pdHPD5ye6lpkfkfkRoQX3o/Sofia's-Code-Test?node-id=0%3A1)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Deploy Link
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Check out the deployed site [here](https://ww-takehome-francesca.vercel.app/).
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Table of Contents
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- Overview
+- Project Goals
+- Approach
+- Technologies and Tools
+- Site Examples
+- Install and Setup
+- Up Next
 
-## Learn More
+## Overview
 
-To learn more about Next.js, take a look at the following resources:
+Take home challenge for [Wunder Werkz](https://www.iheartwunderwerkz.com/) - October 2022
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Goals
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The goal of this project was to showcase my front-end development skills and highlight my abilities in duplicating design specs and understanding legacy code.
 
-## Deploy on Vercel
+## Approach
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+First, I went through the spec, style guide, and codebase thoroughly to gain a better understanding of how the data flowed through the app and what was perhaps attainable within the time frame of three hours. I created a [project board](https://github.com/users/mcfrann/projects/3) to organize my tasks and keep track of any issues, questions, or refactoring needs that came up throughout the project. I granted myself three hours over the span of a couple days to render the data to the page with roughly correct styling. I then granted myself some extra time on the last day to refactor and implement responsive design in the components I was able to finish so that what I had accomplished was buttoned up and ready for presentation. Finally, I updated my project board and deployed with Vercel.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Technologies and Tools
+
+- JavaScript
+- ReactJS
+- NextJS
+- HTML/JSX
+- SCSS
+- [GitHub Projects](https://github.com/users/mcfrann/projects/3)
+- Vercel
+
+## Site Examples
+
+Main:
+
+![Main](https://media.giphy.com/media/xyrFTNHMpA42jTPqxU/giphy.gif)
+
+Clicking on banner hides it and directs to the careers section:
+
+![Banner](https://media.giphy.com/media/PfWcLgzlB9dnuVWXdv/giphy.gif)
+
+Responsive design:
+
+![Mobile](https://media.giphy.com/media/UD9NRTERm8kxHFYnJK/giphy.gif)
+
+## Install and Setup
+
+To run this app locally:
+
+1. Run `git clone git@github.com:mcfrann/ww-takehome.git` in your command line
+2. Run `cd ww-takehome` to navigate into the repository
+3. Run `npm install` - after this point, you will need an access token and id to continue. If you don't have access to those, feel free to check out the [deployed site](https://ww-takehome-francesca.vercel.app/).
+4. Run `npm run dev`
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Up Next
+
+Some tasks I would be eager to accomplish if I had more time would be to further familiarize myself with the SCSS variables (flex, etc) to utilize them more consistently throughout the app, fix the issues I had with the map showing up after breakpoints were added, dive into the parallax functionality, continue tweaking styling, and of course finish the app. :)
