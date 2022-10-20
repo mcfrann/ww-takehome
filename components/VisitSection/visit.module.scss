@@ -101,3 +101,23 @@
     display: none;
   }
 }
+
+.imageWrapperDesktop {
+  @include vars.tablet-and-lower {
+    display: none;
+  }
+}
+
+.gridItemFour {
+  @include vars.tablet-and-lower {
+    height: vars.$six-twelfths;
+  }
+}
+
+.mapContainerMobile {
+  display: none;
+  @include vars.tablet-and-lower {
+    display: block;
+    border: vars.$border-width solid vars.$black;
+  }
+}
