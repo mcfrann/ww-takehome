@@ -60,8 +60,12 @@
   width: 15vw;
   bottom: 13vh;
   left: 25vw;
+  @include vars.lap-small {
+    left: 18%;
+    width: 20vw;
+  }
   @include vars.tablet-and-lower {
-    width: 28%;
-    left: 2%;
+    width: 25vw;
+    left: 3%;
   }
 }
