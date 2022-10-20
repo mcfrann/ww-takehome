@@ -14,7 +14,6 @@
   background-color: vars.$pink;
   position: relative;
   @include vars.tablet-and-lower {
-    height: vars.$six-twelfths;
     background-color: white;
   }
 }
@@ -31,6 +30,7 @@
   bottom: 6vh;
   left: 27vw;
   width: vars.$two-twelfths;
+  background-color: white;
 }
 
 .parallaxOne,
@@ -46,6 +46,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @include vars.tablet-and-lower {
+    height: vars.$six-twelfths;
+  }
 }
 
 .gridItemTwo,
