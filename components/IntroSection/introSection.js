@@ -3,7 +3,6 @@ import { ImageOrSvg } from '../ImageorSvg/imageOrSvg.js'
 
 export const IntroSection = ({ section, parallax }) => {
   const {
-    logoIcon,
     headline,
     subhead,
     mainImage,
