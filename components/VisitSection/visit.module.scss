@@ -69,6 +69,7 @@
   border-bottom: none;
   @include vars.tablet-and-lower {
     border-bottom: vars.$border-width solid vars.$black;
+    order: -1;
   }
 }
 
