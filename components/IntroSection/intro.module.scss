@@ -15,7 +15,7 @@
 }
 
 .outerImageWrapper {
-  width: 37vw;
+  width: 35em;
   height: 95vh;
   padding: 1em;
   border: vars.$border-width solid vars.$black;
@@ -28,22 +28,31 @@
     border: vars.$border-width solid vars.$black;
     border-radius: 50%;
   }
+  @include vars.tablet-and-lower {
+    width: 29em;
+    margin-left: 2em;
+    margin-right: 2em;
+    background-color: #f3e8e2;
+  }
+}
+
+.parallaxOne {
+  top: -5vh;
+  left: 11vw;
+}
+
+.parallaxTwo {
+  bottom: 13vh;
+  right: 11vw;
 }
 
 .parallaxOne,
 .parallaxTwo {
   width: 7vw;
   position: absolute;
-}
-
-.parallaxOne {
-  top: -5vh;
-  left: 12vw;
-}
-
-.parallaxTwo {
-  bottom: 13vh;
-  right: 12vw;
+  @include vars.tablet-and-lower {
+    display: none;
+  }
 }
 
 .mainImageIcon {
@@ -51,4 +60,8 @@
   width: 15vw;
   bottom: 13vh;
   left: 25vw;
+  @include vars.tablet-and-lower {
+    width: 28%;
+    left: 2%;
+  }
 }
