@@ -1,10 +1,8 @@
 @use '../../styles/vars';
 
 .introSection {
-  position: relative;
   display: flex;
   flex-direction: column;
-  // justify-content: center;
   align-items: center;
 }
 
@@ -17,8 +15,8 @@
 }
 
 .outerImageWrapper {
-  width: 40vw;
-  height: 95vh;
+  width: 35em;
+  height: 48em;
   padding: 1em;
   border: vars.$border-width solid vars.$black;
   border-radius: 50%;
@@ -30,27 +28,47 @@
     border: vars.$border-width solid vars.$black;
     border-radius: 50%;
   }
+  @include vars.tablet-and-lower {
+    width: 29em;
+    margin-left: 2em;
+    margin-right: 2em;
+    background-color: #f3e8e2;
+  }
+}
+
+.parallaxOne {
+  top: -2em;
+  left: 10em;
+}
+
+.parallaxTwo {
+  bottom: 11em;
+  right: 10em;
 }
 
 .parallaxOne,
 .parallaxTwo {
   width: 7vw;
   position: absolute;
-}
-
-.parallaxOne {
-  top: -5vh;
-  left: 12vw;
-}
-
-.parallaxTwo {
-  bottom: 13vh;
-  right: 12vw;
+  @include vars.lap-small {
+    display: none;
+  }
+  @include vars.tablet-and-lower {
+    display: none;
+  }
 }
 
 .mainImageIcon {
   position: absolute;
-  width: 15vw;
-  bottom: 13vh;
-  left: 25vw;
+  width: 12em;
+  bottom: 10em;
+  left: 20vw;
+  @include vars.lap-small {
+    width: 10em;
+    left: 15vw;
+  }
+  @include vars.tablet-and-lower {
+    width: 8em;
+    left: 3vw;
+  }
 }

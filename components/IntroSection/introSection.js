@@ -1,16 +1,15 @@
-import styles from './intro.module.scss'
-import { ImageOrSvg } from '../ImageorSvg/imageOrSvg.js'
+import styles from './intro.module.scss';
+import { ImageOrSvg } from '../ImageorSvg/imageOrSvg.js';
 
-export const IntroSection = ({ section, parallax }) => {
+export const IntroSection = ({ section }) => {
   const {
-    logoIcon,
     headline,
     subhead,
     mainImage,
     mainImageIcon,
     parallaxOne,
     parallaxTwo
-  } = section.fields
+  } = section.fields;
 
   return (
     <section className={styles.introSection}>
@@ -33,5 +32,5 @@ export const IntroSection = ({ section, parallax }) => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};

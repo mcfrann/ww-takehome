@@ -1,5 +1,5 @@
-import GoogleMapReact from 'google-map-react'
-import MapMarker from './mapMarker'
+import GoogleMapReact from 'google-map-react';
+import MapMarker from './mapMarker';
 
 function createMapOptions(maps) {
   // next props are exposed at maps
@@ -143,27 +143,27 @@ function createMapOptions(maps) {
         ]
       }
     ]
-  }
+  };
 }
 
 const GoogleMap = ({ latandLong }) => {
-  let isMobile = false
+  let isMobile = false;
   try {
-    window
-    isMobile = window.innerWidth < 821
+    window;
+    isMobile = window.innerWidth < 821;
   } catch (err) {
-    console.log('Oops, `window` is not defined')
+    console.log('Oops, `window` is not defined');
   }
 
-  let mapHeight = 'inherit'
-  let mapZoom = isMobile ? 15 : 16
+  let mapHeight = 'inherit';
+  let mapZoom = isMobile ? 15 : 16;
   const defaultProps = {
     center: {
       lat: latandLong.lat,
       lng: latandLong.lon
     },
     zoom: mapZoom
-  }
+  };
   return (
     <div className='map-section' style={{ height: mapHeight, width: '100%' }}>
       <GoogleMapReact
@@ -175,7 +175,7 @@ const GoogleMap = ({ latandLong }) => {
         <MapMarker lat={latandLong.lat} lng={latandLong.lon} />
       </GoogleMapReact>
     </div>
-  )
-}
+  );
+};
 
-export default GoogleMap
+export default GoogleMap;

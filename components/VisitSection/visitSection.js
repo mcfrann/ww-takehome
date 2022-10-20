@@ -1,10 +1,10 @@
-import styles from './visit.module.scss'
-import { ImageOrSvg } from '../ImageorSvg/imageOrSvg'
-import GoogleMap from '../Location/Map'
-import Image from 'next/image'
-import FlourPic from '../../public/flour.jpg'
+import styles from './visit.module.scss';
+import { ImageOrSvg } from '../ImageorSvg/imageOrSvg';
+import GoogleMap from '../Location/Map';
+import Image from 'next/image';
+import FlourPic from '../../public/flour.jpg';
 
-export const VisitSection = ({ section, parallax }) => {
+export const VisitSection = ({ section }) => {
   const {
     sectionImage,
     hoursHeadline,
@@ -12,17 +12,16 @@ export const VisitSection = ({ section, parallax }) => {
     parallaxIconOne,
     parallaxIconTwo,
     addressLine1,
-    addressLine2,
     zip,
     city,
     stateAbbreviation,
-    googleMapLink,
     menuTitle,
-    mapLocation
-  } = section.fields
+    mapLocation,
+    googleMapLink
+  } = section.fields;
 
-  const days = `${hoursGroups[0].fields.hours[0].fields.startDay} - ${hoursGroups[0].fields.hours[0].fields.endDay}`
-  const hours = `${hoursGroups[0].fields.hours[0].fields.startTime} - ${hoursGroups[0].fields.hours[0].fields.endTime}`
+  const days = `${hoursGroups[0].fields.hours[0].fields.startDay} - ${hoursGroups[0].fields.hours[0].fields.endDay}`;
+  const hours = `${hoursGroups[0].fields.hours[0].fields.startTime} - ${hoursGroups[0].fields.hours[0].fields.endTime}`;
 
   return (
     <section id={menuTitle} className={styles.visitSection}>
@@ -55,7 +54,7 @@ export const VisitSection = ({ section, parallax }) => {
         </div>
       </div>
       <div className={styles.gridItemFour}>
-        <div className={styles.imageWrapper}>
+        <div className={styles.imageWrapperDesktop}>
           <Image
             src={FlourPic}
             alt={'flour photo'}
@@ -65,7 +64,12 @@ export const VisitSection = ({ section, parallax }) => {
             objectFit={'cover'}
           />
         </div>
+        <div className={styles.mapContainerMobile}>
+          <a href={googleMapLink} target='_blank' rel='noreferrer'>
+            <GoogleMap latandLong={mapLocation} />
+          </a>
+        </div>
       </div>
     </section>
-  )
-}
+  );
+};
