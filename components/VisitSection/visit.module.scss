@@ -54,6 +54,7 @@
 .gridItemTwo,
 .gridItemFour {
   border: vars.$border-width solid vars.$black;
+  background-color: vars.$white;
   padding: 1em;
   div,
   span,
@@ -66,6 +67,9 @@
 
 .gridItemTwo {
   border-bottom: none;
+  @include vars.tablet-and-lower {
+    border-bottom: vars.$border-width solid vars.$black;
+  }
 }
 
 .imageWrapper {
