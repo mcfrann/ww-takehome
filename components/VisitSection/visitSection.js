@@ -16,7 +16,8 @@ export const VisitSection = ({ section, parallax }) => {
     city,
     stateAbbreviation,
     menuTitle,
-    mapLocation
+    mapLocation,
+    googleMapLink
   } = section.fields
 
   const days = `${hoursGroups[0].fields.hours[0].fields.startDay} - ${hoursGroups[0].fields.hours[0].fields.endDay}`
@@ -53,7 +54,7 @@ export const VisitSection = ({ section, parallax }) => {
         </div>
       </div>
       <div className={styles.gridItemFour}>
-        <div className={styles.imageWrapper}>
+        <div className={styles.imageWrapperDesktop}>
           <Image
             src={FlourPic}
             alt={'flour photo'}
@@ -62,6 +63,11 @@ export const VisitSection = ({ section, parallax }) => {
             layout={'intrinsic'}
             objectFit={'cover'}
           />
+        </div>
+        <div className={styles.mapContainerMobile}>
+          <a href={googleMapLink} target='_blank'>
+            <GoogleMap latandLong={mapLocation} />
+          </a>
         </div>
       </div>
     </section>
