@@ -94,4 +94,7 @@
   width: 38vw;
   margin-top: 3em;
   border: vars.$border-width solid vars.$black;
+  @include vars.tablet-and-lower {
+    display: none;
+  }
 }
