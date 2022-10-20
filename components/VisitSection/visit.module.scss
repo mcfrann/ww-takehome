@@ -6,12 +6,17 @@
   grid-template-rows: vars.$eight-twelfths vars.$eight-twelfths;
   @include vars.tablet-and-lower {
     grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
   }
 }
 
 .gridItemOne {
   background-color: vars.$pink;
   position: relative;
+  @include vars.tablet-and-lower {
+    height: vars.$six-twelfths;
+    background-color: white;
+  }
 }
 
 .parallaxOne {
