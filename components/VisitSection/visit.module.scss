@@ -11,8 +11,8 @@
 }
 
 .gridItemOne {
-  background-color: vars.$pink;
   position: relative;
+  background-color: vars.$pink;
   @include vars.tablet-and-lower {
     background-color: white;
   }
