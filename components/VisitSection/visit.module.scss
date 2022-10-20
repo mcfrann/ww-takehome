@@ -4,6 +4,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: vars.$eight-twelfths vars.$eight-twelfths;
+  @include vars.tablet-and-lower {
+    grid-template-columns: 1fr;
+  }
 }
 
 .gridItemOne {
