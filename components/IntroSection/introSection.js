@@ -1,7 +1,7 @@
 import styles from './intro.module.scss'
 import { ImageOrSvg } from '../ImageorSvg/imageOrSvg.js'
 
-export const IntroSection = ({ section, parallax }) => {
+export const IntroSection = ({ section }) => {
   const {
     headline,
     subhead,
