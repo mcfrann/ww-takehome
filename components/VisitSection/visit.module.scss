@@ -28,6 +28,13 @@
   width: vars.$two-twelfths;
 }
 
+.parallaxOne,
+.parallaxTwo {
+  @include vars.tablet-and-lower {
+    display: none;
+  }
+}
+
 .gridItemOne,
 .gridItemThree {
   display: flex;
