@@ -4,7 +4,7 @@ import GoogleMap from '../Location/Map'
 import Image from 'next/image'
 import FlourPic from '../../public/flour.jpg'
 
-export const VisitSection = ({ section, parallax }) => {
+export const VisitSection = ({ section }) => {
   const {
     sectionImage,
     hoursHeadline,
