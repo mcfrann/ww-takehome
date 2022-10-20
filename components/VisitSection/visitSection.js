@@ -12,11 +12,9 @@ export const VisitSection = ({ section, parallax }) => {
     parallaxIconOne,
     parallaxIconTwo,
     addressLine1,
-    addressLine2,
     zip,
     city,
     stateAbbreviation,
-    googleMapLink,
     menuTitle,
     mapLocation
   } = section.fields
