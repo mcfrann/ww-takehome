@@ -16,7 +16,7 @@
 
 .outerImageWrapper {
   width: 35em;
-  height: 95vh;
+  height: 48em;
   padding: 1em;
   border: vars.$border-width solid vars.$black;
   border-radius: 50%;
@@ -37,19 +37,22 @@
 }
 
 .parallaxOne {
-  top: -5vh;
-  left: 11vw;
+  top: -2em;
+  left: 10em;
 }
 
 .parallaxTwo {
-  bottom: 13vh;
-  right: 11vw;
+  bottom: 11em;
+  right: 10em;
 }
 
 .parallaxOne,
 .parallaxTwo {
   width: 7vw;
   position: absolute;
+  @include vars.lap-small {
+    display: none;
+  }
   @include vars.tablet-and-lower {
     display: none;
   }
@@ -57,15 +60,15 @@
 
 .mainImageIcon {
   position: absolute;
-  width: 15vw;
-  bottom: 13vh;
-  left: 25vw;
+  width: 12em;
+  bottom: 10em;
+  left: 20vw;
   @include vars.lap-small {
-    left: 18%;
-    width: 20vw;
+    width: 10em;
+    left: 15vw;
   }
   @include vars.tablet-and-lower {
-    width: 25vw;
-    left: 3%;
+    width: 8em;
+    left: 3vw;
   }
 }
