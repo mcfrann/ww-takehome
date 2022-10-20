@@ -1,8 +1,8 @@
-import styles from './visit.module.scss'
-import { ImageOrSvg } from '../ImageorSvg/imageOrSvg'
-import GoogleMap from '../Location/Map'
-import Image from 'next/image'
-import FlourPic from '../../public/flour.jpg'
+import styles from './visit.module.scss';
+import { ImageOrSvg } from '../ImageorSvg/imageOrSvg';
+import GoogleMap from '../Location/Map';
+import Image from 'next/image';
+import FlourPic from '../../public/flour.jpg';
 
 export const VisitSection = ({ section }) => {
   const {
@@ -18,10 +18,10 @@ export const VisitSection = ({ section }) => {
     menuTitle,
     mapLocation,
     googleMapLink
-  } = section.fields
+  } = section.fields;
 
-  const days = `${hoursGroups[0].fields.hours[0].fields.startDay} - ${hoursGroups[0].fields.hours[0].fields.endDay}`
-  const hours = `${hoursGroups[0].fields.hours[0].fields.startTime} - ${hoursGroups[0].fields.hours[0].fields.endTime}`
+  const days = `${hoursGroups[0].fields.hours[0].fields.startDay} - ${hoursGroups[0].fields.hours[0].fields.endDay}`;
+  const hours = `${hoursGroups[0].fields.hours[0].fields.startTime} - ${hoursGroups[0].fields.hours[0].fields.endTime}`;
 
   return (
     <section id={menuTitle} className={styles.visitSection}>
@@ -65,11 +65,11 @@ export const VisitSection = ({ section }) => {
           />
         </div>
         <div className={styles.mapContainerMobile}>
-          <a href={googleMapLink} target='_blank'>
+          <a href={googleMapLink} target='_blank' rel='noreferrer'>
             <GoogleMap latandLong={mapLocation} />
           </a>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};

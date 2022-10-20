@@ -1,4 +1,4 @@
-import styles from './announcement.module.scss'
+import styles from './announcement.module.scss';
 
 export const AnnouncementBar = ({ headline, url, hide, hidden }) => {
   return (
@@ -11,5 +11,5 @@ export const AnnouncementBar = ({ headline, url, hide, hidden }) => {
         {headline}
       </a>
     </div>
-  )
-}
+  );
+};
