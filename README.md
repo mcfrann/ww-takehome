@@ -29,7 +29,7 @@ The goal of this project was to showcase my front-end development skills and hig
 
 ## Approach
 
-First, I went through the spec, style guide, and codebase thoroughly to gain a better understanding of how the data flowed through the app and what was perhaps attainable within the time frame of three hours. I created a [project board](https://github.com/users/mcfrann/projects/3) to organize my tasks and keep track of any issues, questions, or refactoring needs that came up throughout the project. I granted myself three hours over the span of a couple days to render the data to the page with roughly correct styling. I then granted myself some extra time on the last day to refactor and implement responsive design in the components I was able to finish so that what I had accomplished was buttoned up and ready for presentation. Finally, I updated my project board and deployed with Vercel.
+First, I went through the spec, style guide, and codebase to understand the existing patterns in the application. I created a [project board](https://github.com/users/mcfrann/projects/3) to organize my tasks and keep track of any issues, questions, or refactoring needs that arose throughout the project. I granted myself three hours over the span of a couple days to render the data to the page. I then granted myself some extra time on the last day to refactor. In that time I implemented a responsive design in the completed components. Finally, I updated my project board and deployed the site with Vercel.
 
 ## Technologies and Tools
 
@@ -67,4 +67,4 @@ To run this app locally:
 
 ## Up Next
 
-Some tasks I would be eager to accomplish if I had more time would be to further familiarize myself with the SCSS variables (flex, etc) to utilize them more consistently throughout the app, fix the issues I had with the map showing up after breakpoints were added, dive into the parallax functionality, continue tweaking styling, and of course finish the app. :)
+Some tasks I would be eager to accomplish if I had more time would be to further familiarize myself with the SCSS variables (flex, etc) to utilize them more consistently throughout the app, fix the issues I had with the map showing up after breakpoints were added, dive into the parallax functionality, continue tweaking styling, and of course, finish the app. :)
