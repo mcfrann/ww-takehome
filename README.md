@@ -29,7 +29,7 @@ The goal of this project was to showcase my front-end development skills and hig
 
 ## Approach
 
-First, I went through the spec, style guide, and codebase to understand the existing patterns in the application. I created a [project board](https://github.com/users/mcfrann/projects/3) to organize my tasks and keep track of any issues, questions, or refactoring needs that arose throughout the project. I granted myself three hours over the span of a couple days to render the data to the page. I then granted myself some extra time on the last day to refactor. In that time I implemented a responsive design in the completed components. Finally, I updated my project board and deployed the site with Vercel.
+First, I went through the spec, style guide, and codebase to understand the existing patterns in the application. I created a [project board](https://github.com/users/mcfrann/projects/3) to organize my tasks and keep track of any issues, questions, or refactoring needs that arose throughout the project. I granted myself three hours over the span of a couple days to render the data to the page. I then granted myself some extra time on the last day to refactor. Within that time I implemented responsive design for the completed components. Finally, I updated my project board and deployed the site with Vercel.
 
 ## Technologies and Tools
 
