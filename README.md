@@ -67,4 +67,9 @@ To run this app locally:
 
 ## Up Next
 
-Some tasks I would be eager to accomplish if I had more time would be to further familiarize myself with the SCSS variables (flex, etc) to utilize them more consistently throughout the app, fix the issues I had with the map showing up after breakpoints were added, dive into the parallax functionality, continue tweaking styling, and of course, finish the app. :)
+Some tasks I would be eager to complete if allowed more time:
+  - further familiarize myself with the SCSS variables to utilize them more consistently throughout the app
+  - fix the issues I had with the map showing up after breakpoints were added for the mobile design
+  - dive into the parallax functionality
+  - continue tweaking styling
+  - finish the app. :)
