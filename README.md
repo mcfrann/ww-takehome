@@ -73,3 +73,4 @@ Some tasks I would be eager to complete if allowed more time:
   - dive into the parallax functionality
   - continue tweaking styling
   - finish the app. :)
+
